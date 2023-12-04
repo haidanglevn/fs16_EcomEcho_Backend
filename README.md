@@ -26,7 +26,7 @@ You can follow the same topics as your backend project or choose the alternative
 
 ## Instruction
 
-This repository should be used only for backend server. The frontend server should be done in a separate repository. You can modify your previous frontend project and instructors will check the submissions (pull requests) in the frontend project repository. The modified frontend server need to be connected with this backend server to make a whole fullstack project.
+This repository should be used only for backend server. The frontend server should be done in a separate repository [here](https://github.com/Integrify-Finland/fs16_6-frontend-project). You can modify your previous frontend project and instructors will check the submissions (pull requests) in the frontend project repository. The modified frontend server need to be connected with this backend server to make a whole fullstack project.
 
 ### Frontend
 
