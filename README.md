@@ -17,12 +17,13 @@ You can follow the same topics as your backend project or choose the alternative
 
 ## Table of Contents
 
-1. [Features](#features)
+1. [Instruction](#instruction)
+2. [Features](#features)
    - [Mandatory features](#mandatory-features)
    - [Extra features](#extra-features)
-2. [Requirements](#requirements)
-3. [Getting Started](#getting-started)
-4. [Testing](#testing)
+3. [Requirements](#requirements)
+4. [Getting Started](#getting-started)
+5. [Testing](#testing)
 
 ## Instruction
 
