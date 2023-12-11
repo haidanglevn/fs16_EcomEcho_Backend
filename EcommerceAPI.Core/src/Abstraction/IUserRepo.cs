@@ -8,7 +8,7 @@ namespace EcommerceAPI.Core.src.Abstraction
         IEnumerable<User> GetAllUsers(GetAllParams options);
         User GetOneUser(Guid userId);
         bool CreateNewUser(User user);
-        bool UpdateUser(Guid userId, User updatedUser);
+        bool UpdateUser(User updatedUser);
         bool DeleteUser(Guid userId);
     }
 }
