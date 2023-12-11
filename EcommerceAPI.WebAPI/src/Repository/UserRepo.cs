@@ -2,19 +2,25 @@ using EcommerceAPI.Core.src.Abstraction;
 using EcommerceAPI.Core.src.Entity;
 using EcommerceAPI.Core.src.Parameter;
 using EcommerceAPI.WebAPI.src.Database;
+using Microsoft.EntityFrameworkCore;
 
 namespace EcommerceAPI.WebAPI.src.Repository
 {
     public class UserRepo : IUserRepo
     {
-        private List<User> _users;
-        public UserRepo()
+        private DbSet<User> _users;
+        private DatabaseContext _database;
+        public UserRepo(DatabaseContext database)
         {
-            _users = new DatabaseContext().Users;
+            // _users = new DatabaseContext().Users;
+            _users = database.Users;
+            _database = database;
         }
-        public bool CreateNewUser(User user)
+        public User CreateNewUser(User user)
         {
-            throw new NotImplementedException();
+            _users.Add(user);
+            _database.SaveChanges();
+            return user;
         }
 
         public bool DeleteUser(Guid userId)

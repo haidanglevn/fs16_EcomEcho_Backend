@@ -20,4 +20,10 @@ public class UserController : ControllerBase
     {
         return Ok(_userService.GetAllUsers(options));
     }
+
+    [HttpPost()]
+    public ActionResult<UserReadDTO> CreateNewUser([FromBody] UserCreateDTO userCreateDTO)
+    {
+        return CreatedAtAction(nameof(CreateNewUser), _userService.CreateNewUser(userCreateDTO));
+    }
 }

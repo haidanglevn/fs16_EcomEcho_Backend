@@ -1,0 +1,9 @@
+POST http://localhost:5173/api/users HTTP/1.1
+content-type: application/json
+
+{
+  "firstName": "Michal",
+  "lastName": "Smith",
+  "email": "test2@mail.com",
+  "password": "easytoread"
+}

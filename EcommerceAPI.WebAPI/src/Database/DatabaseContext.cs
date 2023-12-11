@@ -1,19 +1,31 @@
 using EcommerceAPI.Core.src.Entity;
+using Microsoft.EntityFrameworkCore;
+using Npgsql;
 
 namespace EcommerceAPI.WebAPI.src.Database
 {
-    public class DatabaseContext
+    public class DatabaseContext : DbContext
     {
-        public List<User> Users { get; set; }
-        public DatabaseContext()
+        private readonly IConfiguration _config;
+        public DbSet<User> Users { get; set; }
+        public DatabaseContext(DbContextOptions options, IConfiguration config) : base(options)
         {
-            Users = new List<User>{
-                new() {LastName = "Ben", FirstName="White", Email= "white@mail.com", Password = "something"},
-                new() {LastName = "Aaron", FirstName="Ramsdale", Email= "aaron@mail.com", Password = "something"},
-                new() {LastName = "Dang", FirstName="Le", Email= "dang@mail.com", Password = "something"},
-                new() {LastName = "Declan", FirstName="Rice", Email= "rice@mail.com", Password = "something"},
-            };
+            _config = config;
         }
 
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            var dataSourceBuilder = new NpgsqlDataSourceBuilder(_config.GetConnectionString("LocalDb"));
+            dataSourceBuilder.MapEnum<Role>();
+            var dataSource = dataSourceBuilder.Build();
+            optionsBuilder.UseNpgsql(dataSource).UseSnakeCaseNamingConvention();
+            base.OnConfiguring(optionsBuilder);
+        }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.HasPostgresEnum<Role>();
+            base.OnModelCreating(modelBuilder);
+        }
     }
 }

@@ -8,7 +8,7 @@ namespace EcommerceAPI.Business.src.Abstraction
     {
         IEnumerable<UserReadDTO> GetAllUsers(GetAllParams options);
         UserReadDTO GetOneUser(Guid userId);
-        bool CreateNewUser(UserCreateDTO user);
+        UserReadDTO CreateNewUser(UserCreateDTO user);
         bool UpdateUser(UserUpdateDTO updatedUser);
         bool DeleteUser(Guid userId);
     }

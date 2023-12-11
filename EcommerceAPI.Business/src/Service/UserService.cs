@@ -1,3 +1,4 @@
+using AutoMapper;
 using EcommerceAPI.Business.src.Abstraction;
 using EcommerceAPI.Business.src.DTO;
 using EcommerceAPI.Core.src.Abstraction;
@@ -9,21 +10,16 @@ namespace EcommerceAPI.Business.src.Service
     public class UserService : IUserService
     {
         private IUserRepo _userRepo;
-        public UserService(IUserRepo userRepo)
+        private IMapper _mapper;
+        public UserService(IUserRepo userRepo, IMapper mapper)
         {
             _userRepo = userRepo;
+            _mapper = mapper;
         }
-        public bool CreateNewUser(UserCreateDTO userCreateDTO)
+        public UserReadDTO CreateNewUser(UserCreateDTO userCreateDTO)
         {
-            var result = _userRepo.CreateNewUser(userCreateDTO.Transform());
-            if (result)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            var result = _userRepo.CreateNewUser(_mapper.Map<UserCreateDTO, User>(userCreateDTO));
+            return _mapper.Map<User, UserReadDTO>(result);
         }
 
         public bool DeleteUser(Guid userId)
@@ -33,7 +29,7 @@ namespace EcommerceAPI.Business.src.Service
 
         public IEnumerable<UserReadDTO> GetAllUsers(GetAllParams options)
         {
-            return _userRepo.GetAllUsers(options).Select(u => new UserReadDTO().Convert(u));
+            return _userRepo.GetAllUsers(options).Select(u => _mapper.Map<User, UserReadDTO>(u));
         }
 
         public UserReadDTO GetOneUser(Guid userId)

@@ -10,10 +10,6 @@ namespace EcommerceAPI.Business.src.DTO
         public string LastName { get; set; }
 
         public string Email { get; set; }
-        public UserReadDTO Convert(User user)
-        {
-            return new UserReadDTO { Role = user.Role, Email = user.Email, FirstName = user.FirstName, LastName = user.LastName };
-        }
     }
 
     public class UserUpdateDTO
@@ -30,9 +26,9 @@ namespace EcommerceAPI.Business.src.DTO
 
         public string Email { get; set; }
         public string Password { get; set; }
-        public User Transform()
-        {
-            return new User { Id = new Guid(), FirstName = FirstName, LastName = LastName, Password = Password, Email = Email };
-        }
+        // public User Transform()
+        // {
+        //     return new User { Id = new Guid(), FirstName = FirstName, LastName = LastName, Password = Password, Email = Email };
+        // }
     }
 }
