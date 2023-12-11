@@ -8,6 +8,8 @@ namespace EcommerceAPI.WebAPI.src.Database
     {
         private readonly IConfiguration _config;
         public DbSet<User> Users { get; set; }
+        public DbSet<Address> Addresses { get; set; }
+
         public DatabaseContext(DbContextOptions options, IConfiguration config) : base(options)
         {
             _config = config;
@@ -26,6 +28,16 @@ namespace EcommerceAPI.WebAPI.src.Database
         {
             modelBuilder.HasPostgresEnum<Role>();
             base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<User>()
+               .HasMany(u => u.Addresses) // User has many Addresses
+               .WithOne()
+               .OnDelete(DeleteBehavior.Cascade); // Cascade delete behavior
+
+            // Unique Email configuration
+            modelBuilder.Entity<User>()
+                .HasIndex(u => u.Email)
+                .IsUnique();
         }
     }
 }

@@ -9,6 +9,10 @@ namespace EcommerceAPI.Core.src.Entity
 
         public string Email { get; set; }
         public string Password { get; set; }
+
+        // Navigation properties
+        public IEnumerable<Address> Addresses { get; set; } // use IEnumerable for lazy loading, List is not
+
     }
     public enum Role
     {

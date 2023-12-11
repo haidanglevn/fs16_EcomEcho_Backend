@@ -4,6 +4,7 @@ using EcommerceAPI.Core.src.Entity;
 using EcommerceAPI.WebAPI.src.Database;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -12,9 +13,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace EcommerceAPI.WebAPI.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    partial class DatabaseContextModelSnapshot : ModelSnapshot
+    [Migration("20231211230711_TestAddressEntity")]
+    partial class TestAddressEntity
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -101,10 +104,6 @@ namespace EcommerceAPI.WebAPI.Migrations
                     b.HasKey("Id")
                         .HasName("pk_users");
 
-                    b.HasIndex("Email")
-                        .IsUnique()
-                        .HasDatabaseName("ix_users_email");
-
                     b.ToTable("users", (string)null);
                 });
 
@@ -113,7 +112,6 @@ namespace EcommerceAPI.WebAPI.Migrations
                     b.HasOne("EcommerceAPI.Core.src.Entity.User", null)
                         .WithMany("Addresses")
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
                         .HasConstraintName("fk_addresses_users_user_id");
                 });
 
