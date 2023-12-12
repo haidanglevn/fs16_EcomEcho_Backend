@@ -10,6 +10,11 @@ namespace EcommerceAPI.WebAPI.src.Database
         public DbSet<User> Users { get; set; }
         public DbSet<Address> Addresses { get; set; }
 
+        static DatabaseContext()
+        {
+            AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
+        }
+
         public DatabaseContext(DbContextOptions options, IConfiguration config) : base(options)
         {
             _config = config;
@@ -20,7 +25,7 @@ namespace EcommerceAPI.WebAPI.src.Database
             var dataSourceBuilder = new NpgsqlDataSourceBuilder(_config.GetConnectionString("LocalDb"));
             dataSourceBuilder.MapEnum<Role>();
             var dataSource = dataSourceBuilder.Build();
-            optionsBuilder.UseNpgsql(dataSource).UseSnakeCaseNamingConvention();
+            optionsBuilder.UseNpgsql(dataSource).UseSnakeCaseNamingConvention().AddInterceptors(new TimeStampInterceptor());
             base.OnConfiguring(optionsBuilder);
         }
 
