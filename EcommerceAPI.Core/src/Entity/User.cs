@@ -12,7 +12,8 @@ namespace EcommerceAPI.Core.src.Entity
 
         // Navigation properties
         public IEnumerable<Address> Addresses { get; set; } // use IEnumerable for lazy loading, List is not
-
+        public IEnumerable<Review> Reviews { get; set; }
+        public IEnumerable<Order> Orders { get; set; }
     }
     public enum Role
     {
