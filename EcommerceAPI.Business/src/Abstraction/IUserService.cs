@@ -9,6 +9,7 @@ namespace EcommerceAPI.Business.src.Abstraction
         IEnumerable<UserReadDTO> GetAllUsers(GetAllParams options);
         UserReadDTO GetOneUser(Guid userId);
         UserReadDTO CreateNewUser(UserCreateDTO user);
+        public UserReadDTO? Login(string email, string userInputPassword);
         bool UpdateUser(UserUpdateDTO updatedUser);
         bool DeleteUser(Guid userId);
     }

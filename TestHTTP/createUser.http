@@ -1,0 +1,9 @@
+POST http://localhost:5173/api/users HTTP/1.1
+content-type: application/json
+
+{
+  "firstName": "Admin",
+  "lastName": "Account",
+  "email": "admin@mail.com",
+  "password": "admin"
+}

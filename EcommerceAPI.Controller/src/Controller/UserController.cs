@@ -26,4 +26,17 @@ public class UserController : ControllerBase
     {
         return CreatedAtAction(nameof(CreateNewUser), _userService.CreateNewUser(userCreateDTO));
     }
+
+    [HttpPost("login")]
+    public IActionResult Login([FromBody] UserLoginDTO userLoginDTO)
+    {
+        var user = _userService.Login(userLoginDTO.Email, userLoginDTO.Password);
+        if (user == null)
+        {
+            return Unauthorized("Invalid credentials");
+        }
+
+        // You would normally generate a JWT token here, but for testing, you can just return a success message.
+        return Ok("Login successful");
+    }
 }

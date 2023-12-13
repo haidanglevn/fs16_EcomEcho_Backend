@@ -33,6 +33,11 @@ namespace EcommerceAPI.WebAPI.src.Repository
             return _users.Where(u => u.FirstName.Contains(options.Search)).Skip(options.Offset).Take(options.Limit);
         }
 
+        public User? FindByEmail(string email)
+        {
+            return _database.Users.FirstOrDefault(u => u.Email == email);
+        }
+
         public User GetOneUser(Guid userId)
         {
             throw new NotImplementedException();

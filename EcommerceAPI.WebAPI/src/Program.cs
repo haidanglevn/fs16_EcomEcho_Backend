@@ -18,11 +18,16 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IUserService, UserService>(); // create an instance of UserService
 builder.Services.AddScoped<IUserRepo, UserRepo>();
 
+builder.Services.AddScoped<IPasswordHasher, PasswordHasher>();
+
 // add automapper dependency injections
 builder.Services.AddAutoMapper(typeof(UserService).Assembly);
 
 // add database context service
 builder.Services.AddDbContext<DatabaseContext>();
+
+// config for authentication
+builder.Services.AddAuthentication();
 
 var app = builder.Build();
 
@@ -34,6 +39,9 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+// Authen first -> then Authorize
+app.UseAuthentication();
 
 app.UseAuthorization();
 

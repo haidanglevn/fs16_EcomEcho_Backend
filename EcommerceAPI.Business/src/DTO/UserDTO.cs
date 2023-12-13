@@ -18,6 +18,12 @@ namespace EcommerceAPI.Business.src.DTO
 
         public string LastName { get; set; }
     }
+    public class UserLoginDTO
+    {
+        public string Email { get; set; }
+
+        public string Password { get; set; }
+    }
     public class UserCreateDTO
     {
         public string FirstName { get; set; }
