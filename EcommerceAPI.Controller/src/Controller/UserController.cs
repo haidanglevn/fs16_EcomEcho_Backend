@@ -1,5 +1,6 @@
 using EcommerceAPI.Business.src.Abstraction;
 using EcommerceAPI.Business.src.DTO;
+using EcommerceAPI.Business.src.Service;
 using EcommerceAPI.Core.src.Parameter;
 using Microsoft.AspNetCore.Mvc;
 
@@ -10,9 +11,11 @@ namespace EcommerceAPI.WebAPI.Controllers;
 public class UserController : ControllerBase
 {
     private IUserService _userService;
-    public UserController(IUserService userService)
+    private ITokenService _tokenService;
+    public UserController(IUserService userService, ITokenService tokenService)
     {
         _userService = userService;
+        _tokenService = tokenService;
     }
 
     [HttpGet()]
@@ -43,14 +46,15 @@ public class UserController : ControllerBase
         }
 
         // You would normally generate a JWT token here, but for testing, you can just return a success message.
-        return Ok("Login successful");
+        var token = _tokenService.CreateToken(user);
+        return Ok(token);
     }
 
     [HttpPost("is-available")]
     public bool CheckEmail([FromBody] CheckEmailDTO checkEmailDTO)
     {
         var isEmailExist = _userService.CheckEmail(checkEmailDTO.Email);
-        return isEmailExist;
+        return !isEmailExist;
     }
 
     [HttpPut("{userId}")]

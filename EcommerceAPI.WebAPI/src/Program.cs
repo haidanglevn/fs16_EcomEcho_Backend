@@ -17,6 +17,7 @@ builder.Services.AddSwaggerGen();
 // declare services
 builder.Services.AddScoped<IUserService, UserService>(); // create an instance of UserService
 builder.Services.AddScoped<IUserRepo, UserRepo>();
+builder.Services.AddScoped<ITokenService, TokenService>();
 
 builder.Services.AddScoped<IPasswordHasher, PasswordHasher>();
 

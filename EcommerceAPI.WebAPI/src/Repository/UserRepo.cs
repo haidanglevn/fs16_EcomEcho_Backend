@@ -37,15 +37,16 @@ namespace EcommerceAPI.WebAPI.src.Repository
 
         public IEnumerable<User> GetAllUsers(GetAllParams options)
         {
-            return _users
+            return _users.AsNoTracking()
             .Where(u => u.FirstName.Contains(options.Search))
             .Skip(options.Offset)
             .Take(options.Limit);
+            // AsNoTracking() helps improve excution time for large db, as this function doesn't change 
         }
 
         public User? FindByEmail(string email)
         {
-            return _database.Users.FirstOrDefault(u => u.Email == email);
+            return _users.AsNoTracking().FirstOrDefault(u => u.Email == email);
         }
 
         public User? GetOneUser(Guid userId)
