@@ -1,0 +1,49 @@
+### Create New User
+POST http://localhost:5173/api/users
+Content-Type: application/json
+
+{
+  "firstName": "Jane",
+  "lastName": "Doe",
+  "email": "jane.doe@example.com",
+  "password": "Password123"
+}
+
+### User Login
+POST http://localhost:5173/api/users/login
+Content-Type: application/json
+
+{
+  "email": "jane.doe@example.com",
+  "password": "Password123"
+}
+
+### Check Email Availability
+POST http://localhost:5173/api/users/is-available
+Content-Type: application/json
+
+{
+  "email": "jane.doe@example.com"
+}
+
+### Get All Users
+GET http://localhost:5173/api/users
+Content-Type: application/json
+
+### Get One User
+GET http://localhost:5173/api/users/688f3ab6-fbc3-4e41-a7b2-870eeea446ea
+Content-Type: application/json
+
+### Update User
+PUT http://localhost:5173/api/users/688f3ab6-fbc3-4e41-a7b2-870eeea446ea
+Content-Type: application/json
+
+{
+  "firstName": "Jane Updated",
+  "lastName": "Doe Updated"
+}
+
+### Delete User
+DELETE http://localhost:5173/api/users/943f8ad0-7d12-45fb-a2f8-effe919c47a6
+Content-Type: application/json
+

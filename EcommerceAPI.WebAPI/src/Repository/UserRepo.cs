@@ -25,12 +25,22 @@ namespace EcommerceAPI.WebAPI.src.Repository
 
         public bool DeleteUser(Guid userId)
         {
-            throw new NotImplementedException();
+            var user = _users.Find(userId);
+            if (user != null)
+            {
+                _users.Remove(user);
+                _database.SaveChanges();
+                return true;
+            }
+            return false;
         }
 
         public IEnumerable<User> GetAllUsers(GetAllParams options)
         {
-            return _users.Where(u => u.FirstName.Contains(options.Search)).Skip(options.Offset).Take(options.Limit);
+            return _users
+            .Where(u => u.FirstName.Contains(options.Search))
+            .Skip(options.Offset)
+            .Take(options.Limit);
         }
 
         public User? FindByEmail(string email)
@@ -38,14 +48,28 @@ namespace EcommerceAPI.WebAPI.src.Repository
             return _database.Users.FirstOrDefault(u => u.Email == email);
         }
 
-        public User GetOneUser(Guid userId)
+        public User? GetOneUser(Guid userId)
         {
-            throw new NotImplementedException();
+            return _users.Find(userId);
         }
 
-        public bool UpdateUser(User updatedUser)
+        public bool UpdateUser(Guid userId, User user)
         {
-            throw new NotImplementedException();
+            var existingUser = _database.Users.Find(userId);
+            if (existingUser != null)
+            {
+                existingUser.FirstName = user.FirstName;
+                existingUser.LastName = user.LastName;
+                _database.SaveChanges();
+                return true;
+            }
+            return false;
         }
+
+        public bool CheckEmail(string email)
+        {
+            return _database.Users.Any(u => u.Email == email);
+        }
+
     }
 }

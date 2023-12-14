@@ -6,10 +6,11 @@ namespace EcommerceAPI.Core.src.Abstraction
     public interface IUserRepo
     {
         IEnumerable<User> GetAllUsers(GetAllParams options);
-        User GetOneUser(Guid userId);
-        public User? FindByEmail(string email);
+        User? GetOneUser(Guid userId);
         User CreateNewUser(User user);
-        bool UpdateUser(User updatedUser);
+        User? FindByEmail(string email);
+        bool CheckEmail(string email);
+        bool UpdateUser(Guid userId, User user);
         bool DeleteUser(Guid userId);
     }
 }

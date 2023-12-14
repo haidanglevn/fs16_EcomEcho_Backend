@@ -44,9 +44,13 @@ namespace EcommerceAPI.Business.src.Service
             return null;
         }
 
+        public bool CheckEmail(string email)
+        {
+            return _userRepo.CheckEmail(email);
+        }
         public bool DeleteUser(Guid userId)
         {
-            throw new NotImplementedException();
+            return _userRepo.DeleteUser(userId);
         }
 
         public IEnumerable<UserReadDTO> GetAllUsers(GetAllParams options)
@@ -54,14 +58,24 @@ namespace EcommerceAPI.Business.src.Service
             return _userRepo.GetAllUsers(options).Select(u => _mapper.Map<User, UserReadDTO>(u));
         }
 
-        public UserReadDTO GetOneUser(Guid userId)
+        public UserReadDTO? GetOneUser(Guid userId)
         {
-            throw new NotImplementedException();
+            var user = _userRepo.GetOneUser(userId);
+            if (user is not null)
+            {
+                return _mapper.Map<User, UserReadDTO>(user);
+            }
+            else
+            {
+                return null;
+            }
         }
 
-        public bool UpdateUser(UserUpdateDTO updatedUser)
+        public bool UpdateUser(Guid userId, UserUpdateDTO userUpdateDTO)
         {
-            throw new NotImplementedException();
+            var user = _mapper.Map<UserUpdateDTO, User>(userUpdateDTO);
+            return _userRepo.UpdateUser(userId, user);
         }
+
     }
 }

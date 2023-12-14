@@ -32,9 +32,10 @@ namespace EcommerceAPI.Business.src.DTO
 
         public string Email { get; set; }
         public string Password { get; set; }
-        // public User Transform()
-        // {
-        //     return new User { Id = new Guid(), FirstName = FirstName, LastName = LastName, Password = Password, Email = Email };
-        // }
+    }
+
+    public class CheckEmailDTO
+    {
+        public string Email { get; set; }
     }
 }
