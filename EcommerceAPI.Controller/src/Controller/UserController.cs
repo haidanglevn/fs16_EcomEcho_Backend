@@ -1,7 +1,9 @@
+using System.Security.Claims;
 using EcommerceAPI.Business.src.Abstraction;
 using EcommerceAPI.Business.src.DTO;
 using EcommerceAPI.Business.src.Service;
 using EcommerceAPI.Core.src.Parameter;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EcommerceAPI.WebAPI.Controllers;
@@ -16,18 +18,6 @@ public class UserController : ControllerBase
     {
         _userService = userService;
         _tokenService = tokenService;
-    }
-
-    [HttpGet()]
-    public ActionResult<IEnumerable<UserReadDTO>> GetAllUsers([FromQuery] GetAllParams options)
-    {
-        return Ok(_userService.GetAllUsers(options));
-    }
-
-    [HttpGet("{userId}")]
-    public ActionResult<UserReadDTO> GetOneUser(Guid userId)
-    {
-        return Ok(_userService.GetOneUser(userId));
     }
 
     [HttpPost()]
@@ -45,7 +35,6 @@ public class UserController : ControllerBase
             return Unauthorized("Invalid credentials");
         }
 
-        // You would normally generate a JWT token here, but for testing, you can just return a success message.
         var token = _tokenService.CreateToken(user);
         return Ok(token);
     }
@@ -56,19 +45,76 @@ public class UserController : ControllerBase
         var isEmailExist = _userService.CheckEmail(checkEmailDTO.Email);
         return !isEmailExist;
     }
+    [HttpGet(), Authorize(Roles = "Admin")]
+    public ActionResult<IEnumerable<UserReadDTO>> GetAllUsers([FromQuery] GetAllParams options)
+    {
+        return Ok(_userService.GetAllUsers(options));
+    }
 
-    [HttpPut("{userId}")]
-    public IActionResult UpdateUser(Guid userId, [FromBody] UserUpdateDTO userUpdateDTO)
+    [HttpGet("{userId}"), Authorize(Roles = "Admin")]
+    public ActionResult<UserReadDTO> GetOneUser(Guid userId)
+    {
+        return Ok(_userService.GetOneUser(userId));
+    }
+
+    [HttpGet("profile"), Authorize]
+    public ActionResult<UserReadDTO> GetCurrentUserProfile()
+    {
+        // Extract userId from the token claims
+        var userIdClaim = HttpContext.User.FindFirst("userId")?.Value;
+        if (userIdClaim == null)
+        {
+            return Unauthorized("User ID is not found in the token.");
+        }
+
+        if (!Guid.TryParse(userIdClaim, out Guid userId))
+        {
+            return BadRequest("Invalid user ID in token.");
+        }
+
+        // Fetch the user profile using the userId
+        var userProfile = _userService.GetOneUser(userId);
+        if (userProfile == null)
+        {
+            return NotFound("User not found.");
+        }
+
+        return Ok(userProfile);
+    }
+
+    // Admin can update info of any users
+    [HttpPatch("{userId}"), Authorize(Roles = "Admin")]
+    public IActionResult UpdateUserAsAdmin(Guid userId, [FromBody] UserUpdateDTO userUpdateDTO)
     {
         var result = _userService.UpdateUser(userId, userUpdateDTO);
         if (!result)
         {
             return NotFound($"User with ID {userId} not found.");
         }
-        return Ok($"User with ID {userId} is updated successfuly");
+        return Ok($"[ADMIN] User with ID {userId} is updated successfully");
     }
 
-    [HttpDelete("{userId}")]
+    // User can only update its own info
+    [HttpPatch("profile")]
+    public IActionResult UpdateCurrentUserInfo([FromBody] UserUpdateDTO userUpdateDTO)
+    {
+        var userIdClaim = HttpContext.User.FindFirst("userId")?.Value;
+        if (userIdClaim == null)
+        {
+            return Unauthorized("User ID is not found in the token.");
+        }
+
+        _ = Guid.TryParse(userIdClaim, out Guid userIdClaimParse);
+
+        var result = _userService.UpdateUser(userIdClaimParse, userUpdateDTO);
+        if (!result)
+        {
+            return NotFound($"User with ID {userIdClaimParse} not found.");
+        }
+        return Ok($"[USER] Your user info is updated successfully");
+    }
+
+    [HttpDelete("{userId}"), Authorize(Roles = "Admin")]
     public IActionResult DeleteUser(Guid userId)
     {
         var result = _userService.DeleteUser(userId);
@@ -76,6 +122,6 @@ public class UserController : ControllerBase
         {
             return NotFound($"User with ID {userId} not found.");
         }
-        return Ok($"User with ID {userId} is deleted successfuly");
+        return Ok($"[ADMIN] User with ID {userId} is deleted successfully");
     }
 }

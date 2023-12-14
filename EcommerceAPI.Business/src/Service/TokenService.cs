@@ -19,6 +19,7 @@ namespace EcommerceAPI.Business.src.Service
         {
             List<Claim> claims = new()
             {
+                new Claim("userId", userReadDTO.Id.ToString()),
                 new Claim(ClaimTypes.Email, userReadDTO.Email),
                 new Claim(ClaimTypes.Role, userReadDTO.Role.ToString()),
             };
@@ -38,3 +39,5 @@ namespace EcommerceAPI.Business.src.Service
         }
     }
 }
+
+// Youtube tutorial: https://www.youtube.com/watch?v=UwruwHl3BlU by Patrick God

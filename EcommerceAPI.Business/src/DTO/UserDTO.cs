@@ -4,6 +4,7 @@ namespace EcommerceAPI.Business.src.DTO
 {
     public class UserReadDTO
     {
+        public Guid Id { get; set; }
         public Role Role { get; set; }
         public string FirstName { get; set; }
 
@@ -15,7 +16,6 @@ namespace EcommerceAPI.Business.src.DTO
     public class UserUpdateDTO
     {
         public string FirstName { get; set; }
-
         public string LastName { get; set; }
     }
     public class UserLoginDTO
