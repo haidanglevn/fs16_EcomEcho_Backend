@@ -2,6 +2,7 @@ using System.Security.Claims;
 using EcommerceAPI.Business.src.Abstraction;
 using EcommerceAPI.Business.src.DTO;
 using EcommerceAPI.Business.src.Service;
+using EcommerceAPI.Core.src.Entity;
 using EcommerceAPI.Core.src.Parameter;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;

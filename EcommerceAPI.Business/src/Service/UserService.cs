@@ -53,9 +53,9 @@ namespace EcommerceAPI.Business.src.Service
             return _userRepo.DeleteUser(userId);
         }
 
-        public IEnumerable<UserReadDTO> GetAllUsers(GetAllParams options)
+        public IEnumerable<UserReadNoAddressDTO> GetAllUsers(GetAllParams options)
         {
-            return _userRepo.GetAllUsers(options).Select(u => _mapper.Map<User, UserReadDTO>(u));
+            return _userRepo.GetAllUsers(options).Select(u => _mapper.Map<User, UserReadNoAddressDTO>(u));
         }
 
         public UserReadDTO? GetOneUser(Guid userId)
@@ -76,6 +76,5 @@ namespace EcommerceAPI.Business.src.Service
             var user = _mapper.Map<UserUpdateDTO, User>(userUpdateDTO);
             return _userRepo.UpdateUser(userId, user);
         }
-
     }
 }

@@ -6,7 +6,7 @@ namespace EcommerceAPI.Business.src.Abstraction
 {
     public interface IUserService
     {
-        IEnumerable<UserReadDTO> GetAllUsers(GetAllParams options);
+        IEnumerable<UserReadNoAddressDTO> GetAllUsers(GetAllParams options);
         UserReadDTO? GetOneUser(Guid userId);
         UserReadDTO CreateNewUser(UserCreateDTO user);
         UserReadDTO? Login(string email, string userInputPassword);

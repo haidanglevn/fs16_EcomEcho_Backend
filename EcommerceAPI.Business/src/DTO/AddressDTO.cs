@@ -1,15 +1,11 @@
-namespace EcommerceAPI.Core.src.Entity
+namespace EcommerceAPI.Business.src.DTO
 {
-    public class Address : BaseEntity
+    public class AddressReadDTO
     {
         public string Country { get; set; }
-
         public string City { get; set; }
         public string? State { get; set; }
         public string Street { get; set; }
         public string PostalCode { get; set; }
-        // public Guid UserId { get; set; }
-
-        // public User User { get; set; }
     }
 }

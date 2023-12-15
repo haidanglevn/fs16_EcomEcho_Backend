@@ -51,7 +51,7 @@ namespace EcommerceAPI.WebAPI.src.Repository
 
         public User? GetOneUser(Guid userId)
         {
-            return _users.Find(userId);
+            return _users.Include(u => u.Addresses).FirstOrDefault(u => u.Id == userId);
         }
 
         public bool UpdateUser(Guid userId, User user)
