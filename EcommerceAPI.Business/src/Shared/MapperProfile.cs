@@ -12,6 +12,9 @@ namespace EcommerceAPI.Business.src.Shared
             CreateMap<UserCreateDTO, User>();
             CreateMap<UserUpdateDTO, User>();
             CreateMap<User, UserReadNoAddressDTO>();
+            CreateMap<Category, CategoryReadDTO>();
+            CreateMap<CategoryCreateDTO, Category>();
+            CreateMap<CategoryUpdateDTO, Category>();
             CreateMap<Address, AddressReadDTO>();
         }
     }

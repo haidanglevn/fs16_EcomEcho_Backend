@@ -1,5 +1,4 @@
 using EcommerceAPI.Business.src.DTO;
-using EcommerceAPI.Core.src.Entity;
 using EcommerceAPI.Core.src.Parameter;
 
 namespace EcommerceAPI.Business.src.Abstraction

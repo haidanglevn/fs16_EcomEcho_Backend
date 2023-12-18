@@ -12,7 +12,6 @@ namespace EcommerceAPI.WebAPI.src.Repository
         private DatabaseContext _database;
         public UserRepo(DatabaseContext database)
         {
-            // _users = new DatabaseContext().Users;
             _users = database.Users;
             _database = database;
         }
@@ -61,6 +60,7 @@ namespace EcommerceAPI.WebAPI.src.Repository
             {
                 existingUser.FirstName = user.FirstName;
                 existingUser.LastName = user.LastName;
+                existingUser.UpdatedAt = DateTime.Now;
                 _database.SaveChanges();
                 return true;
             }

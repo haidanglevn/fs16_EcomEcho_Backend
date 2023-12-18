@@ -1,0 +1,32 @@
+### Create New Category (Only for Admin)
+POST http://localhost:5173/api/categories
+Authorization: Bearer eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJmZTc4MTMwYy00MWZlLTRhY2YtODdmMy1kMjhiZmNjMjNhNGMiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJhZG1pbkBtYWlsLmNvbSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluIiwiZXhwIjoxNzAzNDMwMjE1fQ.Uv7qP7iSR7uONXckOsfBTQI7chXlyELTzrIR0Saapvg
+Content-Type: application/json
+
+{
+  "name": "Sports & Outdoors",
+  "image": "sports_and_outdoors.png"
+}
+
+### Get All Categories 
+GET http://localhost:5173/api/categories
+Content-Type: application/json
+
+### Get One Category
+GET http://localhost:5173/api/categories/ab5fa6cd-3ced-41b2-b604-e2e2b494372d
+Content-Type: application/json
+
+### Delete Category (Only for Admin)
+DELETE http://localhost:5173/api/categories/0ea67d14-7f51-4881-91a0-7e5b9e692041
+Authorization: Bearer eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJmZTc4MTMwYy00MWZlLTRhY2YtODdmMy1kMjhiZmNjMjNhNGMiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJhZG1pbkBtYWlsLmNvbSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluIiwiZXhwIjoxNzAzNDMwMjE1fQ.Uv7qP7iSR7uONXckOsfBTQI7chXlyELTzrIR0Saapvg
+Content-Type: application/json
+
+### Update Category (Only for Admin)
+PATCH http://localhost:5173/api/categories/2f413f4b-f0ea-4397-8cc7-eebd28ea1da2
+Authorization: Bearer eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJmZTc4MTMwYy00MWZlLTRhY2YtODdmMy1kMjhiZmNjMjNhNGMiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJhZG1pbkBtYWlsLmNvbSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluIiwiZXhwIjoxNzAzNDMwMjE1fQ.Uv7qP7iSR7uONXckOsfBTQI7chXlyELTzrIR0Saapvg
+Content-Type: application/json
+
+{
+  "name": "Sports & Outdoors 2",
+  "image": "sports_and_outdoors2.png"
+}

@@ -3,9 +3,9 @@ POST http://localhost:5173/api/users
 Content-Type: application/json
 
 {
-  "firstName": "Jane",
+  "firstName": "John",
   "lastName": "Doe",
-  "email": "jane.doe@example.com",
+  "email": "john.doe@example.com",
   "password": "Password123"
 }
 
@@ -56,8 +56,8 @@ Authorization: Bearer eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW
 Content-Type: application/json
 
 {
-  "firstName": "Jane Updated3",
-  "lastName": "Doe Updated"
+  "firstName": "Jane Updated4",
+  "lastName": "Doe Updated4"
 }
 
 ### Update current user info (User can only update his own info)

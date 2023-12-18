@@ -7,7 +7,7 @@ using EcommerceAPI.Core.src.Parameter;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace EcommerceAPI.WebAPI.Controllers;
+namespace EcommerceAPI.Controller.src.Controller;
 
 [ApiController]
 [Route("api/[controller]s")]
@@ -46,6 +46,7 @@ public class UserController : ControllerBase
         var isEmailExist = _userService.CheckEmail(checkEmailDTO.Email);
         return !isEmailExist;
     }
+
     [HttpGet(), Authorize(Roles = "Admin")]
     public ActionResult<IEnumerable<UserReadDTO>> GetAllUsers([FromQuery] GetAllParams options)
     {
