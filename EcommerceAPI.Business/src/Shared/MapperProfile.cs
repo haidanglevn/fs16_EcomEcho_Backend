@@ -17,7 +17,7 @@ namespace EcommerceAPI.Business.src.Shared
             // Product
             CreateMap<Product, ProductReadDTO>();
             CreateMap<ProductCreateDTO, Product>();
-            CreateMap<ProductUpdateDTO, Product>();
+            CreateMap<ProductUpdateDTO, Product>().ForAllMembers(opt => opt.Condition((src, dest, member) => member != null));
             CreateMap<Product, ProductReadSimpleDTO>();
 
 

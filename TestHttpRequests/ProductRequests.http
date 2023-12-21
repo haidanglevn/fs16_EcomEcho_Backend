@@ -1,22 +1,45 @@
 ### Create New Product (Only for Admin)
 POST http://localhost:5173/api/products
-# Authorization: Bearer eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJkZjM0ZWI1MS1jNTFiLTRjZmEtODQ2ZS05YzRmMDNhOTUwZWMiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJhZG1pbkBtYWlsLmNvbSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluIiwiZXhwIjoxNzAzODYzNDY0fQ.4WfMPF2BfFUKN2ZczSonP2eVvpqLrNmbNxQrD0rAX7A
+Authorization: Bearer eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJkZjM0ZWI1MS1jNTFiLTRjZmEtODQ2ZS05YzRmMDNhOTUwZWMiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJhZG1pbkBtYWlsLmNvbSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluIiwiZXhwIjoxNzAzODYzNDY0fQ.4WfMPF2BfFUKN2ZczSonP2eVvpqLrNmbNxQrD0rAX7A
 Content-Type: application/json
 
 {
-  "title": "Test Product",
+  "title": "Test Product 2",
   "description": "sports_and_outdoors.png",
-  "price": 100,
+  "price": 50,
   "categoryId": "2db03a2a-b9a9-4391-b005-709d7c45e818",
   "variants": [
     {
         "color": 0,
-        "size": 3,
-        "quantity": 10
+        "size": 1,
+        "quantity": 102
+    },
+    {
+        "color": 3,
+        "size": 4,
+        "quantity": 20
     }
   ]
 }
 
 ### Get One Product
-GET http://localhost:5173/api/products/eebd0309-0bec-43d7-8452-394508488e9d
+GET http://localhost:5173/api/products/d3111eaf-da87-4138-8efd-a2ed799a3a9c
 Content-Type: application/json
+
+### Get All Products
+GET http://localhost:5173/api/products
+Content-Type:  application/json
+
+### Update one Product
+PATCH http://localhost:5173/api/products/d3111eaf-da87-4138-8efd-a2ed799a3a9c
+Authorization: Bearer eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJkZjM0ZWI1MS1jNTFiLTRjZmEtODQ2ZS05YzRmMDNhOTUwZWMiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJhZG1pbkBtYWlsLmNvbSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluIiwiZXhwIjoxNzAzODYzNDY0fQ.4WfMPF2BfFUKN2ZczSonP2eVvpqLrNmbNxQrD0rAX7A
+Content-Type: application/json
+
+{
+  "price": 6969691
+}
+
+### Delete one product 
+DELETE http://localhost:5173/api/products/eebd0309-0bec-43d7-8452-394508488e9d
+Authorization: Bearer eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJkZjM0ZWI1MS1jNTFiLTRjZmEtODQ2ZS05YzRmMDNhOTUwZWMiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJhZG1pbkBtYWlsLmNvbSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluIiwiZXhwIjoxNzAzODYzNDY0fQ.4WfMPF2BfFUKN2ZczSonP2eVvpqLrNmbNxQrD0rAX7A
+Content-Type:  application/json

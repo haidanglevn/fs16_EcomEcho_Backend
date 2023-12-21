@@ -37,9 +37,9 @@ namespace EcommerceAPI.Business.src.Service
             return _productRepo.DeleteProduct(productId);
         }
 
-        public IEnumerable<ProductReadSimpleDTO> GetAllProducts(GetAllParams options)
+        public IEnumerable<ProductReadDTO> GetAllProducts(GetAllParams options)
         {
-            return _productRepo.GetAllProducts(options).Select(p => _mapper.Map<Product, ProductReadSimpleDTO>(p));
+            return _productRepo.GetAllProducts(options).Select(p => _mapper.Map<Product, ProductReadDTO>(p));
         }
 
         public ProductReadDTO? GetOneProduct(Guid productId)

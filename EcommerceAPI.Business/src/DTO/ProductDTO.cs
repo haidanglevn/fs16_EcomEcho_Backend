@@ -8,7 +8,7 @@ namespace EcommerceAPI.Business.src.DTO
         public string Title { get; set; }
         public string Description { get; set; }
         public decimal Price { get; set; }
-        public Guid CategoryId { get; set; }
+        // public Guid CategoryId { get; set; }
         public CategoryReadDTO Category { get; set; }
         public ICollection<Variant> Variants { get; set; }
 
@@ -24,6 +24,8 @@ namespace EcommerceAPI.Business.src.DTO
         public string Title { get; set; }
         public string Description { get; set; }
         public decimal Price { get; set; }
+        public CategoryReadDTO Category { get; set; }
+        public ICollection<Variant> Variants { get; set; }
     }
 
     public class ProductCreateDTO
@@ -41,13 +43,12 @@ namespace EcommerceAPI.Business.src.DTO
 
     public class ProductUpdateDTO
     {
-        public Guid Id { get; set; }
-        public string Title { get; set; }
-        public string Description { get; set; }
-        public decimal Price { get; set; }
-        public ICollection<Variant> Variants { get; set; }
+        public string? Title { get; set; }
+        public string? Description { get; set; }
+        public decimal? Price { get; set; }
 
-        // Implement later
+        // Implement later: maybe also change the categoryId?
+        // public ICollection<Variant> Variants { get; set; }
         // public ICollection<Image> Images { get; set; }
         // public ICollection<Review> Reviews { get; set; }
     }

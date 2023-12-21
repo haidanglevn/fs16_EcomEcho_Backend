@@ -17,23 +17,7 @@ namespace EcommerceAPI.WebAPI.src.Repository
             _variants = database.Variants;
             _database = database;
         }
-        // public Product CreateNewProduct(Product product)
-        // {
-        //     try
-        //     {
-        //         _products.Add(product);
-        //     }
-        //     catch (Exception e)
-        //     {
-        //         throw new Exception("Error creating new product in Product table: " + e.Message.ToString());
-        //     }
-        //     foreach (Variant variant in product.Variants)
-        //     {
-        //         _variants.Add(variant);
-        //     }
-        //     _database.SaveChanges();
-        //     return product;
-        // }
+
         public Product CreateNewProduct(Product product)
         {
             try
@@ -78,6 +62,8 @@ namespace EcommerceAPI.WebAPI.src.Repository
         public IEnumerable<Product> GetAllProducts(GetAllParams options)
         {
             return _products.AsNoTracking()
+            .Include(p => p.Category)
+            .Include(p => p.Variants)
             .Where(u => u.Title.Contains(options.Search))
             .Skip(options.Offset)
             .Take(options.Limit);
@@ -86,8 +72,8 @@ namespace EcommerceAPI.WebAPI.src.Repository
         public Product? GetOneProduct(Guid productId)
         {
             return _products
-                    .Include(p => p.Category) // Include the Category
-                    .Include(p => p.Variants) // Include Variants
+                    .Include(p => p.Category)
+                    .Include(p => p.Variants)
                     .FirstOrDefault(p => p.Id == productId);
         }
 
@@ -96,15 +82,40 @@ namespace EcommerceAPI.WebAPI.src.Repository
             var existingProduct = _products.Find(productId);
             if (existingProduct != null)
             {
-                existingProduct.Title = product.Title;
-                existingProduct.Price = product.Price;
-                existingProduct.Description = product.Description;
+                UpdateEntityFields(existingProduct, product);
                 // Image, Review or Variant has to be updated seperately.
                 existingProduct.UpdatedAt = DateTime.Now;
                 _database.SaveChanges();
                 return true;
             }
             return false;
+        }
+
+        private void UpdateEntityFields(Product existingProduct, Product product)
+        {
+            var dtoProperties = product.GetType().GetProperties();
+            foreach (var dtoProp in dtoProperties)
+            {
+                // Skip key properties
+                // if (_database.Entry(existingProduct).Metadata.FindPrimaryKey()!.Properties.Any(p => p.Name == dtoProp.Name))
+                // {
+                //     continue;
+                // }
+
+                if (dtoProp.Name == "Id" || (dtoProp.Name == "CategoryId"))
+                {
+                    continue;
+                }
+                var value = dtoProp.GetValue(product);
+                if (value != null)
+                {
+                    var entityProp = existingProduct.GetType().GetProperty(dtoProp.Name);
+                    if (entityProp != null && entityProp.CanWrite)
+                    {
+                        entityProp.SetValue(existingProduct, value);
+                    }
+                }
+            }
         }
     }
 }

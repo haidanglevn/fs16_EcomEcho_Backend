@@ -5,7 +5,7 @@ namespace EcommerceAPI.Business.src.Abstraction
 {
     public interface IProductService
     {
-        IEnumerable<ProductReadSimpleDTO> GetAllProducts(GetAllParams options);
+        IEnumerable<ProductReadDTO> GetAllProducts(GetAllParams options);
         ProductReadDTO? GetOneProduct(Guid productId);
         ProductReadDTO CreateNewProduct(ProductCreateDTO productCreateDTO);
         bool UpdateProduct(Guid productId, ProductUpdateDTO productUpdateDTO);
