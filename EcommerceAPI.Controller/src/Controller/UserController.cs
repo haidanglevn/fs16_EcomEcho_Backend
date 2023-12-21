@@ -7,123 +7,124 @@ using EcommerceAPI.Core.src.Parameter;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace EcommerceAPI.Controller.src.Controller;
-
-[ApiController]
-[Route("api/[controller]s")]
-public class UserController : ControllerBase
+namespace EcommerceAPI.Controller.src.Controller
 {
-    private IUserService _userService;
-    private ITokenService _tokenService;
-    public UserController(IUserService userService, ITokenService tokenService)
+    [ApiController]
+    [Route("api/[controller]s")]
+    public class UserController : ControllerBase
     {
-        _userService = userService;
-        _tokenService = tokenService;
-    }
-
-    [HttpPost()]
-    public ActionResult<UserReadDTO> CreateNewUser([FromBody] UserCreateDTO userCreateDTO)
-    {
-        return CreatedAtAction(nameof(CreateNewUser), _userService.CreateNewUser(userCreateDTO));
-    }
-
-    [HttpPost("login")]
-    public IActionResult Login([FromBody] UserLoginDTO userLoginDTO)
-    {
-        var user = _userService.Login(userLoginDTO.Email, userLoginDTO.Password);
-        if (user == null)
+        private IUserService _userService;
+        private ITokenService _tokenService;
+        public UserController(IUserService userService, ITokenService tokenService)
         {
-            return Unauthorized("Invalid credentials");
+            _userService = userService;
+            _tokenService = tokenService;
         }
 
-        var token = _tokenService.CreateToken(user);
-        return Ok(token);
-    }
-
-    [HttpPost("is-available")]
-    public bool CheckEmail([FromBody] CheckEmailDTO checkEmailDTO)
-    {
-        var isEmailExist = _userService.CheckEmail(checkEmailDTO.Email);
-        return !isEmailExist;
-    }
-
-    [HttpGet(), Authorize(Roles = "Admin")]
-    public ActionResult<IEnumerable<UserReadDTO>> GetAllUsers([FromQuery] GetAllParams options)
-    {
-        return Ok(_userService.GetAllUsers(options));
-    }
-
-    [HttpGet("{userId}"), Authorize(Roles = "Admin")]
-    public ActionResult<UserReadDTO> GetOneUser(Guid userId)
-    {
-        return Ok(_userService.GetOneUser(userId));
-    }
-
-    [HttpGet("profile"), Authorize]
-    public ActionResult<UserReadDTO> GetCurrentUserProfile()
-    {
-        // Extract userId from the token claims
-        var userIdClaim = HttpContext.User.FindFirst("userId")?.Value;
-        if (userIdClaim == null)
+        [HttpPost()]
+        public ActionResult<UserReadDTO> CreateNewUser([FromBody] UserCreateDTO userCreateDTO)
         {
-            return Unauthorized("User ID is not found in the token.");
+            return CreatedAtAction(nameof(CreateNewUser), _userService.CreateNewUser(userCreateDTO));
         }
 
-        if (!Guid.TryParse(userIdClaim, out Guid userId))
+        [HttpPost("login")]
+        public IActionResult Login([FromBody] UserLoginDTO userLoginDTO)
         {
-            return BadRequest("Invalid user ID in token.");
+            var user = _userService.Login(userLoginDTO.Email, userLoginDTO.Password);
+            if (user == null)
+            {
+                return Unauthorized("Invalid credentials");
+            }
+
+            var token = _tokenService.CreateToken(user);
+            return Ok(token);
         }
 
-        // Fetch the user profile using the userId
-        var userProfile = _userService.GetOneUser(userId);
-        if (userProfile == null)
+        [HttpPost("is-available")]
+        public bool CheckEmail([FromBody] CheckEmailDTO checkEmailDTO)
         {
-            return NotFound("User not found.");
+            var isEmailExist = _userService.CheckEmail(checkEmailDTO.Email);
+            return !isEmailExist;
         }
 
-        return Ok(userProfile);
-    }
-
-    // Admin can update info of any users
-    [HttpPatch("{userId}"), Authorize(Roles = "Admin")]
-    public IActionResult UpdateUserAsAdmin(Guid userId, [FromBody] UserUpdateDTO userUpdateDTO)
-    {
-        var result = _userService.UpdateUser(userId, userUpdateDTO);
-        if (!result)
+        [HttpGet(), Authorize(Roles = "Admin")]
+        public ActionResult<IEnumerable<UserReadDTO>> GetAllUsers([FromQuery] GetAllParams options)
         {
-            return NotFound($"User with ID {userId} not found.");
-        }
-        return Ok($"[ADMIN] User with ID {userId} is updated successfully");
-    }
-
-    // User can only update its own info
-    [HttpPatch("profile")]
-    public IActionResult UpdateCurrentUserInfo([FromBody] UserUpdateDTO userUpdateDTO)
-    {
-        var userIdClaim = HttpContext.User.FindFirst("userId")?.Value;
-        if (userIdClaim == null)
-        {
-            return Unauthorized("User ID is not found in the token.");
+            return Ok(_userService.GetAllUsers(options));
         }
 
-        _ = Guid.TryParse(userIdClaim, out Guid userIdClaimParse);
-
-        var result = _userService.UpdateUser(userIdClaimParse, userUpdateDTO);
-        if (!result)
+        [HttpGet("{userId}"), Authorize(Roles = "Admin")]
+        public ActionResult<UserReadDTO> GetOneUser(Guid userId)
         {
-            return NotFound($"User with ID {userIdClaimParse} not found.");
+            return Ok(_userService.GetOneUser(userId));
         }
-        return Ok($"[USER] Your user info is updated successfully");
-    }
 
-    [HttpDelete("{userId}"), Authorize(Roles = "Admin")]
-    public IActionResult DeleteUser(Guid userId)
-    {
-        var result = _userService.DeleteUser(userId);
-        if (!result)
+        [HttpGet("profile"), Authorize]
+        public ActionResult<UserReadDTO> GetCurrentUserProfile()
         {
-            return NotFound($"User with ID {userId} not found.");
+            // Extract userId from the token claims
+            var userIdClaim = HttpContext.User.FindFirst("userId")?.Value;
+            if (userIdClaim == null)
+            {
+                return Unauthorized("User ID is not found in the token.");
+            }
+
+            if (!Guid.TryParse(userIdClaim, out Guid userId))
+            {
+                return BadRequest("Invalid user ID in token.");
+            }
+
+            // Fetch the user profile using the userId
+            var userProfile = _userService.GetOneUser(userId);
+            if (userProfile == null)
+            {
+                return NotFound("User not found.");
+            }
+
+            return Ok(userProfile);
         }
-        return Ok($"[ADMIN] User with ID {userId} is deleted successfully");
+
+        // Admin can update info of any users
+        [HttpPatch("{userId}"), Authorize(Roles = "Admin")]
+        public IActionResult UpdateUserAsAdmin(Guid userId, [FromBody] UserUpdateDTO userUpdateDTO)
+        {
+            var result = _userService.UpdateUser(userId, userUpdateDTO);
+            if (!result)
+            {
+                return NotFound($"User with ID {userId} not found.");
+            }
+            return Ok($"[ADMIN] User with ID {userId} is updated successfully");
+        }
+
+        // User can only update its own info
+        [HttpPatch("profile")]
+        public IActionResult UpdateCurrentUserInfo([FromBody] UserUpdateDTO userUpdateDTO)
+        {
+            var userIdClaim = HttpContext.User.FindFirst("userId")?.Value;
+            if (userIdClaim == null)
+            {
+                return Unauthorized("User ID is not found in the token.");
+            }
+
+            _ = Guid.TryParse(userIdClaim, out Guid userIdClaimParse);
+
+            var result = _userService.UpdateUser(userIdClaimParse, userUpdateDTO);
+            if (!result)
+            {
+                return NotFound($"User with ID {userIdClaimParse} not found.");
+            }
+            return Ok($"[USER] Your user info is updated successfully");
+        }
+
+        [HttpDelete("{userId}"), Authorize(Roles = "Admin")]
+        public IActionResult DeleteUser(Guid userId)
+        {
+            var result = _userService.DeleteUser(userId);
+            if (!result)
+            {
+                return NotFound($"User with ID {userId} not found.");
+            }
+            return Ok($"[ADMIN] User with ID {userId} is deleted successfully");
+        }
     }
 }

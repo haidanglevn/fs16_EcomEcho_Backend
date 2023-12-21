@@ -4,7 +4,6 @@ namespace EcommerceAPI.Core.src.Entity
     {
         public string Name { get; set; }
         public string Image { get; set; }
-
         public IEnumerable<Product> Products { get; set; }
     }
 }

@@ -47,6 +47,11 @@ namespace EcommerceAPI.WebAPI.src.Repository
             return _categories.Find(categoryId);
         }
 
+        public bool CheckCategoryExist(Guid categoryId)
+        {
+            return _categories.Any(c => c.Id == categoryId);
+        }
+
         public bool UpdateCategory(Guid categoryId, Category category)
         {
             var existingCategory = _categories.Find(categoryId);

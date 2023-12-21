@@ -14,6 +14,7 @@ namespace EcommerceAPI.WebAPI.src.Database
         public DbSet<Category> Categories { get; set; }
         public DbSet<Order> Orders { get; set; }
         public DbSet<OrderItem> OrderItems { get; set; }
+        public DbSet<Variant> Variants { get; set; }
 
         static DatabaseContext()
         {
@@ -29,6 +30,9 @@ namespace EcommerceAPI.WebAPI.src.Database
         {
             var dataSourceBuilder = new NpgsqlDataSourceBuilder(_config.GetConnectionString("LocalDb"));
             dataSourceBuilder.MapEnum<Role>();
+            dataSourceBuilder.MapEnum<Status>();
+            dataSourceBuilder.MapEnum<Color>();
+            dataSourceBuilder.MapEnum<Size>();
             var dataSource = dataSourceBuilder.Build();
             optionsBuilder.UseNpgsql(dataSource).UseSnakeCaseNamingConvention().AddInterceptors(new TimeStampInterceptor());
             base.OnConfiguring(optionsBuilder);
@@ -39,6 +43,8 @@ namespace EcommerceAPI.WebAPI.src.Database
             // Enums
             modelBuilder.HasPostgresEnum<Role>();
             modelBuilder.HasPostgresEnum<Status>();
+            modelBuilder.HasPostgresEnum<Color>();
+            modelBuilder.HasPostgresEnum<Size>();
             base.OnModelCreating(modelBuilder);
 
             // Update/Delete behaviors
@@ -64,10 +70,21 @@ namespace EcommerceAPI.WebAPI.src.Database
                 .OnDelete(DeleteBehavior.Restrict); // Restrict delete behavior
 
             modelBuilder.Entity<Product>()
+                .HasOne(p => p.Category)  // Each Product has one Category
+                .WithMany(c => c.Products)  // Each Category has many Products
+                .HasForeignKey(p => p.CategoryId)  // The foreign key is CategoryId
+                .OnDelete(DeleteBehavior.Cascade);  // Specify the delete behavior if necessary
+
+            modelBuilder.Entity<Product>()
                 .HasMany(p => p.OrderItems)
                 .WithOne()
                 .HasForeignKey(oi => oi.ProductId)
                 .OnDelete(DeleteBehavior.Restrict); // Restrict delete behavior
+
+            modelBuilder.Entity<Product>()
+                .HasMany(p => p.Variants)
+                .WithOne()
+                .OnDelete(DeleteBehavior.Cascade);
 
             // Unique Email configuration
             modelBuilder.Entity<User>()

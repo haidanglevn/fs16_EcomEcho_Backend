@@ -13,8 +13,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace EcommerceAPI.WebAPI.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20231212093313_AddAllOtherEntities")]
-    partial class AddAllOtherEntities
+    [Migration("20231221080328_NewDatabase")]
+    partial class NewDatabase
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -24,7 +24,9 @@ namespace EcommerceAPI.WebAPI.Migrations
                 .HasAnnotation("ProductVersion", "7.0.14")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
+            NpgsqlModelBuilderExtensions.HasPostgresEnum(modelBuilder, "color", new[] { "black", "silver", "gray", "white", "maroon", "red", "purple", "fuchsia", "green", "lime", "olive", "yellow", "navy", "blue", "teal", "aqua", "orange", "alice_blue", "coral", "dark_blue" });
             NpgsqlModelBuilderExtensions.HasPostgresEnum(modelBuilder, "role", new[] { "customer", "admin" });
+            NpgsqlModelBuilderExtensions.HasPostgresEnum(modelBuilder, "size", new[] { "xs", "s", "m", "l", "xl", "xxl", "xxxl" });
             NpgsqlModelBuilderExtensions.HasPostgresEnum(modelBuilder, "status", new[] { "pending", "shipping", "received" });
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
@@ -49,8 +51,9 @@ namespace EcommerceAPI.WebAPI.Migrations
                         .HasColumnType("timestamp without time zone")
                         .HasColumnName("created_at");
 
-                    b.Property<int>("PostalCode")
-                        .HasColumnType("integer")
+                    b.Property<string>("PostalCode")
+                        .IsRequired()
+                        .HasColumnType("text")
                         .HasColumnName("postal_code");
 
                     b.Property<string>("State")
@@ -146,8 +149,8 @@ namespace EcommerceAPI.WebAPI.Migrations
                         .HasColumnType("timestamp without time zone")
                         .HasColumnName("created_at");
 
-                    b.Property<int>("Status")
-                        .HasColumnType("integer")
+                    b.Property<Status>("Status")
+                        .HasColumnType("status")
                         .HasColumnName("status");
 
                     b.Property<DateTime>("UpdatedAt")
@@ -217,7 +220,7 @@ namespace EcommerceAPI.WebAPI.Migrations
                         .HasColumnType("uuid")
                         .HasColumnName("id");
 
-                    b.Property<Guid?>("CategoryId")
+                    b.Property<Guid>("CategoryId")
                         .HasColumnType("uuid")
                         .HasColumnName("category_id");
 
@@ -233,10 +236,6 @@ namespace EcommerceAPI.WebAPI.Migrations
                     b.Property<decimal>("Price")
                         .HasColumnType("numeric")
                         .HasColumnName("price");
-
-                    b.Property<int>("Quantity")
-                        .HasColumnType("integer")
-                        .HasColumnName("quantity");
 
                     b.Property<string>("Title")
                         .IsRequired()
@@ -349,6 +348,46 @@ namespace EcommerceAPI.WebAPI.Migrations
                     b.ToTable("users", (string)null);
                 });
 
+            modelBuilder.Entity("EcommerceAPI.Core.src.Entity.Variant", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid")
+                        .HasColumnName("id");
+
+                    b.Property<Color>("Color")
+                        .HasColumnType("color")
+                        .HasColumnName("color");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp without time zone")
+                        .HasColumnName("created_at");
+
+                    b.Property<Guid?>("ProductId")
+                        .HasColumnType("uuid")
+                        .HasColumnName("product_id");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("integer")
+                        .HasColumnName("quantity");
+
+                    b.Property<Size>("Size")
+                        .HasColumnType("size")
+                        .HasColumnName("size");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("timestamp without time zone")
+                        .HasColumnName("updated_at");
+
+                    b.HasKey("Id")
+                        .HasName("pk_variants");
+
+                    b.HasIndex("ProductId")
+                        .HasDatabaseName("ix_variants_product_id");
+
+                    b.ToTable("variants", (string)null);
+                });
+
             modelBuilder.Entity("EcommerceAPI.Core.src.Entity.Address", b =>
                 {
                     b.HasOne("EcommerceAPI.Core.src.Entity.User", null)
@@ -394,11 +433,14 @@ namespace EcommerceAPI.WebAPI.Migrations
 
             modelBuilder.Entity("EcommerceAPI.Core.src.Entity.Product", b =>
                 {
-                    b.HasOne("EcommerceAPI.Core.src.Entity.Category", null)
+                    b.HasOne("EcommerceAPI.Core.src.Entity.Category", "Category")
                         .WithMany("Products")
                         .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired()
                         .HasConstraintName("fk_products_categories_category_id");
+
+                    b.Navigation("Category");
                 });
 
             modelBuilder.Entity("EcommerceAPI.Core.src.Entity.Review", b =>
@@ -412,6 +454,15 @@ namespace EcommerceAPI.WebAPI.Migrations
                         .WithMany("Reviews")
                         .HasForeignKey("UserId")
                         .HasConstraintName("fk_reviews_users_user_id");
+                });
+
+            modelBuilder.Entity("EcommerceAPI.Core.src.Entity.Variant", b =>
+                {
+                    b.HasOne("EcommerceAPI.Core.src.Entity.Product", null)
+                        .WithMany("Variants")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .HasConstraintName("fk_variants_products_product_id");
                 });
 
             modelBuilder.Entity("EcommerceAPI.Core.src.Entity.Category", b =>
@@ -431,6 +482,8 @@ namespace EcommerceAPI.WebAPI.Migrations
                     b.Navigation("OrderItems");
 
                     b.Navigation("Reviews");
+
+                    b.Navigation("Variants");
                 });
 
             modelBuilder.Entity("EcommerceAPI.Core.src.Entity.User", b =>

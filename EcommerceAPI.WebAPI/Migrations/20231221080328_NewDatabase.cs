@@ -1,4 +1,5 @@
 ﻿using System;
+using EcommerceAPI.Core.src.Entity;
 using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
@@ -6,15 +7,16 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace EcommerceAPI.WebAPI.Migrations
 {
     /// <inheritdoc />
-    public partial class AddAllOtherEntities : Migration
+    public partial class NewDatabase : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.AlterDatabase()
+                .Annotation("Npgsql:Enum:color", "black,silver,gray,white,maroon,red,purple,fuchsia,green,lime,olive,yellow,navy,blue,teal,aqua,orange,alice_blue,coral,dark_blue")
                 .Annotation("Npgsql:Enum:role", "customer,admin")
-                .Annotation("Npgsql:Enum:status", "pending,shipping,received")
-                .OldAnnotation("Npgsql:Enum:role", "customer,admin");
+                .Annotation("Npgsql:Enum:size", "xs,s,m,l,xl,xxl,xxxl")
+                .Annotation("Npgsql:Enum:status", "pending,shipping,received");
 
             migrationBuilder.CreateTable(
                 name: "categories",
@@ -32,23 +34,21 @@ namespace EcommerceAPI.WebAPI.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "orders",
+                name: "users",
                 columns: table => new
                 {
                     id = table.Column<Guid>(type: "uuid", nullable: false),
-                    status = table.Column<int>(type: "integer", nullable: false),
-                    user_id = table.Column<Guid>(type: "uuid", nullable: true),
+                    role = table.Column<Role>(type: "role", nullable: false),
+                    first_name = table.Column<string>(type: "text", nullable: false),
+                    last_name = table.Column<string>(type: "text", nullable: false),
+                    email = table.Column<string>(type: "text", nullable: false),
+                    password = table.Column<string>(type: "text", nullable: false),
                     created_at = table.Column<DateTime>(type: "timestamp without time zone", nullable: false),
                     updated_at = table.Column<DateTime>(type: "timestamp without time zone", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("pk_orders", x => x.id);
-                    table.ForeignKey(
-                        name: "fk_orders_users_user_id",
-                        column: x => x.user_id,
-                        principalTable: "users",
-                        principalColumn: "id");
+                    table.PrimaryKey("pk_users", x => x.id);
                 });
 
             migrationBuilder.CreateTable(
@@ -59,8 +59,7 @@ namespace EcommerceAPI.WebAPI.Migrations
                     title = table.Column<string>(type: "text", nullable: false),
                     description = table.Column<string>(type: "text", nullable: false),
                     price = table.Column<decimal>(type: "numeric", nullable: false),
-                    quantity = table.Column<int>(type: "integer", nullable: false),
-                    category_id = table.Column<Guid>(type: "uuid", nullable: true),
+                    category_id = table.Column<Guid>(type: "uuid", nullable: false),
                     created_at = table.Column<DateTime>(type: "timestamp without time zone", nullable: false),
                     updated_at = table.Column<DateTime>(type: "timestamp without time zone", nullable: false)
                 },
@@ -76,6 +75,51 @@ namespace EcommerceAPI.WebAPI.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "addresses",
+                columns: table => new
+                {
+                    id = table.Column<Guid>(type: "uuid", nullable: false),
+                    country = table.Column<string>(type: "text", nullable: false),
+                    city = table.Column<string>(type: "text", nullable: false),
+                    state = table.Column<string>(type: "text", nullable: true),
+                    street = table.Column<string>(type: "text", nullable: false),
+                    postal_code = table.Column<string>(type: "text", nullable: false),
+                    user_id = table.Column<Guid>(type: "uuid", nullable: true),
+                    created_at = table.Column<DateTime>(type: "timestamp without time zone", nullable: false),
+                    updated_at = table.Column<DateTime>(type: "timestamp without time zone", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("pk_addresses", x => x.id);
+                    table.ForeignKey(
+                        name: "fk_addresses_users_user_id",
+                        column: x => x.user_id,
+                        principalTable: "users",
+                        principalColumn: "id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "orders",
+                columns: table => new
+                {
+                    id = table.Column<Guid>(type: "uuid", nullable: false),
+                    status = table.Column<Status>(type: "status", nullable: false),
+                    user_id = table.Column<Guid>(type: "uuid", nullable: true),
+                    created_at = table.Column<DateTime>(type: "timestamp without time zone", nullable: false),
+                    updated_at = table.Column<DateTime>(type: "timestamp without time zone", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("pk_orders", x => x.id);
+                    table.ForeignKey(
+                        name: "fk_orders_users_user_id",
+                        column: x => x.user_id,
+                        principalTable: "users",
+                        principalColumn: "id");
+                });
+
+            migrationBuilder.CreateTable(
                 name: "image",
                 columns: table => new
                 {
@@ -88,6 +132,56 @@ namespace EcommerceAPI.WebAPI.Migrations
                     table.PrimaryKey("pk_image", x => x.id);
                     table.ForeignKey(
                         name: "fk_image_products_product_id",
+                        column: x => x.product_id,
+                        principalTable: "products",
+                        principalColumn: "id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "reviews",
+                columns: table => new
+                {
+                    id = table.Column<Guid>(type: "uuid", nullable: false),
+                    rating = table.Column<int>(type: "integer", nullable: false),
+                    comment = table.Column<string>(type: "text", nullable: false),
+                    product_id = table.Column<Guid>(type: "uuid", nullable: true),
+                    user_id = table.Column<Guid>(type: "uuid", nullable: true),
+                    created_at = table.Column<DateTime>(type: "timestamp without time zone", nullable: false),
+                    updated_at = table.Column<DateTime>(type: "timestamp without time zone", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("pk_reviews", x => x.id);
+                    table.ForeignKey(
+                        name: "fk_reviews_products_product_id",
+                        column: x => x.product_id,
+                        principalTable: "products",
+                        principalColumn: "id");
+                    table.ForeignKey(
+                        name: "fk_reviews_users_user_id",
+                        column: x => x.user_id,
+                        principalTable: "users",
+                        principalColumn: "id");
+                });
+
+            migrationBuilder.CreateTable(
+                name: "variants",
+                columns: table => new
+                {
+                    id = table.Column<Guid>(type: "uuid", nullable: false),
+                    color = table.Column<Color>(type: "color", nullable: false),
+                    size = table.Column<Size>(type: "size", nullable: false),
+                    quantity = table.Column<int>(type: "integer", nullable: false),
+                    product_id = table.Column<Guid>(type: "uuid", nullable: true),
+                    created_at = table.Column<DateTime>(type: "timestamp without time zone", nullable: false),
+                    updated_at = table.Column<DateTime>(type: "timestamp without time zone", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("pk_variants", x => x.id);
+                    table.ForeignKey(
+                        name: "fk_variants_products_product_id",
                         column: x => x.product_id,
                         principalTable: "products",
                         principalColumn: "id",
@@ -123,32 +217,10 @@ namespace EcommerceAPI.WebAPI.Migrations
                         onDelete: ReferentialAction.Restrict);
                 });
 
-            migrationBuilder.CreateTable(
-                name: "reviews",
-                columns: table => new
-                {
-                    id = table.Column<Guid>(type: "uuid", nullable: false),
-                    rating = table.Column<int>(type: "integer", nullable: false),
-                    comment = table.Column<string>(type: "text", nullable: false),
-                    product_id = table.Column<Guid>(type: "uuid", nullable: true),
-                    user_id = table.Column<Guid>(type: "uuid", nullable: true),
-                    created_at = table.Column<DateTime>(type: "timestamp without time zone", nullable: false),
-                    updated_at = table.Column<DateTime>(type: "timestamp without time zone", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("pk_reviews", x => x.id);
-                    table.ForeignKey(
-                        name: "fk_reviews_products_product_id",
-                        column: x => x.product_id,
-                        principalTable: "products",
-                        principalColumn: "id");
-                    table.ForeignKey(
-                        name: "fk_reviews_users_user_id",
-                        column: x => x.user_id,
-                        principalTable: "users",
-                        principalColumn: "id");
-                });
+            migrationBuilder.CreateIndex(
+                name: "ix_addresses_user_id",
+                table: "addresses",
+                column: "user_id");
 
             migrationBuilder.CreateIndex(
                 name: "ix_image_product_id",
@@ -184,11 +256,25 @@ namespace EcommerceAPI.WebAPI.Migrations
                 name: "ix_reviews_user_id",
                 table: "reviews",
                 column: "user_id");
+
+            migrationBuilder.CreateIndex(
+                name: "ix_users_email",
+                table: "users",
+                column: "email",
+                unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "ix_variants_product_id",
+                table: "variants",
+                column: "product_id");
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+                name: "addresses");
+
             migrationBuilder.DropTable(
                 name: "image");
 
@@ -199,18 +285,19 @@ namespace EcommerceAPI.WebAPI.Migrations
                 name: "reviews");
 
             migrationBuilder.DropTable(
+                name: "variants");
+
+            migrationBuilder.DropTable(
                 name: "orders");
 
             migrationBuilder.DropTable(
                 name: "products");
 
             migrationBuilder.DropTable(
-                name: "categories");
+                name: "users");
 
-            migrationBuilder.AlterDatabase()
-                .Annotation("Npgsql:Enum:role", "customer,admin")
-                .OldAnnotation("Npgsql:Enum:role", "customer,admin")
-                .OldAnnotation("Npgsql:Enum:status", "pending,shipping,received");
+            migrationBuilder.DropTable(
+                name: "categories");
         }
     }
 }

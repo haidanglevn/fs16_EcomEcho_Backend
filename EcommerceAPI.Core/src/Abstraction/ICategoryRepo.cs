@@ -7,6 +7,7 @@ namespace EcommerceAPI.Core.src.Abstraction
     {
         IEnumerable<Category> GetAllCategories(GetAllParams options);
         Category? GetOneCategory(Guid categoryId);
+        bool CheckCategoryExist(Guid categoryId);
         Category CreateNewCategory(Category category);
         bool UpdateCategory(Guid categoryId, Category category);
         bool DeleteCategory(Guid categoryId);
