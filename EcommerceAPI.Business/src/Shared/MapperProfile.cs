@@ -11,7 +11,7 @@ namespace EcommerceAPI.Business.src.Shared
             // User
             CreateMap<User, UserReadDTO>();
             CreateMap<UserCreateDTO, User>();
-            CreateMap<UserUpdateDTO, User>();
+            CreateMap<UserUpdateDTO, User>().ForAllMembers(opt => opt.Condition((src, dest, member) => member != null));
             CreateMap<User, UserReadNoAddressDTO>();
 
             // Product
@@ -19,6 +19,7 @@ namespace EcommerceAPI.Business.src.Shared
             CreateMap<ProductCreateDTO, Product>();
             CreateMap<ProductUpdateDTO, Product>();
             CreateMap<Product, ProductReadSimpleDTO>();
+
 
             // Variant
             CreateMap<VariantCreateDTO, Variant>();

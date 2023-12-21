@@ -26,8 +26,9 @@ namespace EcommerceAPI.Business.src.DTO
 
     public class UserUpdateDTO
     {
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
+        public string? Email { get; set; }
+        public string? FirstName { get; set; }
+        public string? LastName { get; set; }
     }
     public class UserLoginDTO
     {

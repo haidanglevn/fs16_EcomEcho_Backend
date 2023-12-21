@@ -1,3 +1,4 @@
+using EcommerceAPI.Business.src.DTO;
 using EcommerceAPI.Core.src.Abstraction;
 using EcommerceAPI.Core.src.Entity;
 using EcommerceAPI.Core.src.Parameter;
@@ -58,13 +59,35 @@ namespace EcommerceAPI.WebAPI.src.Repository
             var existingUser = _database.Users.Find(userId);
             if (existingUser != null)
             {
-                existingUser.FirstName = user.FirstName;
-                existingUser.LastName = user.LastName;
+                UpdateEntityFields(existingUser, user);
                 existingUser.UpdatedAt = DateTime.Now;
                 _database.SaveChanges();
                 return true;
             }
             return false;
+        }
+
+        // Update utility for checking null value
+        private void UpdateEntityFields(User existingUser, User user)
+        {
+            var dtoProperties = user.GetType().GetProperties();
+            foreach (var dtoProp in dtoProperties)
+            {
+                // Skip key properties
+                if (_database.Entry(existingUser).Metadata.FindPrimaryKey()!.Properties.Any(p => p.Name == dtoProp.Name))
+                {
+                    continue;
+                }
+                var value = dtoProp.GetValue(user);
+                if (value != null)
+                {
+                    var entityProp = existingUser.GetType().GetProperty(dtoProp.Name);
+                    if (entityProp != null && entityProp.CanWrite)
+                    {
+                        entityProp.SetValue(existingUser, value);
+                    }
+                }
+            }
         }
 
         public bool CheckEmail(string email)
