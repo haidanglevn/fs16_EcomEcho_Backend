@@ -85,7 +85,10 @@ namespace EcommerceAPI.WebAPI.src.Repository
 
         public Product? GetOneProduct(Guid productId)
         {
-            return _products.Include(p => p.Variants).FirstOrDefault(p => p.Id == productId);
+            return _products
+                    .Include(p => p.Category) // Include the Category
+                    .Include(p => p.Variants) // Include Variants
+                    .FirstOrDefault(p => p.Id == productId);
         }
 
         public bool UpdateProduct(Guid productId, Product product)

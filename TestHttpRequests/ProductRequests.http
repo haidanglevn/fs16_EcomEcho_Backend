@@ -16,3 +16,7 @@ Content-Type: application/json
     }
   ]
 }
+
+### Get One Product
+GET http://localhost:5173/api/products/eebd0309-0bec-43d7-8452-394508488e9d
+Content-Type: application/json

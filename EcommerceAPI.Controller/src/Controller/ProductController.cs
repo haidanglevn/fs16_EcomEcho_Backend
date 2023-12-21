@@ -19,5 +19,11 @@ namespace EcommerceAPI.Controller.src.Controller
         {
             return CreatedAtAction(nameof(CreateNewProduct), _productService.CreateNewProduct(productCreateDTO));
         }
+
+        [HttpGet("{productId}")]
+        public ActionResult<ProductReadDTO> GetOneProduct(Guid productId)
+        {
+            return Ok(_productService.GetOneProduct(productId));
+        }
     }
 }

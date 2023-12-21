@@ -9,6 +9,7 @@ namespace EcommerceAPI.Business.src.DTO
         public string Description { get; set; }
         public decimal Price { get; set; }
         public Guid CategoryId { get; set; }
+        public CategoryReadDTO Category { get; set; }
         public ICollection<Variant> Variants { get; set; }
 
         // Implement later
