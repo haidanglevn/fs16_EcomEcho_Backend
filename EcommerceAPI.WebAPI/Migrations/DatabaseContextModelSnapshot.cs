@@ -268,7 +268,7 @@ namespace EcommerceAPI.WebAPI.Migrations
                         .HasColumnType("timestamp without time zone")
                         .HasColumnName("created_at");
 
-                    b.Property<Guid?>("ProductId")
+                    b.Property<Guid>("ProductId")
                         .HasColumnType("uuid")
                         .HasColumnName("product_id");
 
@@ -280,7 +280,7 @@ namespace EcommerceAPI.WebAPI.Migrations
                         .HasColumnType("timestamp without time zone")
                         .HasColumnName("updated_at");
 
-                    b.Property<Guid?>("UserId")
+                    b.Property<Guid>("UserId")
                         .HasColumnType("uuid")
                         .HasColumnName("user_id");
 
@@ -445,11 +445,15 @@ namespace EcommerceAPI.WebAPI.Migrations
                     b.HasOne("EcommerceAPI.Core.src.Entity.Product", null)
                         .WithMany("Reviews")
                         .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired()
                         .HasConstraintName("fk_reviews_products_product_id");
 
                     b.HasOne("EcommerceAPI.Core.src.Entity.User", null)
                         .WithMany("Reviews")
                         .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired()
                         .HasConstraintName("fk_reviews_users_user_id");
                 });
 

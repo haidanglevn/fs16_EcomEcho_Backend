@@ -53,15 +53,20 @@ namespace EcommerceAPI.WebAPI.src.Database
                .WithOne()
                .OnDelete(DeleteBehavior.Cascade); // Cascade delete behavior
 
-            modelBuilder.Entity<Category>()
-               .HasMany(c => c.Products)
-               .WithOne()
-               .OnDelete(DeleteBehavior.Cascade);
-
             modelBuilder.Entity<Product>()
                .HasMany(p => p.Images)
                .WithOne()
                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<User>()
+                .HasMany(u => u.Reviews)
+                .WithOne()
+                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<Product>()
+                .HasMany(p => p.Reviews)
+                .WithOne()
+                .OnDelete(DeleteBehavior.Cascade);
 
             modelBuilder.Entity<Order>()
                 .HasMany(o => o.OrderItems)
@@ -70,16 +75,21 @@ namespace EcommerceAPI.WebAPI.src.Database
                 .OnDelete(DeleteBehavior.Restrict); // Restrict delete behavior
 
             modelBuilder.Entity<Product>()
-                .HasOne(p => p.Category)  // Each Product has one Category
-                .WithMany(c => c.Products)  // Each Category has many Products
-                .HasForeignKey(p => p.CategoryId)  // The foreign key is CategoryId
-                .OnDelete(DeleteBehavior.Cascade);  // Specify the delete behavior if necessary
-
-            modelBuilder.Entity<Product>()
                 .HasMany(p => p.OrderItems)
                 .WithOne()
                 .HasForeignKey(oi => oi.ProductId)
                 .OnDelete(DeleteBehavior.Restrict); // Restrict delete behavior
+
+            modelBuilder.Entity<Category>()
+               .HasMany(c => c.Products)
+               .WithOne()
+               .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<Product>()
+                .HasOne(p => p.Category)  // Each Product has one Category
+                .WithMany(c => c.Products)  // Each Category has many Products
+                .HasForeignKey(p => p.CategoryId)  // The foreign key is CategoryId
+                .OnDelete(DeleteBehavior.Cascade);  // Specify the delete behavior if necessary
 
             modelBuilder.Entity<Product>()
                 .HasMany(p => p.Variants)

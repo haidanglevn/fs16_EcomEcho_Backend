@@ -25,6 +25,8 @@ builder.Services.AddScoped<ICategoryRepo, CategoryRepo>();
 builder.Services.AddScoped<ICategoryService, CategoryService>();
 builder.Services.AddScoped<IProductRepo, ProductRepo>();
 builder.Services.AddScoped<IProductService, ProductService>();
+builder.Services.AddScoped<IReviewRepo, ReviewRepo>();
+builder.Services.AddScoped<IReviewService, ReviewService>();
 
 builder.Services.AddScoped<ITokenService, TokenService>();
 

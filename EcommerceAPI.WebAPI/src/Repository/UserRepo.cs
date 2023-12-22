@@ -94,6 +94,9 @@ namespace EcommerceAPI.WebAPI.src.Repository
         {
             return _database.Users.Any(u => u.Email == email);
         }
-
+        public bool CheckUserExist(Guid userId)
+        {
+            return _users.Any(c => c.Id == userId);
+        }
     }
 }

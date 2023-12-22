@@ -10,5 +10,6 @@ namespace EcommerceAPI.Core.src.Abstraction
         Product CreateNewProduct(Product product);
         bool UpdateProduct(Guid productId, Product product);
         bool DeleteProduct(Guid productId);
+        bool CheckProductExist(Guid productId);
     }
 }

@@ -13,7 +13,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace EcommerceAPI.WebAPI.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20231221080328_NewDatabase")]
+    [Migration("20231222002929_NewDatabase")]
     partial class NewDatabase
     {
         /// <inheritdoc />
@@ -271,7 +271,7 @@ namespace EcommerceAPI.WebAPI.Migrations
                         .HasColumnType("timestamp without time zone")
                         .HasColumnName("created_at");
 
-                    b.Property<Guid?>("ProductId")
+                    b.Property<Guid>("ProductId")
                         .HasColumnType("uuid")
                         .HasColumnName("product_id");
 
@@ -283,7 +283,7 @@ namespace EcommerceAPI.WebAPI.Migrations
                         .HasColumnType("timestamp without time zone")
                         .HasColumnName("updated_at");
 
-                    b.Property<Guid?>("UserId")
+                    b.Property<Guid>("UserId")
                         .HasColumnType("uuid")
                         .HasColumnName("user_id");
 
@@ -448,11 +448,15 @@ namespace EcommerceAPI.WebAPI.Migrations
                     b.HasOne("EcommerceAPI.Core.src.Entity.Product", null)
                         .WithMany("Reviews")
                         .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired()
                         .HasConstraintName("fk_reviews_products_product_id");
 
                     b.HasOne("EcommerceAPI.Core.src.Entity.User", null)
                         .WithMany("Reviews")
                         .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired()
                         .HasConstraintName("fk_reviews_users_user_id");
                 });
 

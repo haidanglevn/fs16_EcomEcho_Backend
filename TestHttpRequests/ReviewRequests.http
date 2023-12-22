@@ -1,0 +1,14 @@
+### Create New Review 
+POST http://localhost:5173/api/reviews
+Content-Type: application/json
+
+{
+  "rating": 4,
+  "userId": "891b4e79-3fcb-4d0b-9363-6bc77c095f71",
+  "comment":"good product 2!",
+  "productId": "7dc9b5dc-d303-4fb3-a4ff-e2e649eb67d2"
+}
+
+### Get all reviews by user Id
+GET http://localhost:5173/api/reviews/by-userid/891b4e79-3fcb-4d0b-9363-6bc77c095f71
+Content-Type: application/json

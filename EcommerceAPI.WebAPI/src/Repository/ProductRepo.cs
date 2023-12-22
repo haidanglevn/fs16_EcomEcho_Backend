@@ -96,12 +96,6 @@ namespace EcommerceAPI.WebAPI.src.Repository
             var dtoProperties = product.GetType().GetProperties();
             foreach (var dtoProp in dtoProperties)
             {
-                // Skip key properties
-                // if (_database.Entry(existingProduct).Metadata.FindPrimaryKey()!.Properties.Any(p => p.Name == dtoProp.Name))
-                // {
-                //     continue;
-                // }
-
                 if (dtoProp.Name == "Id" || (dtoProp.Name == "CategoryId"))
                 {
                     continue;
@@ -116,6 +110,11 @@ namespace EcommerceAPI.WebAPI.src.Repository
                     }
                 }
             }
+        }
+
+        public bool CheckProductExist(Guid productId)
+        {
+            return _products.Any(c => c.Id == productId);
         }
     }
 }

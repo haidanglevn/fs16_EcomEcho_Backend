@@ -10,6 +10,7 @@ namespace EcommerceAPI.Core.src.Abstraction
         User CreateNewUser(User user);
         User? FindByEmail(string email);
         bool CheckEmail(string email);
+        bool CheckUserExist(Guid userId);
         bool UpdateUser(Guid userId, User user);
         bool DeleteUser(Guid userId);
     }
