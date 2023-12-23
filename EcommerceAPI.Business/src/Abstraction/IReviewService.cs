@@ -9,5 +9,6 @@ namespace EcommerceAPI.Business.src.Abstraction
         ReviewReadDTO CreateNewReview(ReviewCreateDTO reviewCreateDTO);
         bool UpdateReview(Guid reviewId, ReviewUpdateDTO reviewUpdateDTO);
         bool DeleteReview(Guid reviewId);
+        ReviewReadDTO? GetOneReview(Guid reviewId);
     }
 }

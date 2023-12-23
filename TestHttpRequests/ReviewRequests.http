@@ -12,3 +12,22 @@ Content-Type: application/json
 ### Get all reviews by user Id
 GET http://localhost:5173/api/reviews/by-userid/891b4e79-3fcb-4d0b-9363-6bc77c095f71
 Content-Type: application/json
+
+### Get all reviews by product Id
+GET http://localhost:5173/api/reviews/by-productid/7dc9b5dc-d303-4fb3-a4ff-e2e649eb67d2
+Content-Type: application/json
+
+### Update your own review
+PATCH http://localhost:5173/api/reviews/5b88ac1c-5b88-4f00-9550-cbc9f3a3f1f0
+Authorization: Bearer eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI4OTFiNGU3OS0zZmNiLTRkMGItOTM2My02YmM3N2MwOTVmNzEiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJhZG1pbkBtYWlsLmNvbSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluIiwiZXhwIjoxNzA0MjAxNjY3fQ.ajdjGYvvT9FQPFE3H6bSYiPBenXh5rnqyIsT7GwHtSc
+Content-Type: application/json
+
+{
+  "rating": 3,
+  "comment":"(edited) actually is not that good..."
+}
+
+### Delete a review (for Admin only)
+DELETE http://localhost:5173/api/reviews/df9ff6d1-ab62-45a3-84c7-c4d004d9d0e1
+Authorization: Bearer eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI4OTFiNGU3OS0zZmNiLTRkMGItOTM2My02YmM3N2MwOTVmNzEiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJhZG1pbkBtYWlsLmNvbSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluIiwiZXhwIjoxNzA0MjAxNjY3fQ.ajdjGYvvT9FQPFE3H6bSYiPBenXh5rnqyIsT7GwHtSc
+Content-Type: application/json

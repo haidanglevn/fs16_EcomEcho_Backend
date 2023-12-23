@@ -34,6 +34,11 @@ namespace EcommerceAPI.WebAPI.src.Repository
             return false;
         }
 
+        public Review? GetOneReview(Guid reviewId)
+        {
+            return _reviews.Find(reviewId);
+        }
+
         public IEnumerable<Review> GetAllReviewByProductId(Guid productId)
         {
             return _reviews.AsNoTracking().Where(r => r.ProductId == productId);
@@ -62,7 +67,7 @@ namespace EcommerceAPI.WebAPI.src.Repository
             var dtoProperties = review.GetType().GetProperties();
             foreach (var dtoProp in dtoProperties)
             {
-                if (dtoProp.Name == "UserId" || (dtoProp.Name == "ProductId") || (dtoProp.Name == "Id"))
+                if (dtoProp.Name == "UserId" || (dtoProp.Name == "ProductId") || (dtoProp.Name == "Id") || (dtoProp.Name == "CreatedAt"))
                 {
                     continue;
                 }

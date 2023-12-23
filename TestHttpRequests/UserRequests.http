@@ -2,18 +2,19 @@
 POST http://localhost:5173/api/users
 Content-Type: application/json
 
-# {
-#   "firstName": "John",
-#   "lastName": "Doe",
-#   "email": "john.doe@example.com",
-#   "password": "Password123"
-# }
 {
-  "firstName": "Admin",
-  "lastName": "Admin",
-  "email": "admin@mail.com",
-  "password": "admin"
+  "firstName": "John",
+  "lastName": "Doe",
+  "email": "john.doe@example.com",
+  "password": "Password123"
 }
+
+# {
+#   "firstName": "Admin",
+#   "lastName": "Admin",
+#   "email": "admin@mail.com",
+#   "password": "admin"
+# }
 
 ### User Login as Admin
 POST http://localhost:5173/api/users/login

@@ -49,6 +49,20 @@ namespace EcommerceAPI.Business.src.Service
             return _reviewRepo.GetAllReviewByUserId(reviewId).Select(r => _mapper.Map<Review, ReviewReadDTO>(r));
         }
 
+        public ReviewReadDTO? GetOneReview(Guid reviewId)
+        {
+            var result = _reviewRepo.GetOneReview(reviewId);
+            if (result is not null)
+            {
+                return _mapper.Map<Review, ReviewReadDTO>(result);
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+
         public bool UpdateReview(Guid reviewId, ReviewUpdateDTO reviewUpdateDTO)
         {
             var review = _mapper.Map<ReviewUpdateDTO, Review>(reviewUpdateDTO);

@@ -9,5 +9,6 @@ namespace EcommerceAPI.Core.src.Abstraction
         Review CreateNewReview(Review review);
         bool UpdateReview(Guid reviewId, Review review);
         bool DeleteReview(Guid reviewId);
+        Review? GetOneReview(Guid reviewId);
     }
 }
