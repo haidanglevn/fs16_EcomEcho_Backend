@@ -96,9 +96,13 @@ namespace EcommerceAPI.WebAPI.src.Database
                 .WithOne()
                 .OnDelete(DeleteBehavior.Cascade);
 
-            // Unique Email configuration
+            // Unique configuration
             modelBuilder.Entity<User>()
                 .HasIndex(u => u.Email)
+                .IsUnique();
+
+            modelBuilder.Entity<Review>()
+                .HasIndex(r => new { r.UserId, r.ProductId })
                 .IsUnique();
         }
     }

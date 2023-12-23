@@ -18,7 +18,15 @@ namespace EcommerceAPI.Controller.src.Controller
         [HttpPost()]
         public ActionResult<ReviewReadDTO> CreateNewReview([FromBody] ReviewCreateDTO reviewCreateDTO)
         {
-            return CreatedAtAction(nameof(CreateNewReview), _reviewService.CreateNewReview(reviewCreateDTO));
+            try
+            {
+                var createdReview = _reviewService.CreateNewReview(reviewCreateDTO);
+                return CreatedAtAction(nameof(CreateNewReview), createdReview);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, "An error occurred while creating the review.");
+            }
         }
 
         [HttpGet("by-userid/{userId}")]
