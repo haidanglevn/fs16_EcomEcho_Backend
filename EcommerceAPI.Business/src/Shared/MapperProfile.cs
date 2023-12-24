@@ -25,6 +25,10 @@ namespace EcommerceAPI.Business.src.Shared
             CreateMap<ReviewCreateDTO, Review>();
             CreateMap<ReviewUpdateDTO, Review>().ForAllMembers(opt => opt.Condition((src, dest, member) => member != null));
 
+            // Image
+            CreateMap<Image, ImageReadDTO>();
+            CreateMap<ImageCreateDTO, Image>();
+            CreateMap<ImageUpdateDTO, Image>().ForAllMembers(opt => opt.Condition((src, dest, member) => member != null));
 
             // Variant
             CreateMap<VariantCreateDTO, Variant>();

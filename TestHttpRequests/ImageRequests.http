@@ -1,53 +1,28 @@
-### Create New Product (Only for Admin)
-POST http://localhost:5173/api/products
-Authorization: Bearer eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJkZjM0ZWI1MS1jNTFiLTRjZmEtODQ2ZS05YzRmMDNhOTUwZWMiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJhZG1pbkBtYWlsLmNvbSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluIiwiZXhwIjoxNzAzODYzNDY0fQ.4WfMPF2BfFUKN2ZczSonP2eVvpqLrNmbNxQrD0rAX7A
-Content-Type: application/json
-# variants and images can be empty array
-{
-  "title": "Test Product 7",
-  "description": "A test product with good quality",
-  "price": 50,
-  "categoryId": "afe74ab7-c191-44ec-b888-73f60d40eb0f",
-  "variants": [
-    {
-        "color": 0,
-        "size": 1,
-        "quantity": 102
-    },
-    {
-        "color": 3,
-        "size": 4,
-        "quantity": 20
-    }
-  ],
-  "images":[
-    {
-      "url": "test_product_7.png"
-    },
-    {
-      "url": "test_product_7.png"
-    }
-  ]
-}
-
-### Get One Product
-GET http://localhost:5173/api/products/a87bc7b6-96ca-4d0b-a36c-45fe24810005
-Content-Type: application/json
-
-### Get All Products
-GET http://localhost:5173/api/products
-Content-Type:  application/json
-
-### Update one Product
-PATCH http://localhost:5173/api/products/d3111eaf-da87-4138-8efd-a2ed799a3a9c
+### Add New Image to An Existing Product (Only for Admin)
+POST http://localhost:5173/api/images
 Authorization: Bearer eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJkZjM0ZWI1MS1jNTFiLTRjZmEtODQ2ZS05YzRmMDNhOTUwZWMiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJhZG1pbkBtYWlsLmNvbSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluIiwiZXhwIjoxNzAzODYzNDY0fQ.4WfMPF2BfFUKN2ZczSonP2eVvpqLrNmbNxQrD0rAX7A
 Content-Type: application/json
 
 {
-  "price": 69.99
+  "url": "test_product_4.png",
+  "productId": "7dc9b5dc-d303-4fb3-a4ff-e2e649eb67d2"
 }
 
-### Delete one product 
-DELETE http://localhost:5173/api/products/eebd0309-0bec-43d7-8452-394508488e9d
+### Get all images for one product
+GET http://localhost:5173/api/images/by-productid/a87bc7b6-96ca-4d0b-a36c-45fe24810005
 Authorization: Bearer eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJkZjM0ZWI1MS1jNTFiLTRjZmEtODQ2ZS05YzRmMDNhOTUwZWMiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJhZG1pbkBtYWlsLmNvbSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluIiwiZXhwIjoxNzAzODYzNDY0fQ.4WfMPF2BfFUKN2ZczSonP2eVvpqLrNmbNxQrD0rAX7A
-Content-Type:  application/json
+Content-Type: application/json
+
+### Update an image
+PATCH http://localhost:5173/api/images/0b5bff66-6e52-4c63-8d10-6fda20df1271
+Authorization: Bearer eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJkZjM0ZWI1MS1jNTFiLTRjZmEtODQ2ZS05YzRmMDNhOTUwZWMiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJhZG1pbkBtYWlsLmNvbSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluIiwiZXhwIjoxNzAzODYzNDY0fQ.4WfMPF2BfFUKN2ZczSonP2eVvpqLrNmbNxQrD0rAX7A
+Content-Type: application/json
+
+{
+    "url": "test_product_7_edited.png"
+}
+
+### Delete an image
+DELETE http://localhost:5173/api/images/38f8e736-c4d6-4150-85f0-5e4efd8576f5
+Authorization: Bearer eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJkZjM0ZWI1MS1jNTFiLTRjZmEtODQ2ZS05YzRmMDNhOTUwZWMiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJhZG1pbkBtYWlsLmNvbSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluIiwiZXhwIjoxNzAzODYzNDY0fQ.4WfMPF2BfFUKN2ZczSonP2eVvpqLrNmbNxQrD0rAX7A
+Content-Type: application/json

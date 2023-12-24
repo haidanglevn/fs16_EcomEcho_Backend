@@ -1,9 +1,9 @@
 namespace EcommerceAPI.Core.src.Entity
 {
-    public class Image
+    public class Image : BaseEntity
     {
-        public Guid Id { get; set; } // Primary key
-        public string Url { get; set; } // The URL to the image
+        public string Url { get; set; }
+        public Guid ProductId { get; set; }
 
         // Navigation property back to the Product
         // public Product Product { get; set; }

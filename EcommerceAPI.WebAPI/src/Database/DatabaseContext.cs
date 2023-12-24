@@ -15,6 +15,7 @@ namespace EcommerceAPI.WebAPI.src.Database
         public DbSet<Order> Orders { get; set; }
         public DbSet<OrderItem> OrderItems { get; set; }
         public DbSet<Variant> Variants { get; set; }
+        public DbSet<Image> Images { get; set; }
 
         static DatabaseContext()
         {

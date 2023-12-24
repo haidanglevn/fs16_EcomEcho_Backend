@@ -10,11 +10,13 @@ namespace EcommerceAPI.WebAPI.src.Repository
     {
         private DbSet<Product> _products;
         private DbSet<Variant> _variants;
+        private DbSet<Image> _images;
         private DatabaseContext _database;
         public ProductRepo(DatabaseContext database)
         {
             _products = database.Products;
             _variants = database.Variants;
+            _images = database.Images;
             _database = database;
         }
 
@@ -23,11 +25,7 @@ namespace EcommerceAPI.WebAPI.src.Repository
             try
             {
                 // Retrieve the category using the CategoryId from the product
-                var category = _database.Categories.FirstOrDefault(c => c.Id == product.CategoryId);
-                if (category == null)
-                {
-                    throw new Exception("Category not found");
-                }
+                var category = _database.Categories.FirstOrDefault(c => c.Id == product.CategoryId) ?? throw new Exception("Category not found");
 
                 // Associate the product with the retrieved category
                 product.Category = category;
@@ -36,6 +34,10 @@ namespace EcommerceAPI.WebAPI.src.Repository
                 foreach (Variant variant in product.Variants)
                 {
                     _variants.Add(variant);
+                }
+                foreach (Image image in product.Images)
+                {
+                    _images.Add(image);
                 }
                 _database.SaveChanges();
             }
@@ -64,6 +66,7 @@ namespace EcommerceAPI.WebAPI.src.Repository
             return _products.AsNoTracking()
             .Include(p => p.Category)
             .Include(p => p.Variants)
+            .Include(p => p.Images)
             .Where(u => u.Title.Contains(options.Search))
             .Skip(options.Offset)
             .Take(options.Limit);
@@ -74,6 +77,7 @@ namespace EcommerceAPI.WebAPI.src.Repository
             return _products
                     .Include(p => p.Category)
                     .Include(p => p.Variants)
+                    .Include(p => p.Images)
                     .FirstOrDefault(p => p.Id == productId);
         }
 

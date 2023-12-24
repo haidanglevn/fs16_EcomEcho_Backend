@@ -11,9 +11,9 @@ namespace EcommerceAPI.Business.src.DTO
         // public Guid CategoryId { get; set; }
         public CategoryReadDTO Category { get; set; }
         public ICollection<Variant> Variants { get; set; }
+        public ICollection<Image> Images { get; set; }
 
         // Implement later
-        // public ICollection<Image> Images { get; set; }
         // public ICollection<Review> Reviews { get; set; }
     }
 
@@ -26,6 +26,7 @@ namespace EcommerceAPI.Business.src.DTO
         public decimal Price { get; set; }
         public CategoryReadDTO Category { get; set; }
         public ICollection<Variant> Variants { get; set; }
+        public ICollection<Image> Images { get; set; }
     }
 
     public class ProductCreateDTO
@@ -35,6 +36,7 @@ namespace EcommerceAPI.Business.src.DTO
         public decimal Price { get; set; }
         public Guid CategoryId { get; set; }
         public ICollection<VariantCreateDTO> Variants { get; set; }
+        public ICollection<Image> Images { get; set; }
 
         // Implement later
         // public ICollection<Image> Images { get; set; }
