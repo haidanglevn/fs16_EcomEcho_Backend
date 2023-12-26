@@ -2,7 +2,7 @@ namespace EcommerceAPI.Core.src.Entity
 {
     public class User : BaseEntity
     {
-        public Role Role { get; set; } = Role.Customer;
+        public Role Role { get; set; }
         public string FirstName { get; set; }
 
         public string LastName { get; set; }

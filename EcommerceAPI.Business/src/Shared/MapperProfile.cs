@@ -11,7 +11,12 @@ namespace EcommerceAPI.Business.src.Shared
             // User
             CreateMap<User, UserReadDTO>();
             CreateMap<UserCreateDTO, User>();
-            CreateMap<UserUpdateDTO, User>().ForAllMembers(opt => opt.Condition((src, dest, member) => member != null));
+            CreateMap<UserUpdateDTO, User>()
+                .ForMember(dest => dest.FirstName, opt => opt.Condition(src => src.FirstName != null))
+                .ForMember(dest => dest.LastName, opt => opt.Condition(src => src.LastName != null))
+                .ForMember(dest => dest.Email, opt => opt.Condition(src => src.Email != null))
+                // Add similar lines for other properties that are optional in the update
+                .ForMember(dest => dest.Role, opt => opt.Ignore()); // Explicitly ignore Role
             CreateMap<User, UserReadNoAddressDTO>();
 
             // Product

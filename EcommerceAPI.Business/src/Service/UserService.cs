@@ -1,3 +1,4 @@
+using System.Text.Json;
 using AutoMapper;
 using EcommerceAPI.Business.src.Abstraction;
 using EcommerceAPI.Business.src.DTO;
@@ -73,8 +74,19 @@ namespace EcommerceAPI.Business.src.Service
 
         public bool UpdateUser(Guid userId, UserUpdateDTO userUpdateDTO)
         {
-            var user = _mapper.Map<UserUpdateDTO, User>(userUpdateDTO);
-            return _userRepo.UpdateUser(userId, user);
+            var existingUser = _userRepo.GetOneUser(userId);
+            if (existingUser is not null)
+            {
+                var user = _mapper.Map<UserUpdateDTO, User>(userUpdateDTO, existingUser);
+                // Console.WriteLine("-------------------------------------------");
+                // Console.WriteLine(JsonSerializer.Serialize<User>(user).ToString());
+                // Console.WriteLine("-------------------------------------------");
+                return _userRepo.UpdateUser(userId, user);
+            }
+            else
+            {
+                throw new Exception("Invalid userID");
+            }
         }
     }
 }
