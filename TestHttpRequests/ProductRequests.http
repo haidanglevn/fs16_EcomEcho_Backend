@@ -2,9 +2,9 @@
 POST http://localhost:5173/api/products
 Authorization: Bearer eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJkZjM0ZWI1MS1jNTFiLTRjZmEtODQ2ZS05YzRmMDNhOTUwZWMiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJhZG1pbkBtYWlsLmNvbSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluIiwiZXhwIjoxNzAzODYzNDY0fQ.4WfMPF2BfFUKN2ZczSonP2eVvpqLrNmbNxQrD0rAX7A
 Content-Type: application/json
-# variants and images can be empty array
+
 {
-  "title": "Test Product 7",
+  "title": "Picsum Test Image",
   "description": "A test product with good quality",
   "price": 50,
   "categoryId": "afe74ab7-c191-44ec-b888-73f60d40eb0f",
@@ -22,10 +22,13 @@ Content-Type: application/json
   ],
   "images":[
     {
-      "url": "test_product_7.png"
+      "url": "https://picsum.photos/1000/1000?random=1"
     },
     {
-      "url": "test_product_7.png"
+      "url": "https://picsum.photos/1000/1000?random=2"
+    },
+    {
+      "url": "https://picsum.photos/1000/1000?random=3"
     }
   ]
 }

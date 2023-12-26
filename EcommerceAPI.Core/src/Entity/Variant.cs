@@ -6,8 +6,8 @@ namespace EcommerceAPI.Core.src.Entity
         public Size Size { get; set; } = Size.XS;
         public int Quantity { get; set; } // Quantity available for this variant
 
+        public Guid ProductId { get; set; } // Foreign key to Product
         // Navigation property back to the Product
-        // public Guid ProductId { get; set; } // Foreign key to Product
         // public Product Product { get; set; }
     }
 

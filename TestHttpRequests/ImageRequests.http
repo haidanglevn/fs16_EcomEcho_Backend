@@ -9,17 +9,17 @@ Content-Type: application/json
 }
 
 ### Get all images for one product
-GET http://localhost:5173/api/images/by-productid/a87bc7b6-96ca-4d0b-a36c-45fe24810005
+GET http://localhost:5173/api/images/by-productid/9c2551b3-e006-42d3-98cd-898e23100f41
 Authorization: Bearer eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJkZjM0ZWI1MS1jNTFiLTRjZmEtODQ2ZS05YzRmMDNhOTUwZWMiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJhZG1pbkBtYWlsLmNvbSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluIiwiZXhwIjoxNzAzODYzNDY0fQ.4WfMPF2BfFUKN2ZczSonP2eVvpqLrNmbNxQrD0rAX7A
 Content-Type: application/json
 
 ### Update an image
-PATCH http://localhost:5173/api/images/0b5bff66-6e52-4c63-8d10-6fda20df1271
+PATCH http://localhost:5173/api/images/41e5b20a-4a06-4792-8d7f-3bb90ad6fc16
 Authorization: Bearer eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJkZjM0ZWI1MS1jNTFiLTRjZmEtODQ2ZS05YzRmMDNhOTUwZWMiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJhZG1pbkBtYWlsLmNvbSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluIiwiZXhwIjoxNzAzODYzNDY0fQ.4WfMPF2BfFUKN2ZczSonP2eVvpqLrNmbNxQrD0rAX7A
 Content-Type: application/json
 
 {
-    "url": "test_product_7_edited.png"
+    "url": "https://picsum.photos/500/500?random=1"
 }
 
 ### Delete an image

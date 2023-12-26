@@ -37,7 +37,8 @@ namespace EcommerceAPI.Controller.src.Controller
             }
 
             var token = _tokenService.CreateToken(user);
-            return Ok(token);
+            var response = new { access_token = token };
+            return Ok(response);
         }
 
         [HttpPost("is-available")]

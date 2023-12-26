@@ -41,6 +41,14 @@ namespace EcommerceAPI.WebAPI.src.Database
             modelBuilder.HasPostgresEnum<Size>();
             base.OnModelCreating(modelBuilder);
 
+            modelBuilder.Entity<User>().HasData(SeedData.Users());
+            modelBuilder.Entity<Category>().HasData(SeedData.Categories());
+            modelBuilder.Entity<Product>().HasData(SeedData.Products());
+            modelBuilder.Entity<Image>().HasData(SeedData.Images());
+            modelBuilder.Entity<Variant>().HasData(SeedData.Variants());
+            modelBuilder.Entity<Review>().HasData(SeedData.Reviews());
+            modelBuilder.Entity<Address>().HasData(SeedData.Addresses());
+
             // Update/Delete behaviors
             modelBuilder.Entity<User>()
                .HasMany(u => u.Addresses) // User has many Addresses

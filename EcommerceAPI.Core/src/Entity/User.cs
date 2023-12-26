@@ -9,6 +9,7 @@ namespace EcommerceAPI.Core.src.Entity
 
         public string Email { get; set; }
         public string Password { get; set; }
+        public string Avatar { get; set; }
 
         // Navigation properties
         public IEnumerable<Address> Addresses { get; set; }
