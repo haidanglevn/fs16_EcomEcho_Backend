@@ -2,15 +2,32 @@ using System.Text;
 using EcommerceAPI.Business.src.Abstraction;
 using EcommerceAPI.Business.src.Service;
 using EcommerceAPI.Core.src.Abstraction;
+using EcommerceAPI.Core.src.Entity;
 using EcommerceAPI.WebAPI.src.Database;
 using EcommerceAPI.WebAPI.src.Repository;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
+using Npgsql;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("CorsPolicy", builder =>
+    {
+        builder.WithOrigins("http://localhost:3000")
+               .AllowAnyHeader()
+               .AllowAnyMethod();
+        builder.WithOrigins("http://ecomecho.netlify.app/")
+               .AllowAnyHeader()
+               .AllowAnyMethod();
+    });
+});
+
+// Continue with the rest of your service configurations...
 
 builder.Services.Configure<RouteOptions>(options => options.LowercaseUrls = true);
 builder.Services.AddControllers();
@@ -36,9 +53,21 @@ builder.Services.AddScoped<IPasswordHasher, PasswordHasher>();
 
 // add automapper dependency injections
 builder.Services.AddAutoMapper(typeof(UserService).Assembly);
+var connectionString = builder.Configuration.GetConnectionString("LocalDb");
+var dataSourceBuilder = new NpgsqlDataSourceBuilder(connectionString);
+dataSourceBuilder.MapEnum<Role>();
+dataSourceBuilder.MapEnum<Status>();
+dataSourceBuilder.MapEnum<Color>();
+dataSourceBuilder.MapEnum<Size>();
+var dataSource = dataSourceBuilder.Build();
 
 // add database context service
-builder.Services.AddDbContext<DatabaseContext>();
+builder.Services.AddDbContext<DatabaseContext>(options =>
+{
+    options.UseNpgsql(dataSource)
+           .UseSnakeCaseNamingConvention()
+           .AddInterceptors(new TimeStampInterceptor());
+});
 
 // config for authentication
 var jwtTokenKey = builder.Configuration.GetValue<string>("Jwt:Token");
@@ -67,6 +96,9 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+// Use CORS with the defined policy
+app.UseCors("CorsPolicy");
 
 // Authen first -> then Authorize
 app.UseAuthentication();

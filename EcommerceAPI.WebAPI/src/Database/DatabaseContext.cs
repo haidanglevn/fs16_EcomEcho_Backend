@@ -29,13 +29,6 @@ namespace EcommerceAPI.WebAPI.src.Database
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            var dataSourceBuilder = new NpgsqlDataSourceBuilder(_config.GetConnectionString("LocalDb"));
-            dataSourceBuilder.MapEnum<Role>();
-            dataSourceBuilder.MapEnum<Status>();
-            dataSourceBuilder.MapEnum<Color>();
-            dataSourceBuilder.MapEnum<Size>();
-            var dataSource = dataSourceBuilder.Build();
-            optionsBuilder.UseNpgsql(dataSource).UseSnakeCaseNamingConvention().AddInterceptors(new TimeStampInterceptor());
             base.OnConfiguring(optionsBuilder);
         }
 
