@@ -46,6 +46,8 @@ builder.Services.AddScoped<IReviewRepo, ReviewRepo>();
 builder.Services.AddScoped<IReviewService, ReviewService>();
 builder.Services.AddScoped<IImageRepo, ImageRepo>();
 builder.Services.AddScoped<IImageService, ImageService>();
+builder.Services.AddScoped<IOrderRepo, OrderRepo>();
+builder.Services.AddScoped<IOrderService, OrderService>();
 
 builder.Services.AddScoped<ITokenService, TokenService>();
 

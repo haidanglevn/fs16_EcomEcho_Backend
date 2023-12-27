@@ -7,6 +7,8 @@ namespace EcommerceAPI.Core.src.Entity
         public int Quantity { get; set; } // Quantity available for this variant
 
         public Guid ProductId { get; set; } // Foreign key to Product
+
+        public ICollection<OrderItem> OrderItems { get; set; }
         // Navigation property back to the Product
         // public Product Product { get; set; }
     }

@@ -65,6 +65,11 @@ namespace EcommerceAPI.WebAPI.src.Database
                 .WithOne()
                 .OnDelete(DeleteBehavior.Cascade);
 
+            modelBuilder.Entity<User>()
+                .HasMany(u => u.Orders)
+                .WithOne()
+                .OnDelete(DeleteBehavior.Cascade);
+
             modelBuilder.Entity<Product>()
                 .HasMany(p => p.Reviews)
                 .WithOne()
@@ -74,13 +79,19 @@ namespace EcommerceAPI.WebAPI.src.Database
                 .HasMany(o => o.OrderItems)
                 .WithOne()
                 .HasForeignKey(oi => oi.OrderId)
-                .OnDelete(DeleteBehavior.Restrict); // Restrict delete behavior
+                .OnDelete(DeleteBehavior.Restrict);
 
             modelBuilder.Entity<Product>()
                 .HasMany(p => p.OrderItems)
                 .WithOne()
                 .HasForeignKey(oi => oi.ProductId)
-                .OnDelete(DeleteBehavior.Restrict); // Restrict delete behavior
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<Variant>()
+                .HasMany(v => v.OrderItems)
+                .WithOne()
+                .HasForeignKey(oi => oi.VariantId)
+                .OnDelete(DeleteBehavior.Restrict);
 
             modelBuilder.Entity<Category>()
                .HasMany(c => c.Products)
