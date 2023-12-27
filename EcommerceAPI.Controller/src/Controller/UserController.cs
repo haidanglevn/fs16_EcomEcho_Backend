@@ -127,5 +127,42 @@ namespace EcommerceAPI.Controller.src.Controller
             }
             return Ok($"[ADMIN] User with ID {userId} is deleted successfully");
         }
+
+        [HttpPost("change-password")]
+        [Authorize] // Ensure only authenticated users can access this method
+        public IActionResult ChangePassword([FromBody] UserChangePasswordDTO changePasswordDTO)
+        {
+            // Extract userId from the token claims
+            var userIdClaim = HttpContext.User.FindFirst("userId")?.Value;
+            if (userIdClaim == null)
+            {
+                return Unauthorized("User ID is not found in the token.");
+            }
+
+            if (!Guid.TryParse(userIdClaim, out Guid userId))
+            {
+                return BadRequest("Invalid user ID in token.");
+            }
+
+            try
+            {
+                // Call the ChangePassword method from the UserService
+                var result = _userService.ChangePassword(userId, changePasswordDTO);
+                if (result)
+                {
+                    return Ok("Password changed successfully.");
+                }
+                else
+                {
+                    return BadRequest("Unable to change the password.");
+                }
+            }
+            catch (Exception ex)
+            {
+                // Return a more specific error message or log the exception as needed
+                return BadRequest(ex.Message);
+            }
+        }
+
     }
 }

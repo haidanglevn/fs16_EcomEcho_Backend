@@ -25,13 +25,13 @@ Content-Type: application/json
   "password": "admin"
 }
 
-### User Login as Customer John
+### User Login as Customer
 POST http://localhost:5173/api/users/login
 Content-Type: application/json
 
 {
-  "email": "john.doe@example.com",
-  "password": "Password123"
+  "email": "cena@mail.com",
+  "password": "password1"
 }
 
 ### Check Email Availability
@@ -79,3 +79,15 @@ Content-Type: application/json
 DELETE http://localhost:5173/api/users/943f8ad0-7d12-45fb-a2f8-effe919c47a6
 Authorization: Bearer eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJmZTc4MTMwYy00MWZlLTRhY2YtODdmMy1kMjhiZmNjMjNhNGMiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJhZG1pbkBtYWlsLmNvbSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluIiwiZXhwIjoxNzAzNDMwMjE1fQ.Uv7qP7iSR7uONXckOsfBTQI7chXlyELTzrIR0Saapvg
 Content-Type: application/json
+
+
+### Change password
+POST http://localhost:5173/api/users/change-password
+Authorization: Bearer eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI3NjA0NTRmYS00YWYxLTRhZTYtOWIxOC1lZDNhZWM0YmUyYTkiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJjZW5hQG1haWwuY29tIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiQ3VzdG9tZXIiLCJleHAiOjE3MDQ1MjEzNjl9.Ul6EM6gcJ8Q87yKAnG_vSAnF4lxBDuiq6q2d7J2uM28
+Content-Type: application/json
+
+{
+  "currentPassword": "password",
+  "newPassword": "password1",
+  "confirmNewPassword": "password1"
+}

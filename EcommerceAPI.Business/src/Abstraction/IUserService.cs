@@ -12,5 +12,6 @@ namespace EcommerceAPI.Business.src.Abstraction
         bool CheckEmail(string email);
         bool UpdateUser(Guid userId, UserUpdateDTO userUpdateDTO);
         bool DeleteUser(Guid userId);
+        bool ChangePassword(Guid userId, UserChangePasswordDTO userChangePasswordDTO);
     }
 }

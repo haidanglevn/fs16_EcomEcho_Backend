@@ -88,5 +88,33 @@ namespace EcommerceAPI.Business.src.Service
                 throw new Exception("Invalid userID");
             }
         }
+
+        public bool ChangePassword(Guid userId, UserChangePasswordDTO userChangePasswordDTO)
+        {
+            // Fetch the user from the database
+            var user = _userRepo.GetOneUser(userId) ?? throw new Exception("User not found.");
+
+            // Verify the current password
+            if (!_passwordHasher.VerifyPassword(user.Password, userChangePasswordDTO.CurrentPassword))
+            {
+                throw new Exception("Current password is incorrect.");
+            }
+
+            // Check that the new password and confirmation match
+            if (userChangePasswordDTO.NewPassword != userChangePasswordDTO.ConfirmNewPassword)
+            {
+                throw new Exception("New password and confirmation password do not match.");
+            }
+
+            // Check that the new password is not the same as the current password
+            if (_passwordHasher.VerifyPassword(user.Password, userChangePasswordDTO.NewPassword))
+            {
+                throw new Exception("New password cannot be the same as the current password.");
+            }
+
+            // Hash the new password and update the user record
+            user.Password = _passwordHasher.HashPassword(userChangePasswordDTO.NewPassword);
+            return _userRepo.UpdateUser(user.Id, user);
+        }
     }
 }
