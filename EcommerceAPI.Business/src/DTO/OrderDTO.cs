@@ -25,6 +25,7 @@ namespace EcommerceAPI.Business.src.DTO
     public class OrderCreateDTO
     {
         public Guid UserId { get; set; }
+        public Guid AddressId { get; set; }
         public ICollection<OrderItemCreateDTO> OrderItems { get; set; }
     }
 }

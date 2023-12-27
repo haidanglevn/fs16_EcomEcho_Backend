@@ -22,7 +22,10 @@ namespace EcommerceAPI.Business.src.Service
         }
         public OrderReadDTO CreateNewOrder(OrderCreateDTO orderCreateDTO)
         {
-            var isUserExist = _userRepo.CheckUserExist(orderCreateDTO.UserId);
+            if (orderCreateDTO.OrderItems.Count == 0)
+            {
+                throw new Exception("OrderItems are missing, cannot create order without any order items.");
+            }
             foreach (OrderItemCreateDTO item in orderCreateDTO.OrderItems)
             {
                 // Need to check for variantId as well when that is ready
@@ -36,17 +39,21 @@ namespace EcommerceAPI.Business.src.Service
                     throw new Exception("Invalid quantity in OrderItem, please check again");
                 }
             }
+            var isUserExist = _userRepo.CheckUserExist(orderCreateDTO.UserId);
+            var user = _userRepo.GetOneUser(orderCreateDTO.UserId);
             if (!isUserExist)
             {
                 throw new Exception("Invalid User Id, please check again.");
             }
-            if (orderCreateDTO.OrderItems.Count == 0)
+            else if (user is not null && user.Addresses.Any(a => a.Id == orderCreateDTO.AddressId))
             {
-                throw new Exception("OrderItems are missing, cannot create order without any order items.");
+                var result = _orderRepo.CreateNewOrder(_mapper.Map<OrderCreateDTO, Order>(orderCreateDTO));
+                return _mapper.Map<Order, OrderReadDTO>(result);
             }
-
-            var result = _orderRepo.CreateNewOrder(_mapper.Map<OrderCreateDTO, Order>(orderCreateDTO));
-            return _mapper.Map<Order, OrderReadDTO>(result);
+            else
+            {
+                throw new Exception("Address does not match the provided User, please check again.");
+            }
         }
 
         public bool DeleteOrder(Guid orderId)

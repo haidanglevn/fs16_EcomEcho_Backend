@@ -5,10 +5,11 @@ Content-Type: application/json
 
 {
     "userId": "ad0ad1be-f7e5-47c7-b4c3-c17250cbebab",
+    "addressId":"a2a2a2a2-1234-1234-1234-1234567890ab",
     "orderItems":[
         {
             "productId": "052e6003-3e9b-43f3-9d59-0656df90989e",
-            "variantId": "f25fe360-c4fb-4c28-94b9-425e8c23deab",
+            "variantId": "e9c4c892-2781-4fd4-aa39-6726bd8f7d1f",
             "quantity": 3,
             "price": 0
         }        

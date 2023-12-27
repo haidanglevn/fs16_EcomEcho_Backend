@@ -4,6 +4,7 @@ namespace EcommerceAPI.Core.src.Entity
     {
         public Status Status { get; set; } = Status.Pending;
         public Guid UserId { get; set; }
+        public Guid AddressId { get; set; }
         public ICollection<OrderItem> OrderItems { get; set; }
     }
 

@@ -70,6 +70,11 @@ namespace EcommerceAPI.WebAPI.src.Database
                 .WithOne()
                 .OnDelete(DeleteBehavior.Cascade);
 
+            modelBuilder.Entity<Address>()
+                .HasMany(u => u.Orders)
+                .WithOne()
+                .OnDelete(DeleteBehavior.Cascade);
+
             modelBuilder.Entity<Product>()
                 .HasMany(p => p.Reviews)
                 .WithOne()
