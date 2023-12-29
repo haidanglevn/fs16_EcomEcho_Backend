@@ -13,8 +13,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace EcommerceAPI.WebAPI.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20231227041336_AddOrderRelationUser2")]
-    partial class AddOrderRelationUser2
+    [Migration("20231228065249_NewDatabase")]
+    partial class NewDatabase
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -87,10 +87,10 @@ namespace EcommerceAPI.WebAPI.Migrations
                             Id = new Guid("a1a1a1a1-1234-1234-1234-1234567890ab"),
                             City = "Helsinki",
                             Country = "Finland",
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4458),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(7411),
                             PostalCode = "00100",
                             Street = "Street 1",
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4460),
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(7413),
                             UserId = new Guid("ad0ad1be-f7e5-47c7-b4c3-c17250cbebab")
                         },
                         new
@@ -98,10 +98,10 @@ namespace EcommerceAPI.WebAPI.Migrations
                             Id = new Guid("a2a2a2a2-1234-1234-1234-1234567890ab"),
                             City = "Helsinki",
                             Country = "Finland",
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4465),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(7420),
                             PostalCode = "00200",
                             Street = "Street 2",
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4467),
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(7421),
                             UserId = new Guid("ad0ad1be-f7e5-47c7-b4c3-c17250cbebab")
                         },
                         new
@@ -109,10 +109,10 @@ namespace EcommerceAPI.WebAPI.Migrations
                             Id = new Guid("a3a3a3a3-1234-1234-1234-1234567890ab"),
                             City = "Helsinki",
                             Country = "Finland",
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4469),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(7424),
                             PostalCode = "00300",
                             Street = "Street 3",
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4471),
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(7426),
                             UserId = new Guid("ad0ad1be-f7e5-47c7-b4c3-c17250cbebab")
                         },
                         new
@@ -120,10 +120,10 @@ namespace EcommerceAPI.WebAPI.Migrations
                             Id = new Guid("b1b1b1b1-1234-1234-1234-1234567890ab"),
                             City = "Espoo",
                             Country = "Finland",
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4473),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(7429),
                             PostalCode = "02100",
                             Street = "Street 1",
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4475),
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(7430),
                             UserId = new Guid("760454fa-4af1-4ae6-9b18-ed3aec4be2a9")
                         },
                         new
@@ -131,10 +131,10 @@ namespace EcommerceAPI.WebAPI.Migrations
                             Id = new Guid("b2b2b2b2-1234-1234-1234-1234567890ab"),
                             City = "Espoo",
                             Country = "Finland",
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4478),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(7465),
                             PostalCode = "02100",
                             Street = "Street 2",
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4479),
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(7467),
                             UserId = new Guid("760454fa-4af1-4ae6-9b18-ed3aec4be2a9")
                         },
                         new
@@ -142,10 +142,10 @@ namespace EcommerceAPI.WebAPI.Migrations
                             Id = new Guid("b3b3b3b3-1234-1234-1234-1234567890ab"),
                             City = "Espoo",
                             Country = "Finland",
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4483),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(7471),
                             PostalCode = "02100",
                             Street = "Street 3",
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4484),
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(7473),
                             UserId = new Guid("760454fa-4af1-4ae6-9b18-ed3aec4be2a9")
                         },
                         new
@@ -153,10 +153,10 @@ namespace EcommerceAPI.WebAPI.Migrations
                             Id = new Guid("c1c1c1c1-1234-1234-1234-1234567890ab"),
                             City = "Tampere",
                             Country = "Finland",
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4487),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(7475),
                             PostalCode = "33100",
                             Street = "Street 3",
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4488),
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(7477),
                             UserId = new Guid("611a0192-8b2e-4997-a8c8-59b93674d33b")
                         },
                         new
@@ -164,10 +164,10 @@ namespace EcommerceAPI.WebAPI.Migrations
                             Id = new Guid("c2c2c2c2-1234-1234-1234-1234567890ab"),
                             City = "Tampere",
                             Country = "Finland",
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4491),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(7480),
                             PostalCode = "33100",
                             Street = "Street 4",
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4493),
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(7481),
                             UserId = new Guid("611a0192-8b2e-4997-a8c8-59b93674d33b")
                         },
                         new
@@ -175,10 +175,10 @@ namespace EcommerceAPI.WebAPI.Migrations
                             Id = new Guid("c3c3c3c3-1234-1234-1234-1234567890ab"),
                             City = "Tampere",
                             Country = "Finland",
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4496),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(7484),
                             PostalCode = "33100",
                             Street = "Street 6",
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4497),
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(7486),
                             UserId = new Guid("611a0192-8b2e-4997-a8c8-59b93674d33b")
                         });
                 });
@@ -217,26 +217,26 @@ namespace EcommerceAPI.WebAPI.Migrations
                         new
                         {
                             Id = new Guid("88499694-269b-4308-a64d-0e903a1f503d"),
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(3452),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6373),
                             Image = "https://picsum.photos/1000/1000?random=99",
                             Name = "Fashion",
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(3457)
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6380)
                         },
                         new
                         {
                             Id = new Guid("23b984f8-26f7-49a5-82ea-f4f5ddd16eca"),
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(3462),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6386),
                             Image = "https://picsum.photos/1000/1000?random=100",
                             Name = "Sport",
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(3464)
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6388)
                         },
                         new
                         {
                             Id = new Guid("e842529a-ac4a-48f4-9377-1786d94dd4e8"),
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(3466),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6390),
                             Image = "https://picsum.photos/1000/1000?random=101",
                             Name = "Home",
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(3467)
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6392)
                         });
                 });
 
@@ -275,362 +275,362 @@ namespace EcommerceAPI.WebAPI.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("cbe6ea41-b379-4fe6-8816-e346d9826eb0"),
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(3713),
+                            Id = new Guid("8e2bbdde-955b-4a87-811d-7e264d6ece81"),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6604),
                             ProductId = new Guid("bc2983a5-b13c-49a4-9a6c-29c4dad9c355"),
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(3716),
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6608),
                             Url = "https://picsum.photos/1000/1000?random=1"
                         },
                         new
                         {
-                            Id = new Guid("817e9c0e-f066-49ad-92cc-b2a850015d58"),
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(3739),
+                            Id = new Guid("e4703bd3-c0ef-4cb5-8ade-52c744811245"),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6634),
                             ProductId = new Guid("bc2983a5-b13c-49a4-9a6c-29c4dad9c355"),
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(3741),
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6635),
                             Url = "https://picsum.photos/1000/1000?random=2"
                         },
                         new
                         {
-                            Id = new Guid("02be318d-e2e0-4eec-8a5a-08820d565d01"),
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(3746),
+                            Id = new Guid("0f0fd4d8-a64c-45a8-ad8a-8ac726cfcf71"),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6639),
                             ProductId = new Guid("bc2983a5-b13c-49a4-9a6c-29c4dad9c355"),
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(3748),
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6640),
                             Url = "https://picsum.photos/1000/1000?random=3"
                         },
                         new
                         {
-                            Id = new Guid("d743f218-2cca-4d8a-956e-4cb550ec62ef"),
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(3766),
+                            Id = new Guid("133a3a86-0679-466b-847c-de5beeffb95f"),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6644),
                             ProductId = new Guid("fedfd1c9-a73a-47bf-a635-370c193fc1df"),
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(3768),
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6645),
                             Url = "https://picsum.photos/1000/1000?random=4"
                         },
                         new
                         {
-                            Id = new Guid("b5129947-ba1a-461f-bfe0-7780a94eaf6a"),
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(3773),
+                            Id = new Guid("b25e01ef-52c7-4b5c-935e-b50d53689a77"),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6648),
                             ProductId = new Guid("fedfd1c9-a73a-47bf-a635-370c193fc1df"),
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(3775),
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6650),
                             Url = "https://picsum.photos/1000/1000?random=5"
                         },
                         new
                         {
-                            Id = new Guid("94a81ce2-310b-41d3-8aa1-7cda15d6122e"),
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(3780),
+                            Id = new Guid("f417c476-c833-496d-a65d-aea95d5e2201"),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6654),
                             ProductId = new Guid("fedfd1c9-a73a-47bf-a635-370c193fc1df"),
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(3782),
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6656),
                             Url = "https://picsum.photos/1000/1000?random=6"
                         },
                         new
                         {
-                            Id = new Guid("36515797-65a5-4f1d-8b74-a3ac0d74d06d"),
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(3786),
+                            Id = new Guid("19039599-c446-4686-9741-249c68908525"),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6659),
                             ProductId = new Guid("865770da-89af-4719-b00c-310b57d535e1"),
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(3787),
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6661),
                             Url = "https://picsum.photos/1000/1000?random=7"
                         },
                         new
                         {
-                            Id = new Guid("9f3d6fb3-5d8a-41fb-8ef0-7cab7201c8e9"),
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(3790),
+                            Id = new Guid("01177626-488d-430c-a8f2-84a3a7b0f393"),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6664),
                             ProductId = new Guid("865770da-89af-4719-b00c-310b57d535e1"),
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(3792),
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6665),
                             Url = "https://picsum.photos/1000/1000?random=8"
                         },
                         new
                         {
-                            Id = new Guid("a3ace735-345f-48d6-9b56-afe68c19e6e5"),
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(3795),
+                            Id = new Guid("7e78c9b6-cbf9-4078-ad65-cf815bcd31d3"),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6674),
                             ProductId = new Guid("865770da-89af-4719-b00c-310b57d535e1"),
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(3797),
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6676),
                             Url = "https://picsum.photos/1000/1000?random=9"
                         },
                         new
                         {
-                            Id = new Guid("64fd0472-6edd-4c60-922d-e2ef2f6ba63e"),
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(3801),
+                            Id = new Guid("ad551945-15c3-4a0c-a06e-1518d3168b00"),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6681),
                             ProductId = new Guid("bf49c60a-9173-4533-8ca6-182cc7f685eb"),
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(3802),
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6682),
                             Url = "https://picsum.photos/1000/1000?random=10"
                         },
                         new
                         {
-                            Id = new Guid("a9825585-10a9-4743-8f15-4275a936e456"),
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(3805),
+                            Id = new Guid("f6caf7cb-8e60-409f-a8d1-300e4b214dab"),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6685),
                             ProductId = new Guid("bf49c60a-9173-4533-8ca6-182cc7f685eb"),
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(3807),
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6687),
                             Url = "https://picsum.photos/1000/1000?random=11"
                         },
                         new
                         {
-                            Id = new Guid("e64afa39-2e3b-4d0a-930b-2e1e81e78cff"),
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(3814),
+                            Id = new Guid("f1e93587-a4b3-40c1-a127-b78f133ff215"),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6690),
                             ProductId = new Guid("bf49c60a-9173-4533-8ca6-182cc7f685eb"),
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(3815),
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6692),
                             Url = "https://picsum.photos/1000/1000?random=12"
                         },
                         new
                         {
-                            Id = new Guid("11d6bc24-03e9-493e-b807-384c264faeeb"),
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(3818),
+                            Id = new Guid("f04e4134-acb0-416a-8fbf-b10efa8ef25c"),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6695),
                             ProductId = new Guid("271309f9-03ae-4a21-a98c-cb2b911d7996"),
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(3820),
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6696),
                             Url = "https://picsum.photos/1000/1000?random=13"
                         },
                         new
                         {
-                            Id = new Guid("cc8ab216-0cf1-45b2-94f1-6e91367174d0"),
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(3823),
+                            Id = new Guid("48d8baf0-d0a2-4929-bb27-e1242ccd9b3e"),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6699),
                             ProductId = new Guid("271309f9-03ae-4a21-a98c-cb2b911d7996"),
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(3824),
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6701),
                             Url = "https://picsum.photos/1000/1000?random=14"
                         },
                         new
                         {
-                            Id = new Guid("5bc83b83-cbf0-408f-82d8-f1d37343a8d1"),
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(3827),
+                            Id = new Guid("83422ee7-9f8e-4d65-b227-0cea03dc292a"),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6705),
                             ProductId = new Guid("271309f9-03ae-4a21-a98c-cb2b911d7996"),
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(3828),
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6706),
                             Url = "https://picsum.photos/1000/1000?random=15"
                         },
                         new
                         {
-                            Id = new Guid("465a6ef2-3d54-49c1-9d12-f37ff592d5fa"),
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(3831),
+                            Id = new Guid("91527473-c3c5-49cd-a795-fb9e7ee184bb"),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6709),
                             ProductId = new Guid("46e235cb-57a7-4eaa-b8c0-fc8096daee7b"),
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(3833),
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6711),
                             Url = "https://picsum.photos/1000/1000?random=16"
                         },
                         new
                         {
-                            Id = new Guid("a1eed97c-122b-409e-811d-57e54075a7fc"),
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(3836),
+                            Id = new Guid("b2b74b93-1025-4b7f-b34e-53634b2ee831"),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6717),
                             ProductId = new Guid("46e235cb-57a7-4eaa-b8c0-fc8096daee7b"),
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(3837),
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6719),
                             Url = "https://picsum.photos/1000/1000?random=17"
                         },
                         new
                         {
-                            Id = new Guid("498fdb21-4cfc-4403-aabe-3c3896a0a490"),
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(3841),
+                            Id = new Guid("506ef132-7015-494e-a686-27bfd87a2bcb"),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6723),
                             ProductId = new Guid("46e235cb-57a7-4eaa-b8c0-fc8096daee7b"),
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(3843),
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6725),
                             Url = "https://picsum.photos/1000/1000?random=18"
                         },
                         new
                         {
-                            Id = new Guid("7c7b8160-0d5a-4099-b347-e42aa27a8643"),
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(3846),
+                            Id = new Guid("b1429bd7-1085-471f-8196-e8301fd48f72"),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6728),
                             ProductId = new Guid("425f57d3-5bcd-42cd-a401-9a3a9af83c8f"),
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(3847),
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6730),
                             Url = "https://picsum.photos/1000/1000?random=19"
                         },
                         new
                         {
-                            Id = new Guid("50064b67-fed0-44ad-80df-a0bb6f60b003"),
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(3853),
+                            Id = new Guid("49b0ff7d-d743-4a67-8509-c1aac6004fc0"),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6733),
                             ProductId = new Guid("425f57d3-5bcd-42cd-a401-9a3a9af83c8f"),
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(3855),
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6734),
                             Url = "https://picsum.photos/1000/1000?random=20"
                         },
                         new
                         {
-                            Id = new Guid("f2e572a6-9e50-4add-8fea-7a9bd9413e98"),
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(3858),
+                            Id = new Guid("b945a2ad-8d9f-4668-9e73-a64ac316f70c"),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6738),
                             ProductId = new Guid("425f57d3-5bcd-42cd-a401-9a3a9af83c8f"),
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(3859),
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6739),
                             Url = "https://picsum.photos/1000/1000?random=21"
                         },
                         new
                         {
-                            Id = new Guid("e9a8a09e-693c-4936-a445-e6a0c5dfd314"),
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(3862),
+                            Id = new Guid("e74da698-0f1d-4516-a3fa-e035b91b0fe9"),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6742),
                             ProductId = new Guid("30c4e1a7-3b0f-40e9-be69-903936c22290"),
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(3864),
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6744),
                             Url = "https://picsum.photos/1000/1000?random=22"
                         },
                         new
                         {
-                            Id = new Guid("86914db0-0f5b-46d5-982a-e65a03ccff10"),
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(3867),
+                            Id = new Guid("ae7047e6-18f1-430c-88df-92ea8240d323"),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6747),
                             ProductId = new Guid("30c4e1a7-3b0f-40e9-be69-903936c22290"),
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(3868),
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6749),
                             Url = "https://picsum.photos/1000/1000?random=23"
                         },
                         new
                         {
-                            Id = new Guid("2e28d637-41c7-4cee-9122-ca36d216ebbf"),
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(3871),
+                            Id = new Guid("4f70ec5c-8bc5-4dc4-afc4-99d077c9201d"),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6752),
                             ProductId = new Guid("30c4e1a7-3b0f-40e9-be69-903936c22290"),
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(3872),
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6754),
                             Url = "https://picsum.photos/1000/1000?random=24"
                         },
                         new
                         {
-                            Id = new Guid("77eb52a3-e705-4f8c-b5c8-fe05452fbe27"),
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(3875),
+                            Id = new Guid("7dc21ee4-b3e4-4e13-a832-58e0cda76ccb"),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6759),
                             ProductId = new Guid("7f49c05a-d60c-49e6-b804-f3eb5a65522f"),
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(3876),
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6761),
                             Url = "https://picsum.photos/1000/1000?random=25"
                         },
                         new
                         {
-                            Id = new Guid("b503a738-6b47-4775-b6a8-514c2191e2e3"),
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(3879),
+                            Id = new Guid("16b8428b-050e-4b39-a866-2ecc43d24732"),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6764),
                             ProductId = new Guid("7f49c05a-d60c-49e6-b804-f3eb5a65522f"),
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(3881),
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6766),
                             Url = "https://picsum.photos/1000/1000?random=26"
                         },
                         new
                         {
-                            Id = new Guid("2c57004a-280b-4edf-89b4-12ddcbe4d28b"),
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(3883),
+                            Id = new Guid("f5450d06-0777-4e0d-9ab8-0b05620a395b"),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6769),
                             ProductId = new Guid("7f49c05a-d60c-49e6-b804-f3eb5a65522f"),
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(3885),
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6770),
                             Url = "https://picsum.photos/1000/1000?random=27"
                         },
                         new
                         {
-                            Id = new Guid("d238e6f6-5b15-494d-a5c9-e5d9dca8b0fd"),
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(3891),
+                            Id = new Guid("952414b8-c59e-4f9c-9c33-4e56205d9a69"),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6774),
                             ProductId = new Guid("ead99f26-fbfb-4b83-bf74-2ef2fd2b4754"),
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(3892),
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6775),
                             Url = "https://picsum.photos/1000/1000?random=28"
                         },
                         new
                         {
-                            Id = new Guid("4ea1d228-e802-4b34-b449-fd2d85d8c391"),
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(3895),
+                            Id = new Guid("0931ed46-1718-4e68-ba16-574df562f742"),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6778),
                             ProductId = new Guid("ead99f26-fbfb-4b83-bf74-2ef2fd2b4754"),
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(3897),
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6780),
                             Url = "https://picsum.photos/1000/1000?random=29"
                         },
                         new
                         {
-                            Id = new Guid("1d10d282-f6c7-4a95-9807-9bd1df8a483f"),
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(3900),
+                            Id = new Guid("583eb570-6231-44b6-af9c-f8927482615c"),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6783),
                             ProductId = new Guid("ead99f26-fbfb-4b83-bf74-2ef2fd2b4754"),
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(3901),
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6785),
                             Url = "https://picsum.photos/1000/1000?random=30"
                         },
                         new
                         {
-                            Id = new Guid("8da5fbac-aecc-4b92-bf01-345ddf484fcc"),
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(3904),
+                            Id = new Guid("5356a547-c393-4570-b6b6-bcc3bfcc9164"),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6788),
                             ProductId = new Guid("052e6003-3e9b-43f3-9d59-0656df90989e"),
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(3906),
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6789),
                             Url = "https://picsum.photos/1000/1000?random=31"
                         },
                         new
                         {
-                            Id = new Guid("950b7228-4cd7-4b0b-86d4-b5a79f04115f"),
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(3909),
+                            Id = new Guid("47d03919-cbfc-4373-abc3-103dfe408321"),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6793),
                             ProductId = new Guid("052e6003-3e9b-43f3-9d59-0656df90989e"),
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(3910),
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6794),
                             Url = "https://picsum.photos/1000/1000?random=32"
                         },
                         new
                         {
-                            Id = new Guid("9f4a8833-2b02-421c-af15-903a5d3c8af7"),
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(3913),
+                            Id = new Guid("16744737-7f50-4d27-aa72-350eaa2d7ac0"),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6800),
                             ProductId = new Guid("052e6003-3e9b-43f3-9d59-0656df90989e"),
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(3914),
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6801),
                             Url = "https://picsum.photos/1000/1000?random=33"
                         },
                         new
                         {
-                            Id = new Guid("0e9f35c5-ba7a-4869-a09c-ecc9ebc49f23"),
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(3919),
+                            Id = new Guid("fdef4179-59e4-482d-9084-1593520ad111"),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6805),
                             ProductId = new Guid("b4143d6b-c302-4215-82e9-c9123d2f2ee5"),
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(3920),
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6807),
                             Url = "https://picsum.photos/1000/1000?random=34"
                         },
                         new
                         {
-                            Id = new Guid("d8a852a1-5784-4e9a-8e2b-f4367f8d5d04"),
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(3923),
+                            Id = new Guid("0f3f4c77-ba0e-4587-927f-e7fbf7ab6527"),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6810),
                             ProductId = new Guid("b4143d6b-c302-4215-82e9-c9123d2f2ee5"),
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(3925),
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6812),
                             Url = "https://picsum.photos/1000/1000?random=35"
                         },
                         new
                         {
-                            Id = new Guid("8e08155f-8889-4b6a-a618-18b47d13388c"),
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(3930),
+                            Id = new Guid("ffb1a640-679f-4d44-a269-5c31d3a70369"),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6815),
                             ProductId = new Guid("b4143d6b-c302-4215-82e9-c9123d2f2ee5"),
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(3932),
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6816),
                             Url = "https://picsum.photos/1000/1000?random=36"
                         },
                         new
                         {
-                            Id = new Guid("2f174b02-9432-4fe3-8e37-07b12e867951"),
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(3935),
+                            Id = new Guid("7f700383-2ce8-4e4d-8b3f-b7296a71b12c"),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6820),
                             ProductId = new Guid("41dde13b-dbcc-4f51-a31c-2231f94ddcab"),
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(3936),
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6821),
                             Url = "https://picsum.photos/1000/1000?random=37"
                         },
                         new
                         {
-                            Id = new Guid("3af328ed-9a3e-446e-a2ce-c0b393d80352"),
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(3939),
+                            Id = new Guid("5ac36c75-4aa7-43b8-ac11-9ca4720b8fee"),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6824),
                             ProductId = new Guid("41dde13b-dbcc-4f51-a31c-2231f94ddcab"),
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(3941),
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6826),
                             Url = "https://picsum.photos/1000/1000?random=38"
                         },
                         new
                         {
-                            Id = new Guid("8ad3623e-fab3-4b3b-aea1-81b3c49e0bbd"),
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(3944),
+                            Id = new Guid("56c3b50e-889a-495a-9626-958adbe6a062"),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6829),
                             ProductId = new Guid("41dde13b-dbcc-4f51-a31c-2231f94ddcab"),
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(3945),
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6830),
                             Url = "https://picsum.photos/1000/1000?random=39"
                         },
                         new
                         {
-                            Id = new Guid("ff484588-ceb8-452c-b23a-d7911a6fef2f"),
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(3948),
+                            Id = new Guid("75d56a26-b372-4987-89c3-0aad58ce073c"),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6834),
                             ProductId = new Guid("9101df8f-38e3-40de-a46a-8ca66c26222d"),
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(3949),
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6835),
                             Url = "https://picsum.photos/1000/1000?random=40"
                         },
                         new
                         {
-                            Id = new Guid("37e6d1ef-6b52-4e7a-8a75-affb6d4f9e0a"),
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(3952),
+                            Id = new Guid("91bc8ffd-e147-4816-9c1b-a8b984746dad"),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6841),
                             ProductId = new Guid("9101df8f-38e3-40de-a46a-8ca66c26222d"),
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(3954),
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6842),
                             Url = "https://picsum.photos/1000/1000?random=41"
                         },
                         new
                         {
-                            Id = new Guid("2ff033c1-ce64-43d2-bee7-1df40620370e"),
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(3957),
+                            Id = new Guid("67dde20c-023e-4355-928b-d59acdc1b300"),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6845),
                             ProductId = new Guid("9101df8f-38e3-40de-a46a-8ca66c26222d"),
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(3958),
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6847),
                             Url = "https://picsum.photos/1000/1000?random=42"
                         },
                         new
                         {
-                            Id = new Guid("c5e04b99-2bcf-40c5-91c2-216479ac3add"),
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(3961),
+                            Id = new Guid("fc93c429-18ce-4118-8ab2-b7ab656809dc"),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6850),
                             ProductId = new Guid("8b441114-e030-4412-8952-2370a4b7f05a"),
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(3963),
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6851),
                             Url = "https://picsum.photos/1000/1000?random=43"
                         },
                         new
                         {
-                            Id = new Guid("9a9ffcfc-db72-4a91-866b-2a3c09778a11"),
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(3967),
+                            Id = new Guid("1eca6f5a-1197-445d-92cc-03267f8c6902"),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6855),
                             ProductId = new Guid("8b441114-e030-4412-8952-2370a4b7f05a"),
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(3969),
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6856),
                             Url = "https://picsum.photos/1000/1000?random=44"
                         },
                         new
                         {
-                            Id = new Guid("b4b532b0-cf7a-4f77-953a-acdc3c47429d"),
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(3972),
+                            Id = new Guid("5aedfe52-762a-4333-a0bc-4278fa7aa333"),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6859),
                             ProductId = new Guid("8b441114-e030-4412-8952-2370a4b7f05a"),
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(3973),
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6861),
                             Url = "https://picsum.photos/1000/1000?random=45"
                         });
                 });
@@ -641,6 +641,10 @@ namespace EcommerceAPI.WebAPI.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid")
                         .HasColumnName("id");
+
+                    b.Property<Guid>("AddressId")
+                        .HasColumnType("uuid")
+                        .HasColumnName("address_id");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("timestamp without time zone")
@@ -660,6 +664,9 @@ namespace EcommerceAPI.WebAPI.Migrations
 
                     b.HasKey("Id")
                         .HasName("pk_orders");
+
+                    b.HasIndex("AddressId")
+                        .HasDatabaseName("ix_orders_address_id");
 
                     b.HasIndex("UserId")
                         .HasDatabaseName("ix_orders_user_id");
@@ -763,151 +770,151 @@ namespace EcommerceAPI.WebAPI.Migrations
                         {
                             Id = new Guid("bc2983a5-b13c-49a4-9a6c-29c4dad9c355"),
                             CategoryId = new Guid("88499694-269b-4308-a64d-0e903a1f503d"),
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(3505),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6433),
                             Description = "Description for Fashion Product 1",
                             Price = 100m,
                             Title = "Fashion Product 1",
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(3507)
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6435)
                         },
                         new
                         {
                             Id = new Guid("fedfd1c9-a73a-47bf-a635-370c193fc1df"),
                             CategoryId = new Guid("88499694-269b-4308-a64d-0e903a1f503d"),
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(3582),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6441),
                             Description = "Description for Fashion Product 2",
                             Price = 140m,
                             Title = "Fashion Product 2",
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(3585)
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6443)
                         },
                         new
                         {
                             Id = new Guid("865770da-89af-4719-b00c-310b57d535e1"),
                             CategoryId = new Guid("88499694-269b-4308-a64d-0e903a1f503d"),
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(3589),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6446),
                             Description = "Description for Fashion Product 3",
                             Price = 120m,
                             Title = "Fashion Product 3",
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(3590)
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6447)
                         },
                         new
                         {
                             Id = new Guid("bf49c60a-9173-4533-8ca6-182cc7f685eb"),
                             CategoryId = new Guid("88499694-269b-4308-a64d-0e903a1f503d"),
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(3594),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6450),
                             Description = "Description for Fashion Product 4",
                             Price = 200m,
                             Title = "Fashion Product 4",
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(3596)
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6451)
                         },
                         new
                         {
                             Id = new Guid("271309f9-03ae-4a21-a98c-cb2b911d7996"),
                             CategoryId = new Guid("88499694-269b-4308-a64d-0e903a1f503d"),
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(3599),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6454),
                             Description = "Description for Fashion Product 5",
                             Price = 104m,
                             Title = "Fashion Product 5",
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(3601)
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6456)
                         },
                         new
                         {
                             Id = new Guid("46e235cb-57a7-4eaa-b8c0-fc8096daee7b"),
                             CategoryId = new Guid("23b984f8-26f7-49a5-82ea-f4f5ddd16eca"),
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(3610),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6464),
                             Description = "Description for Sport Product 1",
                             Price = 200m,
                             Title = "Sport Product 1",
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(3612)
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6466)
                         },
                         new
                         {
                             Id = new Guid("425f57d3-5bcd-42cd-a401-9a3a9af83c8f"),
                             CategoryId = new Guid("23b984f8-26f7-49a5-82ea-f4f5ddd16eca"),
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(3615),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6469),
                             Description = "Description for Sport Product 2",
                             Price = 240m,
                             Title = "Sport Product 2",
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(3617)
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6470)
                         },
                         new
                         {
                             Id = new Guid("30c4e1a7-3b0f-40e9-be69-903936c22290"),
                             CategoryId = new Guid("23b984f8-26f7-49a5-82ea-f4f5ddd16eca"),
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(3620),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6526),
                             Description = "Description for Sport Product 3",
                             Price = 154m,
                             Title = "Sport Product 3",
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(3622)
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6528)
                         },
                         new
                         {
                             Id = new Guid("7f49c05a-d60c-49e6-b804-f3eb5a65522f"),
                             CategoryId = new Guid("23b984f8-26f7-49a5-82ea-f4f5ddd16eca"),
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(3626),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6531),
                             Description = "Description for Sport Product 4",
                             Price = 333m,
                             Title = "Sport Product 4",
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(3628)
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6533)
                         },
                         new
                         {
                             Id = new Guid("ead99f26-fbfb-4b83-bf74-2ef2fd2b4754"),
                             CategoryId = new Guid("23b984f8-26f7-49a5-82ea-f4f5ddd16eca"),
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(3632),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6537),
                             Description = "Description for Sport Product 5",
                             Price = 205m,
                             Title = "Sport Product 5",
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(3634)
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6539)
                         },
                         new
                         {
                             Id = new Guid("052e6003-3e9b-43f3-9d59-0656df90989e"),
                             CategoryId = new Guid("e842529a-ac4a-48f4-9377-1786d94dd4e8"),
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(3638),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6542),
                             Description = "Description for Home Product 1",
                             Price = 300m,
                             Title = "Home Product 1",
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(3640)
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6543)
                         },
                         new
                         {
                             Id = new Guid("b4143d6b-c302-4215-82e9-c9123d2f2ee5"),
                             CategoryId = new Guid("e842529a-ac4a-48f4-9377-1786d94dd4e8"),
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(3643),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6546),
                             Description = "Description for Home Product 2",
                             Price = 32m,
                             Title = "Home Product 2",
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(3645)
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6547)
                         },
                         new
                         {
                             Id = new Guid("41dde13b-dbcc-4f51-a31c-2231f94ddcab"),
                             CategoryId = new Guid("e842529a-ac4a-48f4-9377-1786d94dd4e8"),
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(3648),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6550),
                             Description = "Description for Home Product 3",
                             Price = 56m,
                             Title = "Home Product 3",
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(3650)
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6552)
                         },
                         new
                         {
                             Id = new Guid("9101df8f-38e3-40de-a46a-8ca66c26222d"),
                             CategoryId = new Guid("e842529a-ac4a-48f4-9377-1786d94dd4e8"),
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(3653),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6554),
                             Description = "Description for Home Product 4",
                             Price = 143m,
                             Title = "Home Product 4",
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(3655)
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6556)
                         },
                         new
                         {
                             Id = new Guid("8b441114-e030-4412-8952-2370a4b7f05a"),
                             CategoryId = new Guid("e842529a-ac4a-48f4-9377-1786d94dd4e8"),
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(3658),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6559),
                             Description = "Description for Home Product 5",
                             Price = 3000m,
                             Title = "Home Product 5",
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(3660)
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6560)
                         });
                 });
 
@@ -960,100 +967,100 @@ namespace EcommerceAPI.WebAPI.Migrations
                         {
                             Id = new Guid("c9e3c10d-b843-434d-bcbe-bfe35e17dd52"),
                             Comment = "Great product!",
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4346),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(7323),
                             ProductId = new Guid("bc2983a5-b13c-49a4-9a6c-29c4dad9c355"),
                             Rating = 5,
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4348),
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(7325),
                             UserId = new Guid("ad0ad1be-f7e5-47c7-b4c3-c17250cbebab")
                         },
                         new
                         {
                             Id = new Guid("71dd6268-f87a-4816-a5bf-c94769a51473"),
                             Comment = "Really enjoyed this.",
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4355),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(7331),
                             ProductId = new Guid("425f57d3-5bcd-42cd-a401-9a3a9af83c8f"),
                             Rating = 4,
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4356),
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(7333),
                             UserId = new Guid("760454fa-4af1-4ae6-9b18-ed3aec4be2a9")
                         },
                         new
                         {
                             Id = new Guid("eb57b891-c019-46c9-9c6e-630a79d19787"),
                             Comment = "Good quality, but expensive.",
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4359),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(7336),
                             ProductId = new Guid("41dde13b-dbcc-4f51-a31c-2231f94ddcab"),
                             Rating = 3,
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4360),
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(7337),
                             UserId = new Guid("ad0ad1be-f7e5-47c7-b4c3-c17250cbebab")
                         },
                         new
                         {
                             Id = new Guid("9aa483ac-872b-468c-af4f-2c1f94beec3a"),
                             Comment = "Loved the design!",
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4363),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(7340),
                             ProductId = new Guid("bf49c60a-9173-4533-8ca6-182cc7f685eb"),
                             Rating = 4,
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4365),
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(7341),
                             UserId = new Guid("760454fa-4af1-4ae6-9b18-ed3aec4be2a9")
                         },
                         new
                         {
                             Id = new Guid("ca5b7d5d-309c-4973-ad8c-132a4142b5c1"),
                             Comment = "Perfect for my needs!",
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4367),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(7344),
                             ProductId = new Guid("ead99f26-fbfb-4b83-bf74-2ef2fd2b4754"),
                             Rating = 5,
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4369),
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(7345),
                             UserId = new Guid("611a0192-8b2e-4997-a8c8-59b93674d33b")
                         },
                         new
                         {
                             Id = new Guid("a4438f9a-a573-4967-96c3-6a38fcfb6132"),
                             Comment = "Nice product, quick delivery.",
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4372),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(7349),
                             ProductId = new Guid("fedfd1c9-a73a-47bf-a635-370c193fc1df"),
                             Rating = 4,
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4374),
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(7351),
                             UserId = new Guid("611a0192-8b2e-4997-a8c8-59b93674d33b")
                         },
                         new
                         {
                             Id = new Guid("c2cd9d37-25d0-4b5d-a336-8214ce83b648"),
                             Comment = "Outstanding quality!",
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4377),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(7353),
                             ProductId = new Guid("052e6003-3e9b-43f3-9d59-0656df90989e"),
                             Rating = 5,
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4378),
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(7355),
                             UserId = new Guid("611a0192-8b2e-4997-a8c8-59b93674d33b")
                         },
                         new
                         {
                             Id = new Guid("dfc6ffd5-140c-4505-9428-7fe852a93afc"),
                             Comment = "Decent, but expected more.",
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4380),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(7357),
                             ProductId = new Guid("865770da-89af-4719-b00c-310b57d535e1"),
                             Rating = 3,
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4382),
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(7359),
                             UserId = new Guid("ad0ad1be-f7e5-47c7-b4c3-c17250cbebab")
                         },
                         new
                         {
                             Id = new Guid("38fb4093-965e-4e3f-a7a2-c19103fc239e"),
                             Comment = "Absolutely love this!",
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4384),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(7362),
                             ProductId = new Guid("8b441114-e030-4412-8952-2370a4b7f05a"),
                             Rating = 5,
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4386),
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(7363),
                             UserId = new Guid("760454fa-4af1-4ae6-9b18-ed3aec4be2a9")
                         },
                         new
                         {
                             Id = new Guid("30a4ff5e-3bd1-429d-9981-adbcd46e2537"),
                             Comment = "Not as described, disappointed.",
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4389),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(7367),
                             ProductId = new Guid("30c4e1a7-3b0f-40e9-be69-903936c22290"),
                             Rating = 2,
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4391),
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(7368),
                             UserId = new Guid("611a0192-8b2e-4997-a8c8-59b93674d33b")
                         });
                 });
@@ -1066,7 +1073,6 @@ namespace EcommerceAPI.WebAPI.Migrations
                         .HasColumnName("id");
 
                     b.Property<string>("Avatar")
-                        .IsRequired()
                         .HasColumnType("text")
                         .HasColumnName("avatar");
 
@@ -1116,37 +1122,37 @@ namespace EcommerceAPI.WebAPI.Migrations
                         {
                             Id = new Guid("ad0ad1be-f7e5-47c7-b4c3-c17250cbebab"),
                             Avatar = "https://picsum.photos/1000/1000?random=150",
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 192, DateTimeKind.Local).AddTicks(1143),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 909, DateTimeKind.Local).AddTicks(3346),
                             Email = "admin@mail.com",
                             FirstName = "Admin",
                             LastName = "admin",
-                            Password = "4UTu46u/WlG0vRUY032dmw==;xGzf2AkGZ3biLh5zLhDWM3JE+3Lxk8md5hm+MczmfMY=",
+                            Password = "Hx0KKc/9jicJiRIlxT9I2Q==;BRDMk7nhCt4WS6104LVg3Ee4xMWbpwbEHehgo4RpMKg=",
                             Role = Role.Admin,
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 192, DateTimeKind.Local).AddTicks(1194)
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 909, DateTimeKind.Local).AddTicks(3405)
                         },
                         new
                         {
                             Id = new Guid("760454fa-4af1-4ae6-9b18-ed3aec4be2a9"),
                             Avatar = "https://picsum.photos/1000/1000?random=151",
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 193, DateTimeKind.Local).AddTicks(5357),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 910, DateTimeKind.Local).AddTicks(7850),
                             Email = "cena@mail.com",
                             FirstName = "John",
                             LastName = "Cena",
-                            Password = "nbQ2gFwaaoJ+ChuZum9jhw==;GZY9V+rm5lTtI2hzVucxo+qRUF9I+WwpmW3UFC4o8hw=",
+                            Password = "WQv+2GiPor82CbNDWMZYcg==;yuHeVDp04CWgJ/9J29d35ZCMkoUiRBtKLOly5kapLCI=",
                             Role = Role.Customer,
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 193, DateTimeKind.Local).AddTicks(5367)
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 910, DateTimeKind.Local).AddTicks(7854)
                         },
                         new
                         {
                             Id = new Guid("611a0192-8b2e-4997-a8c8-59b93674d33b"),
                             Avatar = "https://picsum.photos/1000/1000?random=152",
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 194, DateTimeKind.Local).AddTicks(9321),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 912, DateTimeKind.Local).AddTicks(1984),
                             Email = "doe@mail.com",
                             FirstName = "John",
                             LastName = "Doe",
-                            Password = "5HWsTxCY7xKJpIPZVWzq/A==;c0iRygi4RSsyycvNDV4kVpNjCR3J/Agcilsi9xX/yhY=",
+                            Password = "Lj5PE0u9ehG6QAxIClgeyA==;1Zb/k888h9mRhBPpAnhQKb5flsuMzf50FAkI/yFGfjA=",
                             Role = Role.Customer,
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 194, DateTimeKind.Local).AddTicks(9326)
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 912, DateTimeKind.Local).AddTicks(1987)
                         });
                 });
 
@@ -1192,453 +1198,453 @@ namespace EcommerceAPI.WebAPI.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("edc6c946-ca54-49de-9588-cacfabd96b65"),
+                            Id = new Guid("671c618b-0e94-4f47-b4cb-e645c28bd559"),
                             Color = Color.Red,
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4065),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6925),
                             ProductId = new Guid("bc2983a5-b13c-49a4-9a6c-29c4dad9c355"),
                             Quantity = 10,
                             Size = Size.L,
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4067)
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6927)
                         },
                         new
                         {
-                            Id = new Guid("f02656fc-8e71-4391-a9f2-a7aad4ce33bd"),
+                            Id = new Guid("da7f0237-aa03-435e-8afc-f59fa2f6c86b"),
                             Color = Color.Blue,
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4074),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6934),
                             ProductId = new Guid("bc2983a5-b13c-49a4-9a6c-29c4dad9c355"),
                             Quantity = 20,
                             Size = Size.XL,
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4076)
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6936)
                         },
                         new
                         {
-                            Id = new Guid("1228a483-d400-44bf-ab38-6737de33835b"),
+                            Id = new Guid("bb945515-cde8-4a45-881a-066c2ef4a0d0"),
                             Color = Color.Black,
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4079),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6940),
                             ProductId = new Guid("bc2983a5-b13c-49a4-9a6c-29c4dad9c355"),
                             Quantity = 30,
                             Size = Size.XXXL,
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4080)
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6941)
                         },
                         new
                         {
-                            Id = new Guid("1a268b61-14af-48c3-a373-ce7d9c138f9e"),
+                            Id = new Guid("465edb9b-d80d-4e56-8d41-2f3e1fdb01ac"),
                             Color = Color.Red,
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4083),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6947),
                             ProductId = new Guid("fedfd1c9-a73a-47bf-a635-370c193fc1df"),
                             Quantity = 20,
                             Size = Size.L,
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4085)
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6949)
                         },
                         new
                         {
-                            Id = new Guid("9860cd50-814a-4969-9578-ba2652a44b98"),
+                            Id = new Guid("52f9b15e-3c8c-48ff-80dc-7dd48af47445"),
                             Color = Color.Blue,
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4088),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6952),
                             ProductId = new Guid("fedfd1c9-a73a-47bf-a635-370c193fc1df"),
                             Quantity = 20,
                             Size = Size.XL,
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4090)
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6954)
                         },
                         new
                         {
-                            Id = new Guid("26b7133e-f33e-4e31-b833-47ff3fd8b995"),
+                            Id = new Guid("3a424648-4dc9-45c2-8d38-1d3d17d73d9a"),
                             Color = Color.Black,
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4094),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6958),
                             ProductId = new Guid("fedfd1c9-a73a-47bf-a635-370c193fc1df"),
                             Quantity = 30,
                             Size = Size.XXXL,
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4095)
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(6960)
                         },
                         new
                         {
-                            Id = new Guid("ec60f1d9-112f-455a-8c89-ea8b1dd9dc5b"),
+                            Id = new Guid("0bcd2360-c5f4-426f-9bd2-6d156bdcaa63"),
                             Color = Color.Red,
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4101),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(7056),
                             ProductId = new Guid("865770da-89af-4719-b00c-310b57d535e1"),
                             Quantity = 10,
                             Size = Size.L,
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4102)
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(7058)
                         },
                         new
                         {
-                            Id = new Guid("24cda3f0-f41d-4c0e-aa90-3b6b442445cf"),
+                            Id = new Guid("eba616fe-38bb-46ae-9de8-a9622d1ed72e"),
                             Color = Color.Blue,
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4105),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(7062),
                             ProductId = new Guid("865770da-89af-4719-b00c-310b57d535e1"),
                             Quantity = 20,
                             Size = Size.XL,
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4107)
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(7064)
                         },
                         new
                         {
-                            Id = new Guid("e858ce85-2270-4bb3-98db-6733b2be279d"),
+                            Id = new Guid("2921b63c-8417-465b-9ca5-17baba9cdc3d"),
                             Color = Color.Black,
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4110),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(7067),
                             ProductId = new Guid("865770da-89af-4719-b00c-310b57d535e1"),
                             Quantity = 30,
                             Size = Size.XXXL,
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4112)
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(7069)
                         },
                         new
                         {
-                            Id = new Guid("99f349df-499f-46ac-bd61-b168f3da7649"),
+                            Id = new Guid("a0838293-3b6e-4197-b8e3-cf67229b36cc"),
                             Color = Color.Red,
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4116),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(7077),
                             ProductId = new Guid("bf49c60a-9173-4533-8ca6-182cc7f685eb"),
                             Quantity = 10,
                             Size = Size.L,
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4117)
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(7078)
                         },
                         new
                         {
-                            Id = new Guid("2fea385c-37ee-4b19-a336-9e12745f6778"),
+                            Id = new Guid("0dc7c958-f17f-4e7c-9dcb-dfad7aa66304"),
                             Color = Color.Blue,
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4120),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(7082),
                             ProductId = new Guid("bf49c60a-9173-4533-8ca6-182cc7f685eb"),
                             Quantity = 20,
                             Size = Size.XL,
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4122)
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(7084)
                         },
                         new
                         {
-                            Id = new Guid("a2cdea24-7801-4c07-a199-928b8be1b637"),
+                            Id = new Guid("807b485e-ae76-45f8-b964-a0a653ac1bc2"),
                             Color = Color.Black,
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4125),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(7089),
                             ProductId = new Guid("bf49c60a-9173-4533-8ca6-182cc7f685eb"),
                             Quantity = 30,
                             Size = Size.XXXL,
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4126)
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(7091)
                         },
                         new
                         {
-                            Id = new Guid("772c5bc9-6339-48de-b8d1-6be7872e4e5a"),
+                            Id = new Guid("196b96ab-dc99-48d6-92ef-a9707ed93540"),
                             Color = Color.Red,
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4130),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(7094),
                             ProductId = new Guid("271309f9-03ae-4a21-a98c-cb2b911d7996"),
                             Quantity = 10,
                             Size = Size.L,
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4131)
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(7096)
                         },
                         new
                         {
-                            Id = new Guid("37a9f6d2-abe8-4226-b98a-c9724fad1f51"),
+                            Id = new Guid("4744c413-fe49-4952-a26d-87a6dc6232ae"),
                             Color = Color.Blue,
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4134),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(7099),
                             ProductId = new Guid("271309f9-03ae-4a21-a98c-cb2b911d7996"),
                             Quantity = 20,
                             Size = Size.XL,
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4136)
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(7100)
                         },
                         new
                         {
-                            Id = new Guid("379c36d5-9c41-4dc2-99a3-0917e9fabdca"),
+                            Id = new Guid("67c9c79d-eddd-496f-ab63-cd4124719f1e"),
                             Color = Color.Black,
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4141),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(7104),
                             ProductId = new Guid("271309f9-03ae-4a21-a98c-cb2b911d7996"),
                             Quantity = 30,
                             Size = Size.XXXL,
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4142)
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(7105)
                         },
                         new
                         {
-                            Id = new Guid("5e2aad41-bf11-4c41-8e42-60cc38b5b1b5"),
+                            Id = new Guid("4d103c38-6034-4068-ba85-97092c008859"),
                             Color = Color.Red,
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4145),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(7109),
                             ProductId = new Guid("46e235cb-57a7-4eaa-b8c0-fc8096daee7b"),
                             Quantity = 10,
                             Size = Size.L,
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4147)
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(7111)
                         },
                         new
                         {
-                            Id = new Guid("b4854c5b-0e94-466f-9082-09920afa0ae8"),
+                            Id = new Guid("3bb256dc-3b46-4904-baaa-8926f40d4cb4"),
                             Color = Color.Blue,
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4150),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(7114),
                             ProductId = new Guid("46e235cb-57a7-4eaa-b8c0-fc8096daee7b"),
                             Quantity = 20,
                             Size = Size.XL,
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4152)
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(7115)
                         },
                         new
                         {
-                            Id = new Guid("850348bb-bdc5-428e-ad9a-dd4a4ed437f7"),
+                            Id = new Guid("d1ed2918-6199-46bf-b3f2-2b4193b54ba8"),
                             Color = Color.Black,
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4156),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(7120),
                             ProductId = new Guid("46e235cb-57a7-4eaa-b8c0-fc8096daee7b"),
                             Quantity = 30,
                             Size = Size.XXXL,
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4157)
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(7121)
                         },
                         new
                         {
-                            Id = new Guid("ff96a9a2-77fa-4a02-a3bc-ea2b88bb76f9"),
+                            Id = new Guid("2e5bcc25-cb03-472c-83ab-e3be3dfbb2ad"),
                             Color = Color.Red,
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4161),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(7125),
                             ProductId = new Guid("425f57d3-5bcd-42cd-a401-9a3a9af83c8f"),
                             Quantity = 10,
                             Size = Size.L,
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4162)
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(7126)
                         },
                         new
                         {
-                            Id = new Guid("6cc47e02-03db-455a-9506-4ce9327b5cbe"),
+                            Id = new Guid("a57b4bb8-52e0-4294-8075-2df091c1b9d5"),
                             Color = Color.Blue,
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4165),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(7131),
                             ProductId = new Guid("425f57d3-5bcd-42cd-a401-9a3a9af83c8f"),
                             Quantity = 20,
                             Size = Size.XL,
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4167)
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(7133)
                         },
                         new
                         {
-                            Id = new Guid("3e4d79f5-2844-4744-9c4d-035c539e51b7"),
+                            Id = new Guid("7eb88e33-c9ec-4faa-93e1-62233781417d"),
                             Color = Color.Black,
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4170),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(7136),
                             ProductId = new Guid("425f57d3-5bcd-42cd-a401-9a3a9af83c8f"),
                             Quantity = 30,
                             Size = Size.XXXL,
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4171)
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(7138)
                         },
                         new
                         {
-                            Id = new Guid("1b59c5e5-1ec0-41a0-ac46-0e328826d0a2"),
+                            Id = new Guid("48f2444f-667a-4cf3-bf6e-61060331ea65"),
                             Color = Color.Red,
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4174),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(7141),
                             ProductId = new Guid("30c4e1a7-3b0f-40e9-be69-903936c22290"),
                             Quantity = 10,
                             Size = Size.L,
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4176)
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(7142)
                         },
                         new
                         {
-                            Id = new Guid("8308c842-4a3a-4be1-8518-e31fde3b499c"),
+                            Id = new Guid("afa84b58-651a-45c9-bd07-c8911a6988b7"),
                             Color = Color.Blue,
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4181),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(7146),
                             ProductId = new Guid("30c4e1a7-3b0f-40e9-be69-903936c22290"),
                             Quantity = 20,
                             Size = Size.XL,
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4182)
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(7147)
                         },
                         new
                         {
-                            Id = new Guid("4dd078cf-22c6-4345-9553-2fe60427c5ce"),
+                            Id = new Guid("8c647e8e-a319-496d-bf08-3f40a892a610"),
                             Color = Color.Black,
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4186),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(7151),
                             ProductId = new Guid("30c4e1a7-3b0f-40e9-be69-903936c22290"),
                             Quantity = 30,
                             Size = Size.XXXL,
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4187)
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(7152)
                         },
                         new
                         {
-                            Id = new Guid("851c8219-53bb-4575-86d3-e24bc7c61b3d"),
+                            Id = new Guid("d0d2ecdf-b74a-492d-98c3-e8f35c0eae32"),
                             Color = Color.Red,
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4190),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(7155),
                             ProductId = new Guid("7f49c05a-d60c-49e6-b804-f3eb5a65522f"),
                             Quantity = 10,
                             Size = Size.L,
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4192)
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(7157)
                         },
                         new
                         {
-                            Id = new Guid("3ea43075-1e66-4e34-8389-86f2dc93cbb4"),
+                            Id = new Guid("654e2f25-09a3-4abd-bfb6-e90acdde0241"),
                             Color = Color.Blue,
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4195),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(7160),
                             ProductId = new Guid("7f49c05a-d60c-49e6-b804-f3eb5a65522f"),
                             Quantity = 20,
                             Size = Size.XL,
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4197)
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(7162)
                         },
                         new
                         {
-                            Id = new Guid("bf099820-cec2-4ec4-bc80-5ae416f002bb"),
+                            Id = new Guid("ce11d5e9-e66a-4b52-b41c-dfb02d6c644e"),
                             Color = Color.Black,
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4200),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(7165),
                             ProductId = new Guid("7f49c05a-d60c-49e6-b804-f3eb5a65522f"),
                             Quantity = 30,
                             Size = Size.XXXL,
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4201)
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(7166)
                         },
                         new
                         {
-                            Id = new Guid("86443275-b7e0-401d-ba98-adfd69fe54e4"),
+                            Id = new Guid("b933c25f-6a63-4507-ba71-2d50db74d8e4"),
                             Color = Color.Red,
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4204),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(7172),
                             ProductId = new Guid("ead99f26-fbfb-4b83-bf74-2ef2fd2b4754"),
                             Quantity = 10,
                             Size = Size.L,
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4206)
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(7173)
                         },
                         new
                         {
-                            Id = new Guid("a933f209-7ac4-41e2-9ec5-150fb283769e"),
+                            Id = new Guid("d4c93685-5b4d-4bce-8e3b-97276377bb90"),
                             Color = Color.Blue,
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4209),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(7177),
                             ProductId = new Guid("ead99f26-fbfb-4b83-bf74-2ef2fd2b4754"),
                             Quantity = 20,
                             Size = Size.XL,
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4210)
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(7178)
                         },
                         new
                         {
-                            Id = new Guid("e60e3cbd-8028-4902-b9d7-cefc297e0434"),
+                            Id = new Guid("cc1b8c19-fa4f-4e6d-a0c8-e926be3885d7"),
                             Color = Color.Black,
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4214),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(7181),
                             ProductId = new Guid("ead99f26-fbfb-4b83-bf74-2ef2fd2b4754"),
                             Quantity = 30,
                             Size = Size.XXXL,
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4215)
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(7183)
                         },
                         new
                         {
-                            Id = new Guid("21759c8e-cc17-4252-80e0-11b43592b8c7"),
+                            Id = new Guid("c5ea3679-6091-41ae-a1a9-db0f53dd3a11"),
                             Color = Color.Red,
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4220),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(7186),
                             ProductId = new Guid("052e6003-3e9b-43f3-9d59-0656df90989e"),
                             Quantity = 10,
                             Size = Size.L,
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4222)
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(7188)
                         },
                         new
                         {
-                            Id = new Guid("ef0d410b-7a6e-4043-8928-c63c9ceb4498"),
+                            Id = new Guid("9348956b-905b-4a97-ba00-40f82951b090"),
                             Color = Color.Blue,
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4225),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(7191),
                             ProductId = new Guid("052e6003-3e9b-43f3-9d59-0656df90989e"),
                             Quantity = 20,
                             Size = Size.XL,
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4226)
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(7192)
                         },
                         new
                         {
-                            Id = new Guid("f25fe360-c4fb-4c28-94b9-425e8c23deab"),
+                            Id = new Guid("9a9a8700-28b0-4849-9865-23a5e9ebafaa"),
                             Color = Color.Black,
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4230),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(7196),
                             ProductId = new Guid("052e6003-3e9b-43f3-9d59-0656df90989e"),
                             Quantity = 30,
                             Size = Size.XXXL,
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4232)
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(7197)
                         },
                         new
                         {
-                            Id = new Guid("07677433-f8e7-4520-9cc5-927537383019"),
+                            Id = new Guid("d38b8889-3d8a-4eda-bdf4-4e0f6511a216"),
                             Color = Color.Red,
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4237),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(7202),
                             ProductId = new Guid("b4143d6b-c302-4215-82e9-c9123d2f2ee5"),
                             Quantity = 10,
                             Size = Size.L,
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4238)
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(7203)
                         },
                         new
                         {
-                            Id = new Guid("b579b676-cc66-44fd-b5ca-f27da43118e9"),
+                            Id = new Guid("a96ee623-999c-43ee-9afe-67f57dd76be8"),
                             Color = Color.Blue,
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4241),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(7207),
                             ProductId = new Guid("b4143d6b-c302-4215-82e9-c9123d2f2ee5"),
                             Quantity = 20,
                             Size = Size.XL,
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4243)
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(7208)
                         },
                         new
                         {
-                            Id = new Guid("542a6d72-05a4-4a0f-a1c0-e9edb7a12141"),
+                            Id = new Guid("8907b530-a9d4-464e-94f2-e86214b3b200"),
                             Color = Color.Black,
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4246),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(7214),
                             ProductId = new Guid("b4143d6b-c302-4215-82e9-c9123d2f2ee5"),
                             Quantity = 30,
                             Size = Size.XXXL,
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4247)
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(7215)
                         },
                         new
                         {
-                            Id = new Guid("a7234533-8ef5-413c-838e-d92a0cdd3e9c"),
+                            Id = new Guid("020e8252-77d0-4ff6-a380-ca7fbb6558ef"),
                             Color = Color.Red,
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4250),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(7218),
                             ProductId = new Guid("41dde13b-dbcc-4f51-a31c-2231f94ddcab"),
                             Quantity = 10,
                             Size = Size.L,
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4252)
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(7220)
                         },
                         new
                         {
-                            Id = new Guid("491dc0fa-ff52-4b52-bf5b-e9e19d82fa93"),
+                            Id = new Guid("d62b2df2-a6f2-4971-9222-d07bc826a81d"),
                             Color = Color.Blue,
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4255),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(7223),
                             ProductId = new Guid("41dde13b-dbcc-4f51-a31c-2231f94ddcab"),
                             Quantity = 20,
                             Size = Size.XL,
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4257)
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(7225)
                         },
                         new
                         {
-                            Id = new Guid("24bcffdc-4f92-42b1-81ed-17db71e4b8f2"),
+                            Id = new Guid("e1f8ed2f-3c48-431e-9030-cb4b33c26b82"),
                             Color = Color.Black,
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4262),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(7228),
                             ProductId = new Guid("41dde13b-dbcc-4f51-a31c-2231f94ddcab"),
                             Quantity = 30,
                             Size = Size.XXXL,
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4263)
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(7230)
                         },
                         new
                         {
-                            Id = new Guid("c4908643-d8a7-4660-9fb0-8ef682805e4e"),
+                            Id = new Guid("0a5dae77-d10f-4a6a-8cef-67304c3fd6ba"),
                             Color = Color.Red,
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4266),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(7233),
                             ProductId = new Guid("9101df8f-38e3-40de-a46a-8ca66c26222d"),
                             Quantity = 10,
                             Size = Size.L,
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4268)
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(7235)
                         },
                         new
                         {
-                            Id = new Guid("4c22b11d-6704-429a-ae91-6658aecc5cba"),
+                            Id = new Guid("f63eb685-2212-40f6-947c-ce4e1df26401"),
                             Color = Color.Blue,
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4271),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(7238),
                             ProductId = new Guid("9101df8f-38e3-40de-a46a-8ca66c26222d"),
                             Quantity = 20,
                             Size = Size.XL,
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4272)
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(7240)
                         },
                         new
                         {
-                            Id = new Guid("0c0545d5-ad12-4a9b-9e8c-70036875643a"),
+                            Id = new Guid("9b202036-51c1-4664-93a8-065398b657b8"),
                             Color = Color.Black,
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4275),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(7243),
                             ProductId = new Guid("9101df8f-38e3-40de-a46a-8ca66c26222d"),
                             Quantity = 30,
                             Size = Size.XXXL,
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4277)
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(7245)
                         },
                         new
                         {
-                            Id = new Guid("301cc04d-3618-4a60-9f74-a34743f3c0fa"),
+                            Id = new Guid("4ac3a217-3b16-485a-a4fc-ee8a0b8d7fd1"),
                             Color = Color.Red,
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4280),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(7248),
                             ProductId = new Guid("8b441114-e030-4412-8952-2370a4b7f05a"),
                             Quantity = 10,
                             Size = Size.L,
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4281)
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(7250)
                         },
                         new
                         {
-                            Id = new Guid("506f6fb7-c219-4002-9d3e-fa08ad44d0bb"),
+                            Id = new Guid("eb4a2f4b-f440-490a-b385-86a88f0eefaa"),
                             Color = Color.Blue,
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4284),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(7255),
                             ProductId = new Guid("8b441114-e030-4412-8952-2370a4b7f05a"),
                             Quantity = 20,
                             Size = Size.XL,
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4286)
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(7257)
                         },
                         new
                         {
-                            Id = new Guid("1df4e8bc-62d6-4d73-95e0-904fc80df670"),
+                            Id = new Guid("252b193f-98e8-4294-8205-b4cd0f3f50dd"),
                             Color = Color.Black,
-                            CreatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4289),
+                            CreatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(7260),
                             ProductId = new Guid("8b441114-e030-4412-8952-2370a4b7f05a"),
                             Quantity = 30,
                             Size = Size.XXXL,
-                            UpdatedAt = new DateTime(2023, 12, 27, 6, 13, 36, 196, DateTimeKind.Local).AddTicks(4290)
+                            UpdatedAt = new DateTime(2023, 12, 28, 8, 52, 48, 913, DateTimeKind.Local).AddTicks(7261)
                         });
                 });
 
@@ -1664,6 +1670,13 @@ namespace EcommerceAPI.WebAPI.Migrations
 
             modelBuilder.Entity("EcommerceAPI.Core.src.Entity.Order", b =>
                 {
+                    b.HasOne("EcommerceAPI.Core.src.Entity.Address", null)
+                        .WithMany("Orders")
+                        .HasForeignKey("AddressId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired()
+                        .HasConstraintName("fk_orders_addresses_address_id");
+
                     b.HasOne("EcommerceAPI.Core.src.Entity.User", null)
                         .WithMany("Orders")
                         .HasForeignKey("UserId")
@@ -1733,6 +1746,11 @@ namespace EcommerceAPI.WebAPI.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired()
                         .HasConstraintName("fk_variants_products_product_id");
+                });
+
+            modelBuilder.Entity("EcommerceAPI.Core.src.Entity.Address", b =>
+                {
+                    b.Navigation("Orders");
                 });
 
             modelBuilder.Entity("EcommerceAPI.Core.src.Entity.Category", b =>

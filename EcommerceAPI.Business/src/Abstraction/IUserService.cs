@@ -7,6 +7,7 @@ namespace EcommerceAPI.Business.src.Abstraction
     {
         IEnumerable<UserReadNoAddressDTO> GetAllUsers(GetAllParams options);
         UserReadDTO? GetOneUser(Guid userId);
+        UserReadSimpleDTO? GetOneUserSimple(Guid userId);
         UserReadDTO CreateNewUser(UserCreateDTO user);
         UserReadDTO? Login(string email, string userInputPassword);
         bool CheckEmail(string email);

@@ -28,6 +28,7 @@ namespace EcommerceAPI.Business.src.Service
                 Email = userCreateDTO.Email,
                 FirstName = userCreateDTO.FirstName,
                 LastName = userCreateDTO.LastName,
+                Avatar = userCreateDTO.Avatar,
                 Password = passwordHash,
             };
 
@@ -65,6 +66,19 @@ namespace EcommerceAPI.Business.src.Service
             if (user is not null)
             {
                 return _mapper.Map<User, UserReadDTO>(user);
+            }
+            else
+            {
+                return null;
+            }
+        }
+        // A basic read one for simplier return of user, without authorization
+        public UserReadSimpleDTO? GetOneUserSimple(Guid userId)
+        {
+            var user = _userRepo.GetOneUser(userId);
+            if (user is not null)
+            {
+                return _mapper.Map<User, UserReadSimpleDTO>(user);
             }
             else
             {

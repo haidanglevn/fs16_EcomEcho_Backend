@@ -60,6 +60,12 @@ namespace EcommerceAPI.Controller.src.Controller
             return Ok(_userService.GetOneUser(userId));
         }
 
+        [HttpGet("{userId}/simple")]
+        public ActionResult<UserReadDTO> GetOneUserSimple(Guid userId)
+        {
+            return Ok(_userService.GetOneUserSimple(userId));
+        }
+
         [HttpGet("profile"), Authorize]
         public ActionResult<UserReadDTO> GetCurrentUserProfile()
         {

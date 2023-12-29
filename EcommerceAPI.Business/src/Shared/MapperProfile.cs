@@ -18,6 +18,7 @@ namespace EcommerceAPI.Business.src.Shared
                 // Add similar lines for other properties that are optional in the update
                 .ForMember(dest => dest.Role, opt => opt.Ignore()); // Explicitly ignore Role
             CreateMap<User, UserReadNoAddressDTO>();
+            CreateMap<User, UserReadSimpleDTO>();
 
             // Product
             CreateMap<Product, ProductReadDTO>();

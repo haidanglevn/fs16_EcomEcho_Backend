@@ -14,7 +14,7 @@ namespace EcommerceAPI.Business.src.DTO
         public ICollection<Image> Images { get; set; }
 
         // Implement later
-        // public ICollection<Review> Reviews { get; set; }
+        public ICollection<Review> Reviews { get; set; }
     }
 
     // Simple DTO for getAll performance
@@ -40,7 +40,6 @@ namespace EcommerceAPI.Business.src.DTO
 
         // Implement later
         // public ICollection<Image> Images { get; set; }
-        // public ICollection<Review> Reviews { get; set; }
     }
 
     public class ProductUpdateDTO

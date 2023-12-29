@@ -4,8 +4,8 @@ Authorization: Bearer eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW
 Content-Type: application/json
 
 {
-  "name": "Fashion",
-  "image": "fashion.png"
+  "name": "Games & Entertainment",
+  "image": "https://picsum.photos/1000/1000?random=101"
 }
 
 ### Get All Categories 

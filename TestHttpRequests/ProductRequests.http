@@ -7,7 +7,7 @@ Content-Type: application/json
   "title": "Picsum Test Image",
   "description": "A test product with good quality",
   "price": 50,
-  "categoryId": "afe74ab7-c191-44ec-b888-73f60d40eb0f",
+  "categoryId": "23b984f8-26f7-49a5-82ea-f4f5ddd16eca",
   "variants": [
     {
         "color": 0,
@@ -34,7 +34,7 @@ Content-Type: application/json
 }
 
 ### Get One Product
-GET http://localhost:5173/api/products/a87bc7b6-96ca-4d0b-a36c-45fe24810005
+GET http://localhost:5173/api/products/46e235cb-57a7-4eaa-b8c0-fc8096daee7b
 Content-Type: application/json
 
 ### Get All Products
@@ -42,7 +42,7 @@ GET http://localhost:5173/api/products
 Content-Type:  application/json
 
 ### Update one Product
-PATCH http://localhost:5173/api/products/d3111eaf-da87-4138-8efd-a2ed799a3a9c
+PATCH http://localhost:5173/api/products/46e235cb-57a7-4eaa-b8c0-fc8096daee7b
 Authorization: Bearer eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJkZjM0ZWI1MS1jNTFiLTRjZmEtODQ2ZS05YzRmMDNhOTUwZWMiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJhZG1pbkBtYWlsLmNvbSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluIiwiZXhwIjoxNzAzODYzNDY0fQ.4WfMPF2BfFUKN2ZczSonP2eVvpqLrNmbNxQrD0rAX7A
 Content-Type: application/json
 

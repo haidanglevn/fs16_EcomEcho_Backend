@@ -67,6 +67,7 @@ namespace EcommerceAPI.WebAPI.src.Repository
             .Include(p => p.Category)
             .Include(p => p.Variants)
             .Include(p => p.Images)
+            .Include(p => p.Reviews)
             .Where(u => u.Title.Contains(options.Search))
             .Skip(options.Offset)
             .Take(options.Limit);
@@ -78,6 +79,7 @@ namespace EcommerceAPI.WebAPI.src.Repository
                     .Include(p => p.Category)
                     .Include(p => p.Variants)
                     .Include(p => p.Images)
+                    .Include(p => p.Reviews)
                     .FirstOrDefault(p => p.Id == productId);
         }
 

@@ -6,7 +6,8 @@ Content-Type: application/json
   "firstName": "New",
   "lastName": "Man",
   "email": "newman1@mail.com",
-  "password": "Password123"
+  "password": "Password123",
+  "avatar":"https://images.unsplash.com/photo-1560807707-8cc77767d783?q=80&w=2535&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
 }
 
 # {
@@ -31,7 +32,7 @@ Content-Type: application/json
 
 {
   "email": "cena@mail.com",
-  "password": "password1"
+  "password": "password"
 }
 
 ### Check Email Availability
@@ -48,13 +49,13 @@ Authorization: Bearer eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW
 Content-Type: application/json
 
 ### Get One User
-GET http://localhost:5173/api/users/688f3ab6-fbc3-4e41-a7b2-870eeea446ea
+GET http://localhost:5173/api/users/611a0192-8b2e-4997-a8c8-59b93674d33b
 Authorization: Bearer eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI4OTFiNGU3OS0zZmNiLTRkMGItOTM2My02YmM3N2MwOTVmNzEiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJhZG1pbkBtYWlsLmNvbSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluIiwiZXhwIjoxNzA0NDQ1MTIzfQ.18b6aDcUSuXYpONF3uRlERk3XlcEMe90XgRos8SewNg
 Content-Type: application/json
 
 ### Get Current User Profile
 GET http://localhost:5173/api/users/profile
-Authorization: Bearer eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI4OTFiNGU3OS0zZmNiLTRkMGItOTM2My02YmM3N2MwOTVmNzEiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJhZG1pbkBtYWlsLmNvbSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluIiwiZXhwIjoxNzA0NDM2MTQ4fQ.Rdox_8oqgJFqvkWHalgivYCK28Q-Po7h-fGDt1HSIVU
+Authorization: Bearer eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI3NjA0NTRmYS00YWYxLTRhZTYtOWIxOC1lZDNhZWM0YmUyYTkiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJjZW5hQG1haWwuY29tIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiQ3VzdG9tZXIiLCJleHAiOjE3MDQ1Mjc0MzN9.d4k7pWe08SLGWAdBKgla1VjtV2yPqGOxz-PgKOcVr_k
 Content-Type: application/json
 
 ### Update Any User as Admin
@@ -76,8 +77,8 @@ Content-Type: application/json
 }
 
 ### Delete User
-DELETE http://localhost:5173/api/users/943f8ad0-7d12-45fb-a2f8-effe919c47a6
-Authorization: Bearer eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJmZTc4MTMwYy00MWZlLTRhY2YtODdmMy1kMjhiZmNjMjNhNGMiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJhZG1pbkBtYWlsLmNvbSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluIiwiZXhwIjoxNzAzNDMwMjE1fQ.Uv7qP7iSR7uONXckOsfBTQI7chXlyELTzrIR0Saapvg
+DELETE http://localhost:5173/api/users/fff37302-f2b0-4693-8a2f-27c73351426a
+Authorization: Bearer eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJhZDBhZDFiZS1mN2U1LTQ3YzctYjRjMy1jMTcyNTBjYmViYWIiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJhZG1pbkBtYWlsLmNvbSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluIiwiZXhwIjoxNzA0NjEwNjAzfQ.argDyed_N0e1IgW3Ig8hx5SsMShXP70VoV8iknd8ILU
 Content-Type: application/json
 
 
