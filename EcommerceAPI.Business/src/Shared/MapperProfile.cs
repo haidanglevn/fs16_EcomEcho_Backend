@@ -53,6 +53,7 @@ namespace EcommerceAPI.Business.src.Shared
             CreateMap<OrderUpdateDTO, Order>().ForAllMembers(opt => opt.Condition((src, dest, member) => member != null));
             // OrderItem
             CreateMap<OrderItemCreateDTO, OrderItem>();
+            CreateMap<OrderItem, OrderItemReadDTO>();
         }
     }
 }

@@ -63,12 +63,21 @@ namespace EcommerceAPI.Business.src.Service
 
         public IEnumerable<OrderReadDTO> GetAllOrders(GetAllParams options)
         {
-            throw new NotImplementedException();
+            return _orderRepo.GetAllOrders(options)
+            .Select(o => _mapper.Map<Order, OrderReadDTO>(o));
         }
 
         public OrderReadDTO? GetOneOrder(Guid orderId)
         {
-            throw new NotImplementedException();
+            var order = _orderRepo.GetOneOrder(orderId);
+            if (order is not null)
+            {
+                return _mapper.Map<Order, OrderReadDTO>(order);
+            }
+            else
+            {
+                return null;
+            }
         }
 
         public bool UpdateOrder(Guid orderId, OrderUpdateDTO orderUpdateDTO)

@@ -1,5 +1,6 @@
 using EcommerceAPI.Business.src.Abstraction;
 using EcommerceAPI.Business.src.DTO;
+using EcommerceAPI.Core.src.Parameter;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -41,6 +42,12 @@ namespace EcommerceAPI.Controller.src.Controller
             {
                 return BadRequest(e.Message);
             }
+        }
+
+        [HttpGet(), Authorize(Roles = "Admin")]
+        public ActionResult<IEnumerable<OrderReadDTO>> GetAllOrders([FromQuery] GetAllParams options)
+        {
+            return Ok(_orderService.GetAllOrders(options));
         }
     }
 }

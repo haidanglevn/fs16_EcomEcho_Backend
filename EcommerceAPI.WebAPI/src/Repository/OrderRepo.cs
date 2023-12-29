@@ -42,12 +42,13 @@ namespace EcommerceAPI.WebAPI.src.Repository
 
         public IEnumerable<Order> GetAllOrders(GetAllParams options)
         {
-            throw new NotImplementedException();
+            return _orders.Include(o => o.OrderItems).Skip(options.Offset)
+            .Take(options.Limit);
         }
 
         public Order? GetOneOrder(Guid orderId)
         {
-            throw new NotImplementedException();
+            return _orders.Include(o => o.OrderItems).FirstOrDefault(o => o.Id == orderId);
         }
 
         public bool UpdateOrder(Guid orderId, Order order)

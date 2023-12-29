@@ -46,3 +46,8 @@ Content-Type: application/json
         }
     ]
 }
+
+### Get all orders (Admin only)
+GET http://localhost:5173/api/orders
+Authorization: Bearer eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJhZDBhZDFiZS1mN2U1LTQ3YzctYjRjMy1jMTcyNTBjYmViYWIiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJhZG1pbkBtYWlsLmNvbSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluIiwiZXhwIjoxNzA0NTE2OTY5fQ.YYDxAikDMgUWJW4fYrxVlILqf5UPQqAzDj44enw7X9k
+Content-Type: application/json
