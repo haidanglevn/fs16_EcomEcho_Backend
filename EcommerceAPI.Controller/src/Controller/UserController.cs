@@ -27,6 +27,12 @@ namespace EcommerceAPI.Controller.src.Controller
             return CreatedAtAction(nameof(CreateNewUser), _userService.CreateNewUser(userCreateDTO));
         }
 
+        [HttpPost("admin/create-user"), Authorize(Roles = "Admin")]
+        public ActionResult<UserReadDTO> CreateNewAdminUser([FromBody] UserCreateAdminDTO userCreateAdminDTO)
+        {
+            return CreatedAtAction(nameof(CreateNewAdminUser), _userService.CreateNewAdminUser(userCreateAdminDTO));
+        }
+
         [HttpPost("login")]
         public IActionResult Login([FromBody] UserLoginDTO userLoginDTO)
         {

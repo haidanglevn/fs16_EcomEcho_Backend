@@ -35,6 +35,23 @@ namespace EcommerceAPI.Business.src.Service
             var result = _userRepo.CreateNewUser(_mapper.Map<UserCreateDTO, User>(hashUserCreateDTO));
             return _mapper.Map<User, UserReadDTO>(result);
         }
+        public UserReadDTO CreateNewAdminUser(UserCreateAdminDTO userCreateAdminDTO)
+        {
+            var passwordHash = _passwordHasher.HashPassword(userCreateAdminDTO.Password);
+
+            var hashUserCreateDTO = new UserCreateAdminDTO
+            {
+                Email = userCreateAdminDTO.Email,
+                FirstName = userCreateAdminDTO.FirstName,
+                LastName = userCreateAdminDTO.LastName,
+                Avatar = userCreateAdminDTO.Avatar,
+                Password = passwordHash,
+                Role = userCreateAdminDTO.Role
+            };
+
+            var result = _userRepo.CreateNewUser(_mapper.Map<UserCreateAdminDTO, User>(hashUserCreateDTO));
+            return _mapper.Map<User, UserReadDTO>(result);
+        }
 
         public UserReadDTO? Login(string email, string userInputPassword)
         {

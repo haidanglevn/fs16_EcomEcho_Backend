@@ -1,11 +1,11 @@
-### Create New User
+### Create New User (For all)
 POST http://localhost:5173/api/users
 Content-Type: application/json
 
 {
   "firstName": "New",
   "lastName": "Man",
-  "email": "newman1@mail.com",
+  "email": "newman2@mail.com",
   "password": "Password123",
   "avatar":"https://images.unsplash.com/photo-1560807707-8cc77767d783?q=80&w=2535&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
 }
@@ -16,6 +16,20 @@ Content-Type: application/json
 #   "email": "admin@mail.com",
 #   "password": "admin"
 # }
+
+### Create New User (For Admin)
+POST http://localhost:5173/api/users/admin/create-user
+Authorization: Bearer eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI4OTFiNGU3OS0zZmNiLTRkMGItOTM2My02YmM3N2MwOTVmNzEiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJhZG1pbkBtYWlsLmNvbSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluIiwiZXhwIjoxNzA0NDQ1MTIzfQ.18b6aDcUSuXYpONF3uRlERk3XlcEMe90XgRos8SewNg
+Content-Type: application/json
+
+{
+  "firstName": "New",
+  "lastName": "Man",
+  "email": "newman2@mail.com",
+  "password": "Password123",
+  "role": 1,
+  "avatar":"https://images.unsplash.com/photo-1560807707-8cc77767d783?q=80&w=2535&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+}
 
 ### User Login as Admin
 POST http://localhost:5173/api/users/login
@@ -77,7 +91,7 @@ Content-Type: application/json
 }
 
 ### Delete User
-DELETE http://localhost:5173/api/users/fff37302-f2b0-4693-8a2f-27c73351426a
+DELETE http://localhost:5173/api/users/c3e55cc3-6a7a-4c6c-9342-0a6f2a226be2
 Authorization: Bearer eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJhZDBhZDFiZS1mN2U1LTQ3YzctYjRjMy1jMTcyNTBjYmViYWIiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJhZG1pbkBtYWlsLmNvbSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluIiwiZXhwIjoxNzA0NjEwNjAzfQ.argDyed_N0e1IgW3Ig8hx5SsMShXP70VoV8iknd8ILU
 Content-Type: application/json
 

@@ -9,6 +9,7 @@ namespace EcommerceAPI.Business.src.Abstraction
         UserReadDTO? GetOneUser(Guid userId);
         UserReadSimpleDTO? GetOneUserSimple(Guid userId);
         UserReadDTO CreateNewUser(UserCreateDTO user);
+        UserReadDTO CreateNewAdminUser(UserCreateAdminDTO user);
         UserReadDTO? Login(string email, string userInputPassword);
         bool CheckEmail(string email);
         bool UpdateUser(Guid userId, UserUpdateDTO userUpdateDTO);

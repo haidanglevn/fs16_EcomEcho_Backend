@@ -11,6 +11,7 @@ namespace EcommerceAPI.Business.src.Shared
             // User
             CreateMap<User, UserReadDTO>();
             CreateMap<UserCreateDTO, User>();
+            CreateMap<UserCreateAdminDTO, User>();
             CreateMap<UserUpdateDTO, User>()
                 .ForMember(dest => dest.FirstName, opt => opt.Condition(src => src.FirstName != null))
                 .ForMember(dest => dest.LastName, opt => opt.Condition(src => src.LastName != null))
