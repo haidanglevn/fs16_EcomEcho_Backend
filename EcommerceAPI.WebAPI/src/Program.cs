@@ -55,7 +55,8 @@ builder.Services.AddScoped<IPasswordHasher, PasswordHasher>();
 
 // add automapper dependency injections
 builder.Services.AddAutoMapper(typeof(UserService).Assembly);
-var connectionString = builder.Configuration.GetConnectionString("LocalDb");
+var connectionString = builder.Configuration.GetConnectionString("Remote");
+// var connectionString = builder.Configuration.GetConnectionString("LocalDb");
 var dataSourceBuilder = new NpgsqlDataSourceBuilder(connectionString);
 dataSourceBuilder.MapEnum<Role>();
 dataSourceBuilder.MapEnum<Status>();
@@ -91,11 +92,14 @@ builder.Services.AddAuthentication().AddJwtBearer(options =>
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+// if (app.Environment.IsDevelopment())
+// {
+//     app.UseSwagger();
+//     app.UseSwaggerUI();
+// }
+
+app.UseSwagger();
+app.UseSwaggerUI();
 
 app.UseHttpsRedirection();
 

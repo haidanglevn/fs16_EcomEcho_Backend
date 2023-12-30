@@ -32,7 +32,8 @@ Content-Type: application/json
 }
 
 ### User Login as Admin
-POST http://localhost:5173/api/users/login
+POST https://ecomecho.azurewebsites.net/api/users/login
+
 Content-Type: application/json
 
 {
