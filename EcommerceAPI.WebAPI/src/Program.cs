@@ -21,7 +21,7 @@ builder.Services.AddCors(options =>
         builder.WithOrigins("http://localhost:3000")
                .AllowAnyHeader()
                .AllowAnyMethod();
-        builder.WithOrigins("http://ecomecho.netlify.app/")
+        builder.WithOrigins("https://ecomecho.netlify.app/")
                .AllowAnyHeader()
                .AllowAnyMethod();
     });
@@ -48,6 +48,8 @@ builder.Services.AddScoped<IImageRepo, ImageRepo>();
 builder.Services.AddScoped<IImageService, ImageService>();
 builder.Services.AddScoped<IOrderRepo, OrderRepo>();
 builder.Services.AddScoped<IOrderService, OrderService>();
+builder.Services.AddScoped<IAddressRepo, AddressRepo>();
+builder.Services.AddScoped<IAddressService, AddressService>();
 
 builder.Services.AddScoped<ITokenService, TokenService>();
 
