@@ -40,7 +40,8 @@ Register and login to explore the users features. Contact owner for Admin accoun
 
 ### Backend
 
-The ERD diagrams show all the entities and their relations:
+The ERD diagrams show all the entities and their relations:![entities](https://github.com/haidanglevn/fs16_CSharp-FullStack/assets/24937536/19bfb32b-b0e6-4532-9edc-2a79e4718a2a)
+
 
 ### Installation and usage
 
