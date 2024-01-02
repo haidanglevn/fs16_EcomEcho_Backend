@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using AutoMapper;
 using EcommerceAPI.Business.src.Abstraction;
 using EcommerceAPI.Business.src.DTO;
@@ -8,6 +9,7 @@ using EcommerceAPI.Core.src.Entity;
 using EcommerceAPI.Core.src.Parameter;
 using FluentAssertions;
 using Moq;
+using Xunit.Sdk;
 
 namespace EcommerceAPI.Test
 {
@@ -38,6 +40,23 @@ namespace EcommerceAPI.Test
             CategoryId = Category1Guid,
         };
 
+        public ProductCreateDTO product3CreateDTO = new()
+        {
+            Title = "Fashion Product 3",
+            Description = "Description for Fashion Product 3",
+            Price = 160,
+            CategoryId = Category1Guid,
+        };
+
+        public Product mockProduct3 = new()
+        {
+            Id = Guid.NewGuid(),
+            Title = "Fashion Product 3",
+            Description = "Description for Fashion Product 3",
+            Price = 160,
+            CategoryId = Category1Guid,
+        };
+
         public List<Product> mockProducts;
 
         public ProductServiceTests()
@@ -54,11 +73,28 @@ namespace EcommerceAPI.Test
                 mockProduct1, mockProduct2
             };
 
+            ProductCreateDTO product3CreateDTO = new()
+            {
+                Title = "Fashion Product 3",
+                Description = "Description for Fashion Product 3",
+                Price = 160,
+                CategoryId = Category1Guid,
+            };
+
+            var mockProduct3 = new Product
+            {
+                Id = Guid.NewGuid(),
+                Title = "Fashion Product 3",
+                Description = "Description for Fashion Product 3",
+                Price = 160,
+                CategoryId = Category1Guid,
+            };
 
             _mockProductRepo.Setup(repo => repo.DeleteProduct(FashionProduct2Guid)).Returns(true);
             _mockProductRepo.Setup(repo => repo.GetAllProducts(options)).Returns(mockProducts);
             _mockProductRepo.Setup(repo => repo.GetOneProduct(FashionProduct1Guid)).Returns(mockProduct1);
             _mockProductRepo.Setup(repo => repo.CheckProductExist(FashionProduct1Guid)).Returns(true);
+
             _productService = new ProductService(_mockProductRepo.Object, _mapper, _mockCategoryRepo.Object);
         }
 
@@ -84,6 +120,18 @@ namespace EcommerceAPI.Test
 
             result.Should().NotBeNull();
             result.Should().BeOfType(typeof(ProductReadDTO));
+        }
+
+        [Fact]
+        public void ProductService_CreateNewProduct_ReturnsTheCreatedProduct()
+        {
+            _mockCategoryRepo.Setup(repo => repo.CheckCategoryExist(Category1Guid)).Returns(true);
+            _mockProductRepo.Setup(repo => repo.CreateNewProduct(_mapper.Map<Product>(product3CreateDTO))).Returns(mockProduct3);
+
+            var result = _productService.CreateNewProduct(product3CreateDTO);
+
+            _mockCategoryRepo.Verify(repo => repo.CheckCategoryExist(Category1Guid), Times.Once);
+            // _mockProductRepo.Verify(repo => repo.CreateNewProduct(_mapper.Map<Product>(product3CreateDTO)), Times.Once);
         }
 
     }
