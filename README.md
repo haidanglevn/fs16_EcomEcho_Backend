@@ -1,4 +1,4 @@
-# Fullstack Project
+# EcomEcho Fullstack Project
 
 ![TypeScript](https://img.shields.io/badge/TypeScript-v.4-green)
 ![SASS](https://img.shields.io/badge/SASS-v.4-hotpink)
@@ -8,102 +8,157 @@
 ![EF Core](https://img.shields.io/badge/EF%20Core-v.7-cyan)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-v.14-drakblue)
 
-This project involves creating a Fullstack project with React and Redux in the frontend and ASP.NET Core 7 in the backend. The goal is to provide a seamless experience for users, along with robust management system for administrators.
-
-- Frontend: SASS, TypeScript, React, Redux Toolkit
-- Backend: ASP.NET Core, Entity Framework Core, PostgreSQL
-
-You can follow the same topics as your backend project or choose the alternative one, between E-commerce and Library. You can reuse the previous frontend project, with necessary modification to fit your backend server.
-
 ## Table of Contents
 
-1. [Instruction](#instruction)
+1. [Introduction](#introduction)
+   - [Frontend](#frontend)
+   - [Backend](#backend)
+   - [Installation and Usage](#installation-and-usage)
 2. [Features](#features)
-   - [Mandatory features](#mandatory-features)
-   - [Extra features](#extra-features)
-3. [Requirements](#requirements)
-4. [Getting Started](#getting-started)
-5. [Testing](#testing)
+3. [Architecture and Design](#architecture--design)
+   - [CLEAN Architecture](#clean-architecture)
+   - [Folder Structure](#folder-structure)
+4. [Testing](#testing)
 
-## Instruction
+## Introduction
 
-This repository should be used only for backend server. The frontend server should be done in a separate repository [here](https://github.com/Integrify-Finland/fs16_6-frontend-project). You can modify your previous frontend project and instructors will check the submissions (pull requests) in the frontend project repository. The modified frontend server need to be connected with this backend server to make a whole fullstack project.
+This project involves creating a Fullstack project with React and Redux in the frontend and ASP.NET Core 7 in the backend. The goal is to provide a seamless experience for users, along with robust management system for administrators as an Ecommerce website.
+
+- Frontend: MaterialUI, TypeScript, React, Redux Toolkit
+- Backend: ASP.NET Core, Entity Framework Core, PostgreSQL
+- Hosting: Netlify, Azure, ElephantSQL
+
+View documentation of the backend with [SwaggerUI](https://ecomecho.azurewebsites.net/swagger/index.html)
 
 ### Frontend
 
-If you only modify the previoud frontend project, you can work on the same repository and there is no need to open new pull request. However, you can get back to your previous pull request and remove all the labels. In case you want to make new project from scratch, you can fork and clone the original repository and open new pullrequest for your new frontend.
+FrontEnd Repo and instruction on installing can be found here [https://github.com/haidanglevn/fs16_Frontend-project](https://github.com/haidanglevn/fs16_Frontend-project)
+
+Live website [https://ecomecho.netlify.app/](https://ecomecho.netlify.app/)
+
+Register and login to explore the users features. Contact owner for Admin account.
 
 ### Backend
 
-Generate a solution file inside this repository. All the project layers of backend server should be added into this solution.
+The ERD diagrams show all the entities and their relations:
+
+### Installation and usage
+
+You can visit the [deployed SwaggerUI](https://ecomecho.azurewebsites.net/swagger/index.html), or follow these steps to set it up as local repository.
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/haidanglevn/fs16_EcomEcho_Backend.git
+   ```
+2. Navigate to WebAPI layer:
+   ```bash
+   cd EcommerceAPI.WebAPI
+   ```
+3. Create a new file "appsetting.json", add the content as follow, mainly focus on setting up the right connection string to your local PostgreSQL.
+
+```
+{
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.AspNetCore": "Warning"
+    }
+  },
+  "AllowedHosts": "*",
+  "ConnectionStrings": {
+    "LocalDb": "Host=localhost;Database=YourDatabase;Username=username;Password=password",
+  },
+  "Jwt": {
+    "Token": "Your secret key for generate token"
+  }
+}
+```
+
+4. Create a migration and update the database with seed data:
+
+```
+dotnet ef migrations add NewDatabase
+dotnet ef database update
+```
+
+4. Run the app:
+   ```bash
+   dotnet watch
+   ```
+5. (Optional) Run all the tests:
+   ```bash
+   dotnet test
+   ```
 
 ## Features
 
-### Mandatory features
+| Entity   | User Features                                                                        | Admin Features (Include User Features)           |
+| -------- | ------------------------------------------------------------------------------------ | ------------------------------------------------ |
+| User     | Create "Customer" user, Edit selfInfo (firstName, lastName, email, password, avatar) | Create "Admin" user, Update & Delete any users   |
+| Category | View all categories                                                                  | Create, Update, Delete any categories            |
+| Product  | View all products                                                                    | Create, Update, Delete any products              |
+| Image    | View all images of one products                                                      | Update images to products                        |
+| Review   | Write review to a product (not ready), view a product's reviews from other           | View & Delete reviews (not ready)                |
+| Order    | Add variant of product to cart, create an order                                      | View all orders, Edit status of order(not ready) |
 
-#### User Functionalities
+## Architecture & Design
 
-1. User Management: Users should be able to register for an user account and log in. Users cannot register themselves as admin.
-2. Browse Products: Users should be able to view all available products and single product, search and sort products.
-3. Add to Cart: Users should be able to add products to a shopping cart, and manage cart.
-4. Checkout: Users should be able to place orders.
+### CLEAN Architecture
 
-#### Admin Functionalities
+CLEAN architecture is applied to this app. The app is seperated into 4 layers (from inside out): Core, Business, Controller, WebAPI.
 
-1. User Management: Admins should be able to view and delete users.
-2. Product Management: Admins should be able to view, edit, delete and add new products.
-3. Order Management: Admins should be able to view all orders.
+- **Core layer** holds the most basic shape of all the entities and the interfaces for all the repos in Abstraction folder.
+- **Business layer** holds the business logic of the app in the form of Services for each entities. Here is also where all the Data Transfer Object (DTO) locate, together with the interfaces for the services and a MapperProfile for AutoMapper functionalities.
+- **Controller layer** define the endpoints that the backend will be available to user, with authorization for any that needed.
+- **WebAPI layer** is the outer most layer to build and the file Program.cs to execute the app is here. This layer also has the repository, the databaseContext to connect to external DB, and the seed data.
 
-### Extra features
+### Folder Structure
 
-#### User Functionalities
+- 📂 `EcommerceAPI.Core/`
+  - 📂 `src/`
+    - 📂 `Abstraction/`
+    - 📂 `Entity/`
+    - 📂 `Parameter/`
+- 📂 `EcommerceAPI.Business/`
 
-1. User Management: Users should be able to view and edit only certain properties in their accounts. They also can unregister their own accounts.
-2. Authentication and account registration with Google Oauth.
-3. Order Management: Users should be able to view their order history, track the status of their orders, and potentially cancel orders within a certain timeframe.
+  - 📂 `src/`
 
-#### Admin Functionalities
+    - 📂 `Abstraction/`
+    - 📂 `DTO/`
 
-1. User Management: Admins should be able to edit users' role and create new users and admins.
-2. Order Management: Admins should be able to update order status, view order details, and cancel orders.
+      - 📄 `AddressDTO.cs`
+      - 📄 `ProductDTO.cs`
+      - 📄 `OrderDTO.cs`
+      - ... and other DTOs
 
-And any other extra features that you want to implement (like file upload, reviews, payment, email, etc.).
+    - 📂 `Service/`
+      - 📄 `AddressService.cs`
+      - 📄 `ProductService.cs`
+      - 📄 `OrderService.cs`
+      - ... and other services
+    - 📂 `Shared/`
+      - 📄 `MapperProfile.cs`
 
-## Requirements
+- 📂 `EcommerceAPI.Controller/`
 
-1. Apply CLEAN architecture in your backend. In README file, explain the architecture of your project as well.
-2. Error handler: This will ensure any exceptions thrown in your application are handled appropriately and helpful error messages are returned.
-3. In backend server, unit testing (xunit) should be done, at least for Service(Use case) layer. We recommend to test entities, repositories and controllers as well.
-4. Document with Swagger: Make sure to annotate your API endpoints and generate a Swagger UI for easier testing and documentation.
-5. Project should have proper file structure, naming convention, and comply with Rest API.
-6. `README` file should sufficiently describe the project, as well as the deployment, link to frontend github as well.
-7. Frontend, backend, and database servers need to be available in the live servers.  
+  - 📂 `src/Controller`
+    - 📄 `AddressController.cs`
+    - 📄 `ProductController.cs`
+    - 📄 `OrderController.cs`
+    - ... and other Controllers
 
-## Getting Started
+- 📂 `EcommerceAPI.WebAPI/`
 
-1. Start with backend first before moving to frontend.
-2. In the backend, here is the recommended order:
+  - 📂 `src/`
+    - 📂 `Database/`
+    - 📂 `Repository/`
+    - 📂 `Middleware/`
+    - 📄 `Program.cs`
 
-   - Plan Your Database Schema before start coding
-
-   - Set Up the Project Structure
-
-   - Build the models
-
-   - Create the Repositories
-
-   - Build the Services
-
-   - Set Up Authentication & Authorization
-
-   - Build the Controllers
-
-   - Implement Error Handling Middleware
-
-3. You should focus on the mandatory features first. Make sure you have minimal working project before opting for advanced functionalities.
-
-Testing should be done along the development circle, early and regularly.
+- 📂 `EcommerceAPI.Test/`
+- 📄 `README.md`
+- 📄 `.gitignore`
 
 ## Testing
 
-Unit testing, and optionally integration testing, must be included for both frontend and backend code. Aim for high test coverage and ensure all major functionalities are covered.
+**WebAPI layer** is a seperate layer just for testing. Main packages here are Moq and xUnits. There are tests for some of the services in Business layer, but more tests are being added.
