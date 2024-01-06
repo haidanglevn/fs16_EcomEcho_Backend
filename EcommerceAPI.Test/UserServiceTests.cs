@@ -70,6 +70,7 @@ namespace EcommerceAPI.Test
         {
             var email = "test@email.com";
             var password = "password";
+            var hashed = _passwordHasher.HashPassword(password);
             var mockUser = new User()
             {
                 Id = Guid.NewGuid(),
@@ -77,11 +78,10 @@ namespace EcommerceAPI.Test
                 LastName = "admin",
                 Email = "test@email.com",
                 Avatar = "https://picsum.photos/1000/1000?random=150",
-                Password = "password",
+                Password = hashed,
                 Role = Role.Admin
             };
-
-            // _mockUserRepo.Setup(repo => repo.FindByEmail(email)).Returns(mockUser);
+            _mockUserRepo.Setup(repo => repo.FindByEmail(email)).Returns(mockUser);
             //Act
             var result = _userService.Login(email, password);
 

@@ -9,6 +9,7 @@ using EcommerceAPI.Core.src.Entity;
 using EcommerceAPI.Core.src.Parameter;
 using FluentAssertions;
 using Moq;
+using Newtonsoft.Json;
 using Xunit.Sdk;
 
 namespace EcommerceAPI.Test
@@ -46,6 +47,13 @@ namespace EcommerceAPI.Test
             Description = "Description for Fashion Product 3",
             Price = 160,
             CategoryId = Category1Guid,
+        };
+
+        public ProductUpdateDTO product3UpdateDTO = new()
+        {
+            Title = "Fashion Product 3",
+            Description = "Description for Fashion Product 3",
+            Price = 160,
         };
 
         public Product mockProduct3 = new()
@@ -126,13 +134,21 @@ namespace EcommerceAPI.Test
         public void ProductService_CreateNewProduct_ReturnsTheCreatedProduct()
         {
             _mockCategoryRepo.Setup(repo => repo.CheckCategoryExist(Category1Guid)).Returns(true);
-            _mockProductRepo.Setup(repo => repo.CreateNewProduct(_mapper.Map<Product>(product3CreateDTO))).Returns(mockProduct3);
+            _mockProductRepo.Setup(repo => repo.CreateNewProduct(It.IsAny<Product>())).Returns(mockProduct3);
 
             var result = _productService.CreateNewProduct(product3CreateDTO);
 
+            Assert.Equal(result.Title, mockProduct3.Title);
+
             _mockCategoryRepo.Verify(repo => repo.CheckCategoryExist(Category1Guid), Times.Once);
-            // _mockProductRepo.Verify(repo => repo.CreateNewProduct(_mapper.Map<Product>(product3CreateDTO)), Times.Once);
+            _mockProductRepo.Verify(repo => repo.CreateNewProduct(It.IsAny<Product>()), Times.Once);
         }
 
+        [Fact]
+        public void ProductService_UpdateProduct_ShouldReturnTrue()
+        {
+            _mockProductRepo.Setup(repo => repo.UpdateProduct(It.IsAny<Guid>(), It.IsAny<Product>())).Returns(true);
+            Assert.True(_productService.UpdateProduct(mockProduct3.Id, product3UpdateDTO));
+        }
     }
 }
