@@ -34,7 +34,7 @@ namespace EcommerceAPI.Business.src.Service
 
         public bool DeleteAddress(Guid addressId)
         {
-            throw new NotImplementedException();
+            return _addressRepo.DeleteAddress(addressId);
         }
 
         public IEnumerable<AddressReadDTO> GetAddressesByUserId(Guid userId)
@@ -47,9 +47,17 @@ namespace EcommerceAPI.Business.src.Service
             throw new NotImplementedException();
         }
 
-        public AddressReadDTO GetOneAddress(Guid addressId)
+        public AddressReadDTO? GetOneAddress(Guid addressId)
         {
-            throw new NotImplementedException();
+            var address = _addressRepo.GetOneAddress(addressId);
+            if (address is not null)
+            {
+                return _mapper.Map<Address, AddressReadDTO>(address);
+            }
+            else
+            {
+                return null;
+            }
         }
 
         public bool UpdateAddress(Guid addressId, AddressUpdateDTO address)

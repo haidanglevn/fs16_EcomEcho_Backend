@@ -8,7 +8,7 @@ namespace EcommerceAPI.Business.src.Abstraction
         AddressReadDTO CreateNewAddress(AddressCreateDTO address);
         IEnumerable<AddressReadDTO> GetAllAddresses(GetAllParams options);
         IEnumerable<AddressReadDTO> GetAddressesByUserId(Guid userId);
-        AddressReadDTO GetOneAddress(Guid addressId);
+        AddressReadDTO? GetOneAddress(Guid addressId);
         bool UpdateAddress(Guid addressId, AddressUpdateDTO address);
         bool DeleteAddress(Guid addressId);
 

@@ -51,9 +51,9 @@ namespace EcommerceAPI.WebAPI.src.Repository
             throw new NotImplementedException();
         }
 
-        public Address GetOneAddress(Guid addressId)
+        public Address? GetOneAddress(Guid addressId)
         {
-            throw new NotImplementedException();
+            return _addresses.FirstOrDefault(a => a.Id == addressId);
         }
 
         public bool UpdateAddress(Guid addressId, Address address)

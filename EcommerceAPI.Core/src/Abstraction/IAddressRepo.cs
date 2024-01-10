@@ -8,7 +8,7 @@ namespace EcommerceAPI.Core.src.Abstraction
         Address CreateNewAddress(Address address);
         IEnumerable<Address> GetAllAddresses(GetAllParams options);
         IEnumerable<Address> GetAddressesByUserId(Guid userId);
-        Address GetOneAddress(Guid addressId);
+        Address? GetOneAddress(Guid addressId);
         bool UpdateAddress(Guid addressId, Address address);
         bool DeleteAddress(Guid addressId);
     }

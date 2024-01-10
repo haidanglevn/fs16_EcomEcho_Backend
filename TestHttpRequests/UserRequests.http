@@ -33,7 +33,6 @@ Content-Type: application/json
 
 ### User Login as Admin
 POST https://ecomecho.azurewebsites.net/api/users/login
-
 Content-Type: application/json
 
 {
