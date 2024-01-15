@@ -52,7 +52,7 @@ namespace EcommerceAPI.WebAPI.src.Repository
             var product = _products.Find(productId);
             if (product != null)
             {
-                _products.Remove(product);
+                product.IsDeleted = true;
                 _database.SaveChanges();
                 return true;
             }

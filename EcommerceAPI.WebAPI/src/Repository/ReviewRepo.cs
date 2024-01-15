@@ -26,7 +26,7 @@ namespace EcommerceAPI.WebAPI.src.Repository
             var review = _reviews.Find(reviewId);
             if (review != null)
             {
-                _reviews.Remove(review);
+                review.IsDeleted = true;
                 _database.SaveChanges();
                 return true;
             }

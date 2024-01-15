@@ -27,7 +27,7 @@ namespace EcommerceAPI.WebAPI.src.Repository
             var category = _categories.Find(categoryId);
             if (category != null)
             {
-                _categories.Remove(category);
+                category.IsDeleted = true;
                 _database.SaveChanges();
                 return true;
             }

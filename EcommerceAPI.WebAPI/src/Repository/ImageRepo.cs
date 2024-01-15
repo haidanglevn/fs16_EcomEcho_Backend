@@ -26,7 +26,7 @@ namespace EcommerceAPI.WebAPI.src.Repository
             var image = _images.Find(imageId);
             if (image != null)
             {
-                _images.Remove(image);
+                image.IsDeleted = true;
                 _database.SaveChanges();
                 return true;
             }

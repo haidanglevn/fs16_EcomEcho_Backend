@@ -28,7 +28,7 @@ namespace EcommerceAPI.WebAPI.src.Repository
             var user = _users.Find(userId);
             if (user != null)
             {
-                _users.Remove(user);
+                user.IsDeleted = true;
                 _database.SaveChanges();
                 return true;
             }

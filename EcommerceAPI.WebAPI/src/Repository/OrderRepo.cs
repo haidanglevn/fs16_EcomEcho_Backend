@@ -1,3 +1,4 @@
+using System.Transactions;
 using EcommerceAPI.Core.src.Abstraction;
 using EcommerceAPI.Core.src.Entity;
 using EcommerceAPI.Core.src.Parameter;
@@ -19,6 +20,7 @@ namespace EcommerceAPI.WebAPI.src.Repository
         }
         public Order CreateNewOrder(Order order)
         {
+            using var scope = new TransactionScope();
             try
             {
                 _orders.Add(order);
@@ -27,17 +29,32 @@ namespace EcommerceAPI.WebAPI.src.Repository
                     _orderItems.Add(orderItem);
                 }
                 _database.SaveChanges();
+
+                scope.Complete();
+                return order;
             }
             catch (Exception e)
             {
-                throw new Exception("Error creating new order: " + e.Message.ToString());
+                Console.WriteLine("Exception caught: " + e.Message);
+                Exception? inner = e.InnerException;
+                while (inner != null)
+                {
+                    throw new Exception("Inner exception: " + inner.Message);
+                }
+                throw new Exception("Error creating new order: " + e.Message);
             }
-            return order;
         }
 
         public bool DeleteOrder(Guid orderId)
         {
-            throw new NotImplementedException();
+            var order = _orders.Find(orderId);
+            if (order != null)
+            {
+                order.IsDeleted = true;
+                _database.SaveChanges();
+                return true;
+            }
+            return false;
         }
 
         public IEnumerable<Order> GetAllOrders(GetAllParams options)

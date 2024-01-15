@@ -49,6 +49,14 @@ namespace EcommerceAPI.WebAPI.src.Database
             modelBuilder.Entity<Review>().HasData(SeedData.Reviews());
             modelBuilder.Entity<Address>().HasData(SeedData.Addresses());
 
+            modelBuilder.Entity<Order>().HasQueryFilter(o => !o.IsDeleted);
+            modelBuilder.Entity<User>().HasQueryFilter(u => !u.IsDeleted);
+            modelBuilder.Entity<Address>().HasQueryFilter(a => !a.IsDeleted);
+            modelBuilder.Entity<Category>().HasQueryFilter(c => !c.IsDeleted);
+            modelBuilder.Entity<Product>().HasQueryFilter(p => !p.IsDeleted);
+            modelBuilder.Entity<Image>().HasQueryFilter(i => !i.IsDeleted);
+            modelBuilder.Entity<Review>().HasQueryFilter(r => !r.IsDeleted);
+
             // Update/Delete behaviors
             modelBuilder.Entity<User>()
                .HasMany(u => u.Addresses)

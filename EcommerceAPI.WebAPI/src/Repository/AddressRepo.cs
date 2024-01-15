@@ -34,7 +34,7 @@ namespace EcommerceAPI.WebAPI.src.Repository
             var address = _addresses.Find(addressId);
             if (address != null)
             {
-                _addresses.Remove(address);
+                address.IsDeleted = true;
                 _database.SaveChanges();
                 return true;
             }
