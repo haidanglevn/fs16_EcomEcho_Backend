@@ -16,8 +16,7 @@ namespace EcommerceAPI.Business.src.Shared
                 .ForMember(dest => dest.FirstName, opt => opt.Condition(src => src.FirstName != null))
                 .ForMember(dest => dest.LastName, opt => opt.Condition(src => src.LastName != null))
                 .ForMember(dest => dest.Email, opt => opt.Condition(src => src.Email != null))
-                // Add similar lines for other properties that are optional in the update
-                .ForMember(dest => dest.Role, opt => opt.Ignore()); // Explicitly ignore Role
+                .ForMember(dest => dest.Role, opt => opt.Ignore());
             CreateMap<User, UserReadNoAddressDTO>();
             CreateMap<User, UserReadSimpleDTO>();
 

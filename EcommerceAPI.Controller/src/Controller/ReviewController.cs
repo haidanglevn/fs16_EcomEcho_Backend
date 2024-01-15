@@ -84,7 +84,6 @@ namespace EcommerceAPI.Controller.src.Controller
             }
             catch (Exception e)
             {
-                // Log the exception details here
                 return StatusCode(500, $"An error occurred while updating the review: {e.Message}");
             }
         }

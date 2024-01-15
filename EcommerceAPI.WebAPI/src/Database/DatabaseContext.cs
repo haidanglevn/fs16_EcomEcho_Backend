@@ -51,9 +51,9 @@ namespace EcommerceAPI.WebAPI.src.Database
 
             // Update/Delete behaviors
             modelBuilder.Entity<User>()
-               .HasMany(u => u.Addresses) // User has many Addresses
+               .HasMany(u => u.Addresses)
                .WithOne()
-               .OnDelete(DeleteBehavior.Cascade); // Cascade delete behavior
+               .OnDelete(DeleteBehavior.Cascade);
 
             modelBuilder.Entity<Product>()
                .HasMany(p => p.Images)

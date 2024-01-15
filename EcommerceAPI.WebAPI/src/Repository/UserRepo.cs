@@ -67,7 +67,6 @@ namespace EcommerceAPI.WebAPI.src.Repository
             return false;
         }
 
-        // Update utility for checking null value
         private void UpdateEntityFields(User existingUser, User user)
         {
             var dtoProperties = user.GetType().GetProperties();

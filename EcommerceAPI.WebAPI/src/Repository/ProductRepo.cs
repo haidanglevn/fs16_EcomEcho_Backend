@@ -24,10 +24,8 @@ namespace EcommerceAPI.WebAPI.src.Repository
         {
             try
             {
-                // Retrieve the category using the CategoryId from the product
                 var category = _database.Categories.FirstOrDefault(c => c.Id == product.CategoryId) ?? throw new Exception("Category not found");
 
-                // Associate the product with the retrieved category
                 product.Category = category;
 
                 _products.Add(product);

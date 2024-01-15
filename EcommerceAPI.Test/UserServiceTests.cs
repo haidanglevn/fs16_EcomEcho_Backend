@@ -25,14 +25,12 @@ namespace EcommerceAPI.Test
             _mapper = new Mapper(config);
             _passwordHasher = new PasswordHasher();
 
-            // Initialize UserService with mocks
             _userService = new UserService(_mockUserRepo.Object, _mapper, _passwordHasher);
         }
 
         [Fact]
         public void UserService_GetAllUsers_ShouldReturnAllUsers()
         {
-            // Arrange
             GetAllParams options = new();
 
             var users = new List<User>{
@@ -57,10 +55,8 @@ namespace EcommerceAPI.Test
             };
 
             _mockUserRepo.Setup(repo => repo.GetAllUsers(options)).Returns(users.AsEnumerable());
-            // Act
             var result = _userService.GetAllUsers(options);
 
-            //Assert
             result.Should().NotBeNullOrEmpty();
             result.Should().HaveCount(2);
         }
@@ -82,10 +78,8 @@ namespace EcommerceAPI.Test
                 Role = Role.Admin
             };
             _mockUserRepo.Setup(repo => repo.FindByEmail(email)).Returns(mockUser);
-            //Act
             var result = _userService.Login(email, password);
 
-            // Assert
             _mockUserRepo.Verify(repo => repo.FindByEmail(email), Times.Once);
         }
 

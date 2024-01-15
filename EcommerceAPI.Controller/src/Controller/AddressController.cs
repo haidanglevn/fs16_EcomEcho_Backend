@@ -84,7 +84,6 @@ namespace EcommerceAPI.Controller.src.Controller
         [HttpDelete("{addressId}"), Authorize]
         public IActionResult DeleteAddress(Guid addressId)
         {
-            // Extract userId from the token claims
             var userIdClaim = HttpContext.User.FindFirst("userId")?.Value;
             if (userIdClaim == null)
             {

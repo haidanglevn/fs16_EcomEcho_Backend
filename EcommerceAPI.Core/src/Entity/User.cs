@@ -11,7 +11,6 @@ namespace EcommerceAPI.Core.src.Entity
         public string Password { get; set; }
         public string? Avatar { get; set; }
 
-        // Navigation properties
         public IEnumerable<Address> Addresses { get; set; }
         public IEnumerable<Review> Reviews { get; set; }
         public IEnumerable<Order> Orders { get; set; }

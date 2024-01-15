@@ -75,7 +75,6 @@ namespace EcommerceAPI.Controller.src.Controller
         [HttpGet("profile"), Authorize]
         public ActionResult<UserReadDTO> GetCurrentUserProfile()
         {
-            // Extract userId from the token claims
             var userIdClaim = HttpContext.User.FindFirst("userId")?.Value;
             if (userIdClaim == null)
             {
@@ -87,7 +86,6 @@ namespace EcommerceAPI.Controller.src.Controller
                 return BadRequest("Invalid user ID in token.");
             }
 
-            // Fetch the user profile using the userId
             var userProfile = _userService.GetOneUser(userId);
             if (userProfile == null)
             {
@@ -141,10 +139,9 @@ namespace EcommerceAPI.Controller.src.Controller
         }
 
         [HttpPost("change-password")]
-        [Authorize] // Ensure only authenticated users can access this method
+        [Authorize]
         public IActionResult ChangePassword([FromBody] UserChangePasswordDTO changePasswordDTO)
         {
-            // Extract userId from the token claims
             var userIdClaim = HttpContext.User.FindFirst("userId")?.Value;
             if (userIdClaim == null)
             {
@@ -158,7 +155,6 @@ namespace EcommerceAPI.Controller.src.Controller
 
             try
             {
-                // Call the ChangePassword method from the UserService
                 var result = _userService.ChangePassword(userId, changePasswordDTO);
                 if (result)
                 {
@@ -171,7 +167,6 @@ namespace EcommerceAPI.Controller.src.Controller
             }
             catch (Exception ex)
             {
-                // Return a more specific error message or log the exception as needed
                 return BadRequest(ex.Message);
             }
         }

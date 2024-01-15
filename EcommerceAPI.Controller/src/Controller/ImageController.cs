@@ -25,7 +25,7 @@ namespace EcommerceAPI.Controller.src.Controller
             }
             catch (Exception)
             {
-                return StatusCode(500, "An error occurred while creating the review.");
+                return StatusCode(500, "An error occurred while creating the image.");
             }
         }
 
