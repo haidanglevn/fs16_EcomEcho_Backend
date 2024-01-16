@@ -1,3 +1,4 @@
+using System.Reflection;
 using EcommerceAPI.Core.src.Abstraction;
 using EcommerceAPI.Core.src.Entity;
 using EcommerceAPI.Core.src.Parameter;
@@ -38,12 +39,12 @@ namespace EcommerceAPI.WebAPI.src.Repository
                     _images.Add(image);
                 }
                 _database.SaveChanges();
+                return product;
             }
             catch (Exception e)
             {
                 throw new Exception("Error creating new product in Product table: " + e.Message.ToString());
             }
-            return product;
         }
 
 
@@ -95,25 +96,33 @@ namespace EcommerceAPI.WebAPI.src.Repository
             return false;
         }
 
-        private void UpdateEntityFields(Product existingProduct, Product product)
+        private static void UpdateEntityFields(Product existingProduct, Product product)
         {
             var dtoProperties = product.GetType().GetProperties();
             foreach (var dtoProp in dtoProperties)
             {
-                if (dtoProp.Name == "Id" || (dtoProp.Name == "CategoryId"))
+                if (dtoProp.Name == "Id" || dtoProp.Name == "CategoryId")
                 {
                     continue;
                 }
+
                 var value = dtoProp.GetValue(product);
-                if (value != null)
+                var entityProp = existingProduct.GetType().GetProperty(dtoProp.Name);
+                if (entityProp != null && entityProp.CanWrite)
                 {
-                    var entityProp = existingProduct.GetType().GetProperty(dtoProp.Name);
-                    if (entityProp != null && entityProp.CanWrite)
+                    if (value != null && !IsDefaultValue(dtoProp, value))
                     {
                         entityProp.SetValue(existingProduct, value);
                     }
                 }
             }
+        }
+
+        private static bool IsDefaultValue(PropertyInfo property, object value)
+        {
+            if (property.PropertyType.IsValueType)
+                return value.Equals(Activator.CreateInstance(property.PropertyType));
+            return false;
         }
 
         public bool CheckProductExist(Guid productId)
