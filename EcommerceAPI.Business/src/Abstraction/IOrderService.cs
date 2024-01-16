@@ -8,7 +8,7 @@ namespace EcommerceAPI.Business.src.Abstraction
         OrderReadDTO CreateNewOrder(OrderCreateDTO orderCreateDTO);
         IEnumerable<OrderReadDTO> GetAllOrders(GetAllParams options);
         OrderReadDTO? GetOneOrder(Guid orderId);
-        bool UpdateOrder(Guid orderId, OrderUpdateDTO orderUpdateDTO);
+        bool UpdateOrderStatus(Guid orderId, OrderUpdateDTO orderUpdateDTO);
         bool DeleteOrder(Guid orderId);
     }
 }

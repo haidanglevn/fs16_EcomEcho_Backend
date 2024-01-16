@@ -59,18 +59,28 @@ namespace EcommerceAPI.WebAPI.src.Repository
 
         public IEnumerable<Order> GetAllOrders(GetAllParams options)
         {
-            return _orders.Include(o => o.OrderItems).Skip(options.Offset)
-            .Take(options.Limit);
+            return _orders.Include(o => o.OrderItems)
+                            .Skip(options.Offset)
+                            .Take(options.Limit);
         }
 
         public Order? GetOneOrder(Guid orderId)
         {
-            return _orders.Include(o => o.OrderItems).FirstOrDefault(o => o.Id == orderId);
+            return _orders.Include(o => o.OrderItems)
+                        .FirstOrDefault(o => o.Id == orderId);
         }
 
-        public bool UpdateOrder(Guid orderId, Order order)
+        public bool UpdateOrderStatus(Guid orderId, Order order)
         {
-            throw new NotImplementedException();
+            var existingOrder = _orders.Find(orderId);
+            if (existingOrder != null)
+            {
+                existingOrder.Status = order.Status;
+                existingOrder.UpdatedAt = DateTime.Now;
+                _database.SaveChanges();
+                return true;
+            }
+            return false;
         }
     }
 }

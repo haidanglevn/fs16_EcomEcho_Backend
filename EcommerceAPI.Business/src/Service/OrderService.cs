@@ -58,7 +58,7 @@ namespace EcommerceAPI.Business.src.Service
 
         public bool DeleteOrder(Guid orderId)
         {
-            throw new NotImplementedException();
+            return _orderRepo.DeleteOrder(orderId);
         }
 
         public IEnumerable<OrderReadDTO> GetAllOrders(GetAllParams options)
@@ -80,9 +80,10 @@ namespace EcommerceAPI.Business.src.Service
             }
         }
 
-        public bool UpdateOrder(Guid orderId, OrderUpdateDTO orderUpdateDTO)
+        public bool UpdateOrderStatus(Guid orderId, OrderUpdateDTO orderUpdateDTO)
         {
-            throw new NotImplementedException();
+            var order = _mapper.Map<Order>(orderUpdateDTO);
+            return _orderRepo.UpdateOrderStatus(orderId, order);
         }
     }
 }

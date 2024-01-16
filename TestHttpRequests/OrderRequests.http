@@ -3,26 +3,18 @@ POST http://localhost:5173/api/orders
 Authorization: Bearer eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJhZDBhZDFiZS1mN2U1LTQ3YzctYjRjMy1jMTcyNTBjYmViYWIiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJhZG1pbkBtYWlsLmNvbSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluIiwiZXhwIjoxNzA2MTg1NTA2fQ.NuJBswV9R4uMd9YhMR6xwY6B_EZpJbXqb055sT3nIHE
 Content-Type: application/json
 
-# {
-#     "userId": "ad0ad1be-f7e5-47c7-b4c3-c17250cbebab",
-#     "addressId":"a2a2a2a2-1234-1234-1234-1234567890ab",
-#     "orderItems":[
-#         {
-#             "productId": "41dde13b-dbcc-4f51-a31c-2231f94ddcab",
-#             "variantId": "020e8252-77d0-4ff6-a380-ca7fbb6558ef",
-#             "quantity": 3,
-#             "price": 0
-#         }        
-#     ]
-# }
-
 {
     "userId": "ad0ad1be-f7e5-47c7-b4c3-c17250cbebab",
     "addressId": "a1a1a1a1-1234-1234-1234-1234567890ab",
+    "fullName": "Admin admin",
+    "email": "admin@mail.com",
+    "avatar": "https://picsum.photos/1000/1000?random=150",
+    "addressLine1": "Street 1 00100",
+    "addressLine2": "Helsinki Finland",
     "orderItems": [
         {
-            "productId": "b4143d6b-c302-4215-82e9-c9123d2f2ee5",
-            "variantId": "1bf0f6a4-3a15-4ac6-b2f8-9acec9a97eaf",
+            "productId": "bf49c60a-9173-4533-8ca6-182cc7f685eb",
+            "variantId": "03fb18b7-6f87-4566-86a5-b50fdfebb817",
             "quantity": 6,
             "price": 32
         }
@@ -31,5 +23,14 @@ Content-Type: application/json
 
 ### Get all orders (Admin only)
 GET http://localhost:5173/api/orders
-Authorization: Bearer eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJhZDBhZDFiZS1mN2U1LTQ3YzctYjRjMy1jMTcyNTBjYmViYWIiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJhZG1pbkBtYWlsLmNvbSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluIiwiZXhwIjoxNzA0NTE2OTY5fQ.YYDxAikDMgUWJW4fYrxVlILqf5UPQqAzDj44enw7X9k
+Authorization: Bearer eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJhZDBhZDFiZS1mN2U1LTQ3YzctYjRjMy1jMTcyNTBjYmViYWIiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJhZG1pbkBtYWlsLmNvbSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluIiwiZXhwIjoxNzA2MTg1NTA2fQ.NuJBswV9R4uMd9YhMR6xwY6B_EZpJbXqb055sT3nIHE
 Content-Type: application/json
+
+### Update all orders (Admin only)
+PATCH http://localhost:5173/api/orders/6ef0c592-49b6-43ea-b404-d0404e1c8163
+Authorization: Bearer eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJhZDBhZDFiZS1mN2U1LTQ3YzctYjRjMy1jMTcyNTBjYmViYWIiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJhZG1pbkBtYWlsLmNvbSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluIiwiZXhwIjoxNzA2MTg1NTA2fQ.NuJBswV9R4uMd9YhMR6xwY6B_EZpJbXqb055sT3nIHE
+Content-Type: application/json
+
+{
+    "status": 1
+}

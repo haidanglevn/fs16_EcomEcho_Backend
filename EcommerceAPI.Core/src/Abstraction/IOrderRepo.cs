@@ -8,7 +8,7 @@ namespace EcommerceAPI.Core.src.Abstraction
         Order CreateNewOrder(Order order);
         IEnumerable<Order> GetAllOrders(GetAllParams options);
         Order? GetOneOrder(Guid orderId);
-        bool UpdateOrder(Guid orderId, Order order);
+        bool UpdateOrderStatus(Guid orderId, Order order);
         bool DeleteOrder(Guid orderId);
     }
 }

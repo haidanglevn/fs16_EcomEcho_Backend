@@ -1,5 +1,6 @@
 using EcommerceAPI.Business.src.Abstraction;
 using EcommerceAPI.Business.src.DTO;
+using EcommerceAPI.Core.src.Entity;
 using EcommerceAPI.Core.src.Parameter;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -48,6 +49,17 @@ namespace EcommerceAPI.Controller.src.Controller
         public ActionResult<IEnumerable<OrderReadDTO>> GetAllOrders([FromQuery] GetAllParams options)
         {
             return Ok(_orderService.GetAllOrders(options));
+        }
+
+        [HttpPatch("{orderId}"), Authorize(Roles = "Admin")]
+        public IActionResult UpdateOrderStatus(Guid orderId, [FromBody] OrderUpdateDTO orderUpdateDTO)
+        {
+            var result = _orderService.UpdateOrderStatus(orderId, orderUpdateDTO);
+            if (!result)
+            {
+                return NotFound($"Order with ID {orderId} not found.");
+            }
+            return Ok($"[ADMIN] Order with ID {orderId} is updated successfully");
         }
     }
 }
