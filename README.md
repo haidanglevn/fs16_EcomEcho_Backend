@@ -38,6 +38,9 @@ Live website [https://ecomecho.netlify.app/](https://ecomecho.netlify.app/)
 
 Register and login to explore the users features. Contact owner for Admin account.
 
+![ecomecho netlify app_](https://github.com/haidanglevn/fs16_CSharp-FullStack/assets/24937536/7afcda68-6bff-4c1c-a24f-8451ad15528e)
+
+
 ### Backend
 
 The ERD diagrams show all the entities and their relations:![entities](https://github.com/haidanglevn/fs16_CSharp-FullStack/assets/24937536/19bfb32b-b0e6-4532-9edc-2a79e4718a2a)
